@@ -269,6 +269,21 @@ main .analytics .item:nth-child(4) .progress .progress-bar{
     conic-gradient(#FFC000 25%, #fff 0%);
 }
 
+main .analytics .item:nth-child(5) .progress .progress-bar{
+    background: radial-gradient(closest-side, #FFD043 79%, transparent 80% 100%),
+    conic-gradient(#FFC000 25%, #fff 0%);
+}
+
+main .analytics .item:nth-child(6) .progress .progress-bar{
+    background: radial-gradient(closest-side, #FFD043 79%, transparent 80% 100%),
+    conic-gradient(#FFC000 25%, #fff 0%);
+}
+
+main .analytics .item:nth-child(4) .progress .progress-bar{
+    background: radial-gradient(closest-side, #FFD043 79%, transparent 80% 100%),
+    conic-gradient(#FFC000 25%, #fff 0%);
+}
+
 main .analytics .item .progress .progress-bar::before{
     font-size: 10px;
     color: #fff;
@@ -306,6 +321,15 @@ main .analytics .item:nth-child(3){
 
 main .analytics .item:nth-child(4){
     background: #FFD043;
+}
+main .analytics .item:nth-child(5){
+    background: #43f2ff;
+}
+main .analytics .item:nth-child(6){
+    background: #ff5943;
+}
+main .analytics .item:nth-child(7){
+    background: #aeff43;
 }
 
 main .separator input{
