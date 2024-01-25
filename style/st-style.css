@@ -60,11 +60,6 @@ i {
   display: none;
 }
 
-.menu-btn i {
-  font-size: 18px;
-  color: #208bee;
-}
-
 .container .left-section .sidebar {
   display: flex;
   flex-direction: column;
@@ -154,12 +149,6 @@ main header {
   gap: 15px;
 }
 
-main header h5 {
-  font-size: 18px;
-  color: #369fff;
-  font-weight: 400;
-}
-
 main .separator {
   display: flex;
   align-items: center;
@@ -225,17 +214,6 @@ main .analytics .item .progress {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-main .analytics .item .progress .info h5 {
-  color: #fff;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-main .analytics .item .progress .info p {
-  color: #fff;
-  font-size: 12px;
 }
 
 main .analytics .item .progress .progress-bar {
@@ -462,7 +440,7 @@ main .planning .item > i {
 }
 
 .container .right-section .separator#first {
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .container .right-section .separator h4 {
