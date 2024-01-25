@@ -214,10 +214,9 @@ main .analytics{
 
 main .analytics .item{
     display: flex;
-    align-items: center;
     justify-content: space-between;
     height: 140px;
-    min-width: 214px;
+    width: 280px;
     padding: 20px;
     border-radius: 20px;
 }
@@ -228,7 +227,14 @@ main .analytics .item .progress{
     justify-content: space-between;
 }
 
-main .analytics .item .progress .info h5{
+.time{
+    margin-right: auto;
+}
+main .analytics .item .info{
+    display: grid;
+
+}
+main .analytics .item .info h5{
     color: #fff;
     font-size: 20px;
     font-weight: bold;
