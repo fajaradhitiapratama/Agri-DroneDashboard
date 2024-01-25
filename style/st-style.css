@@ -34,11 +34,12 @@ i {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-bottom: 30px;
 }
 
 .container .left-section .logo img {
-  width: 40px;
-  height: 40px;
+  width: 70px;
+  height: 70px;
   object-fit: cover;
 }
 
@@ -58,6 +59,11 @@ i {
   border-radius: 6px;
   cursor: pointer;
   display: none;
+}
+
+.menu-btn i {
+  font-size: 18px;
+  color: #208bee;
 }
 
 .container .left-section .sidebar {
@@ -80,7 +86,7 @@ i {
 .container .left-section .sidebar a {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 0px;
   font-size: 14px;
   color: #bdbdbd;
   position: relative;
@@ -171,26 +177,11 @@ main .separator .info a {
   font-size: 14px;
 }
 
-main .separator .search {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-main .separator .search i {
-  font-size: 20px;
-  color: #bdbdbd;
-}
-
 main .separator .search input {
   border: none;
   font-size: 14px;
   width: 80px;
   outline: none;
-}
-
-main .separator .search input::placeholder {
-  color: #bdbdbd;
 }
 
 main .analytics {
@@ -241,18 +232,12 @@ main .analytics .item:nth-child(3) .progress .progress-bar {
     conic-gradient(#6eb33d 75%, #fff 0%);
 }
 
-main .analytics .item:nth-child(4) .progress .progress-bar {
-  background: radial-gradient(closest-side, #ffd043 79%, transparent 80% 100%),
-    conic-gradient(#ffc000 25%, #fff 0%);
-}
-
 main .analytics .item .progress .progress-bar::before {
   font-size: 10px;
   color: #fff;
 }
 
-main .analytics .item:nth-child(1) .progress .progress-bar::before,
-main .analytics .item:nth-child(4) .progress .progress-bar::before {
+main .analytics .item:nth-child(1) .progress .progress-bar::before {
   content: "75%";
 }
 
@@ -279,10 +264,6 @@ main .analytics .item:nth-child(2) {
 
 main .analytics .item:nth-child(3) {
   background: #8ac53e;
-}
-
-main .analytics .item:nth-child(4) {
-  background: #ffd043;
 }
 
 main .separator input {
@@ -367,6 +348,10 @@ main .planning .item .left .details h5 {
   font-weight: 600;
 }
 
+main .planning .item .left .details b {
+  font-weight: bold;
+}
+
 main .planning .item .left .details p {
   font-size: 12px;
   color: #bdbdbd;
@@ -377,70 +362,7 @@ main .planning .item > i {
 }
 
 .container .right-section {
-  padding: 40px 40px 0 40px;
-}
-
-.container .right-section .top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.container .right-section .top > i {
-  color: #909090;
-  position: relative;
-  cursor: pointer;
-}
-
-.container .right-section .top > i::after {
-  content: "";
-  width: 8px;
-  height: 8px;
-  position: absolute;
-  background: #eb5757;
-  border-radius: 50%;
-  right: 0;
-}
-
-.container .right-section .top .profile {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  background: #ebf6ff;
-  width: 244px;
-  height: 60px;
-  border-radius: 16px;
-}
-
-.container .right-section .top .profile > i {
-  cursor: pointer;
-}
-
-.container .right-section .top .profile .left {
-  display: flex;
-  gap: 15px;
-}
-
-.container .right-section .top .profile .left img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: top;
-}
-
-.container .right-section .top .profile .left .user h5 {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.container .right-section .top .profile .left .user a {
-  font-size: 12px;
-}
-
-.container .right-section .separator#first {
-  margin-top: 10px;
+  padding: 60px 40px 0px 40px;
 }
 
 .container .right-section .separator h4 {
@@ -460,9 +382,9 @@ main .planning .item > i {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 190px;
-  padding: 25px;
-  background: #ebf6ff;
+  height: 300px;
+  padding: 170px;
+  background: #e8fcef;
   border-radius: 20px;
 }
 
@@ -485,7 +407,7 @@ main .planning .item > i {
 }
 
 .container .right-section .stats .item .bottom .line {
-  width: 4px;
+  width: 100px;
   height: 30px;
   background: #369fff;
   border-radius: 20px;
@@ -496,51 +418,6 @@ main .planning .item > i {
   color: #006ed3;
 }
 
-.container .right-section .weekly {
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 12px;
-  background: #f7f7f7;
-  border-radius: 16px;
-}
-
-.container .right-section .weekly .title {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.container .right-section .weekly .title .line {
-  width: 6px;
-  height: 50px;
-  background: #006ed3;
-  border-radius: 20px;
-}
-
-.container .right-section .weekly h5 {
-  font-size: 16px;
-}
-
-.container .right-section .weekly .progress-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: radial-gradient(closest-side, #f7f7f7 79%, transparent 80% 100%),
-    conic-gradient(#ccc 25%, #006ed3 0%);
-}
-
-.container .right-section .weekly .progress-bar::before {
-  content: "3/4";
-  font-size: 14px;
-  color: #000;
-}
-
 @media screen and (max-width: 1200px) {
   .container {
     grid-template-columns: 1fr 6fr 5fr;
@@ -549,12 +426,11 @@ main .planning .item > i {
   .container .left-section,
   .container main,
   .container .right-section {
-    padding: 20px 20px 0 20px;
+    padding: 20px 20px 20px 20px;
   }
 
   .container .left-section .logo a,
   .container .left-section .sidebar a,
-  .container .left-section .pic img,
   .container .left-section .upgrade {
     display: none;
   }
@@ -567,11 +443,11 @@ main .planning .item > i {
 
   .container .left-section {
     position: fixed;
-    height: 60vh;
+    height: 20vh;
     background-color: #fff;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    top: -60vh;
+    top: -20vh;
   }
 
   .container .left-section .logo {
@@ -584,8 +460,11 @@ main .planning .item > i {
     display: flex;
   }
 
-  main h5 {
-    font-size: 16px;
+  .container .left-section .logo .menu-btn,
+  main header h5 {
+    font-size: 18px;
+    color: #369fff;
+    font-weight: 400;
   }
 
   main .separator .info {
@@ -604,33 +483,11 @@ main .planning .item > i {
   main .analytics .item i {
     display: none;
   }
-
-  main .planning {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  main .planning .item {
-    padding: 8px;
-  }
-
-  .container .right-section .stats .item {
-    height: 160px;
-    padding: 20px;
-  }
-
-  .container .right-section .stats .item .top p {
-    font-size: 14px;
-  }
-
-  .container .right-section .stats .item .bottom h3 {
-    font-size: 36px;
-  }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100fr;
     padding-top: 80px;
   }
 
@@ -640,10 +497,6 @@ main .planning .item > i {
     right: 0;
     width: 100%;
     padding: 20px;
-    z-index: -100;
-  }
-
-  .container .right-section .weekly {
-    margin-bottom: 20px;
+    z-index: 100px;
   }
 }
