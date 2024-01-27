@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap");
 
+@import url('https://fonts.googleapis.com/css2?family=Capriola&family=Sixtyfour&family=Viga&display=swap');
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Manrope", sans-serif;
+  font-family: "Capriola", sans-serif;
 }
 
 a {
@@ -18,8 +21,9 @@ i {
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 3fr;
-  height: 100vh;
+  grid-template-columns: 1fr 5fr;
+  height: 80vh;
+  /* background-image: url('/assets/bg2.jpg'); */
 }
 
 .container .left-section {
@@ -74,6 +78,7 @@ i {
 
 .container .left-section .sidebar .item {
   display: flex;
+  justify-content: space-between;
   gap: 20px;
   cursor: pointer;
 }
@@ -147,6 +152,19 @@ main {
   border-right: 2px solid #f0f0f0;
   border-left: 2px solid #f0f0f0;
   padding: 40px 40px 0 40px;
+  position: relative;
+}
+main::before{
+  content: ""; /* Required for pseudo-elements */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/bg2.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
 }
 
 main header {
@@ -249,7 +267,8 @@ main .analytics .item .time{
 }
 
 main .analytics .item i {
-  font-size: 80px;
+  margin-top: 5px;
+  font-size: 70px;
   color: #000000;
 }
 
@@ -493,6 +512,11 @@ main .planning .item > i {
   content: "3/4";
   font-size: 14px;
   color: #000;
+}
+footer p{
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid black;
 }
 
 @media screen and (max-width: 1200px) {
