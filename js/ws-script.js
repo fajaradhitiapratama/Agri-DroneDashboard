@@ -24,3 +24,6 @@ sidebarItems.forEach(element => {
 
     });
 });
+
+const today = new Date().toISOString().split('T')[0];
+document.getElementById('tglsekarang').value = today;
