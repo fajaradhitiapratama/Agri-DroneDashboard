@@ -9,7 +9,12 @@
 
 a {
   text-decoration: none;
-  color: #369fff;
+  color: #000000;
+  transition: .3s;
+
+}
+a:hover{
+  color:rgb(4, 0, 255);
 }
 
 i {
@@ -172,7 +177,7 @@ main header {
 
 main header h5 {
   font-size: 18px;
-  color: #369fff;
+  color: #000000;
   font-weight: 400;
 }
 
