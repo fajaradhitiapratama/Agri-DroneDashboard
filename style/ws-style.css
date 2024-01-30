@@ -21,11 +21,14 @@ i {
   font-size: 24px;
 }
 
+
 .container {
   display: grid;
   grid-template-columns: 1fr 5fr;
   height: 100vh;
-  /* background-image: url('/assets/bg2.jpg'); */
+  background-image: url('/assets/bg1.png');
+  background-size: cover;
+  background-position: center;
 }
 
 .container .left-section {
@@ -52,7 +55,7 @@ i {
 .container .left-section .logo a {
   font-weight: 800;
   font-size: 20px;
-  color: #006ed3;
+  color: #000000;
 }
 
 .menu-btn {
@@ -86,7 +89,7 @@ i {
 }
 
 .container .left-section .sidebar i {
-  color: #bdbdbd;
+  color: #000000;
   transition: all 0.3s ease;
 }
 
@@ -94,8 +97,8 @@ i {
   display: flex;
   align-items: center;
   gap: 30px;
-  font-size: 14px;
-  color: #bdbdbd;
+  font-size: 17px;
+  color: #000000;
   position: relative;
   transition: all 0.3s ease;
 }
@@ -103,7 +106,8 @@ i {
 .container .left-section .sidebar .item#active a,
 .container .left-section .sidebar .item#active i,
 .container .left-section .upgrade .link i {
-  color: #369fff;
+  color: #000000;
+  font-weight: bold;
 }
 
 .container .left-section .sidebar .item a::after {
@@ -111,7 +115,7 @@ i {
   content: "";
   width: 0px;
   height: 0px;
-  background-color: #369fff;
+  background-color: #000000;
   right: -30px;
   border-radius: 50%;
   top: 0;
@@ -151,8 +155,7 @@ i {
 }
 
 main {
-  border-right: 2px solid #f0f0f0;
-  border-left: 2px solid #f0f0f0;
+  border-left: 4px solid #0000004d;
   padding: 40px 40px 0 40px;
   position: relative;
 }
@@ -163,7 +166,7 @@ main::before{
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/assets/bg.jpg');
+  background-image: url('/assets/bg1.png');
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -176,7 +179,7 @@ main header {
 }
 
 main header h5 {
-  font-size: 18px;
+  font-size: 22px;
   color: #000000;
   font-weight: 400;
 }
@@ -234,13 +237,13 @@ main .analytics .item .progress {
 
 main .analytics .item .progress .info h5,  
 main .analytics .item .time h5{
-  color: #ffffff;
+  color: #000000;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 main .analytics .item .progress .info p {
-  color: #ffffff;
+  color: #000000;
   font-size: 14px;
   margin-bottom: 5px;
 }
@@ -252,13 +255,13 @@ main .analytics .item .time{
 }
 
 main .analytics .item i {
-  margin-top: 5px;
+  margin-top: 15px;
   font-size: 70px;
-  color: #ffffff;
+  color: #000000;
 }
 
 main .analytics .item{
-  background: linear-gradient(rgb(0, 204, 255), rgba(110, 110, 110, 0.8));
+  background: linear-gradient(rgb(87, 202, 231), rgba(158, 201, 123, 0.8));
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -290,7 +293,7 @@ main .planning .item {
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  background-color: #f7f7f7;
+  background: linear-gradient(rgb(87, 202, 231), rgba(158, 201, 123, 0.8));
   border-radius: 15px;
   cursor: pointer;
   width: 300px;
@@ -314,24 +317,25 @@ main .planning .item .left .icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
+  background: rgb(0, 0, 0);
 }
 
 
 main .planning .item .left .icon i {
-  color: rgb(0, 204, 255);
+  color: rgb(255, 255, 255);
   font-size: 45px;
 }
 
 main .planning .item .left .details h5 {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
+  color: #000000;
 }
 
 main .planning .item .left .details p {
   margin-top: 2px;
   font-size: 35px;
-  color: #bdbdbd;
+  color: #000000;
 }
 
 main .planning .item > i {
@@ -501,6 +505,39 @@ main .planning .item > i {
   content: "3/4";
   font-size: 14px;
   color: #000;
+}
+
+.calender::-webkit-calendar-picker-indicator {
+  background: transparent;
+  bottom: 0;
+  color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+}
+
+.calender {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #495057;
+  font-size: 16px;
+  padding: 8px 12px;
+  outline: none;
+  width: 200px; /* Sesuaikan dengan lebar yang diinginkan */
+}
+
+.calender:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 footer p{
   display: flex;
