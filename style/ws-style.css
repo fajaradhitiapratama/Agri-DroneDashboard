@@ -14,7 +14,7 @@ a {
 
 }
 a:hover{
-  color:rgb(4, 0, 255);
+  font-weight: bold;
 }
 
 i {
@@ -293,9 +293,12 @@ main .planning .item {
   background-color: #f7f7f7;
   border-radius: 15px;
   cursor: pointer;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   width: 300px;
   height: 120px;
+  transition: .6s;
+}
+main .planning .item:hover{
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 main .planning .item .left {
