@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Capriola&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sixtyfour&family=Viga&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Capriola&family=Days+One&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sixtyfour&family=Viga&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Rubik", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 a {
@@ -26,7 +26,7 @@ i {
   display: grid;
   grid-template-columns: 1fr 5fr;
   height: 100vh;
-  background-image: url('/assets/bg1.png');
+  background-image: url('/assets/bg7.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -198,7 +198,8 @@ main .separator .info {
 }
 
 main .separator .info h3 {
-  font-size: 40px;
+  font-size: 50px;
+  font-family: "Days One", sans-serif;
 }
 
 main .separator .info a {
@@ -261,7 +262,7 @@ main .analytics .item i {
 }
 
 main .analytics .item{
-  background: linear-gradient(rgb(87, 202, 231), rgba(158, 201, 123, 0.8));
+  background: linear-gradient(rgb(255, 255, 255), rgba(81, 240, 252, 0.4));
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -293,7 +294,7 @@ main .planning .item {
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  background: linear-gradient(rgb(87, 202, 231), rgba(158, 201, 123, 0.8));
+  background: linear-gradient(rgb(255, 255, 255), rgba(81, 240, 252, 0.8));
   border-radius: 15px;
   cursor: pointer;
   width: 300px;
@@ -507,7 +508,7 @@ main .planning .item > i {
   color: #000;
 }
 
-.calender::-webkit-calendar-picker-indicator {
+.calender::-webkit-calendar-picker-indicator{
   background: transparent;
   bottom: 0;
   color: transparent;
