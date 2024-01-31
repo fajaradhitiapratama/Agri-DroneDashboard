@@ -1,19 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Capriola&family=Days+One&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sixtyfour&family=Viga&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Capriola&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sixtyfour&family=Viga&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 
 a {
   text-decoration: none;
-  color: #000000;
-  transition: 0.3s;
-}
-a:hover {
-  font-weight: bold;
+  color: #369fff;
 }
 
 i {
@@ -24,9 +20,7 @@ i {
   display: grid;
   grid-template-columns: 1fr 5fr;
   height: 100vh;
-  background-image: url("/assets/bg7.jpg");
-  background-size: cover;
-  background-position: center;
+  /* background-image: url('/assets/bg2.jpg'); */
 }
 
 .container .left-section {
@@ -53,7 +47,7 @@ i {
 .container .left-section .logo a {
   font-weight: 800;
   font-size: 20px;
-  color: #000000;
+  color: #006ed3;
 }
 
 .menu-btn {
@@ -87,7 +81,7 @@ i {
 }
 
 .container .left-section .sidebar i {
-  color: #000000;
+  color: #bdbdbd;
   transition: all 0.3s ease;
 }
 
@@ -95,8 +89,8 @@ i {
   display: flex;
   align-items: center;
   gap: 30px;
-  font-size: 17px;
-  color: #000000;
+  font-size: 14px;
+  color: #bdbdbd;
   position: relative;
   transition: all 0.3s ease;
 }
@@ -104,8 +98,7 @@ i {
 .container .left-section .sidebar .item#active a,
 .container .left-section .sidebar .item#active i,
 .container .left-section .upgrade .link i {
-  color: #000000;
-  font-weight: bold;
+  color: #369fff;
 }
 
 .container .left-section .sidebar .item a::after {
@@ -113,7 +106,7 @@ i {
   content: "";
   width: 0px;
   height: 0px;
-  background-color: #000000;
+  background-color: #369fff;
   right: -30px;
   border-radius: 50%;
   top: 0;
@@ -153,7 +146,8 @@ i {
 }
 
 main {
-  border-left: 4px solid #0000004d;
+  border-right: 2px solid #f0f0f0;
+  border-left: 2px solid #f0f0f0;
   padding: 40px 40px 0 40px;
   position: relative;
 }
@@ -164,7 +158,7 @@ main::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("/assets/bg1.png");
+  background-image: url("/assets/bg.jpg");
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -177,8 +171,8 @@ main header {
 }
 
 main header h5 {
-  font-size: 22px;
-  color: #000000;
+  font-size: 18px;
+  color: #369fff;
   font-weight: 400;
 }
 
@@ -196,8 +190,7 @@ main .separator .info {
 }
 
 main .separator .info h3 {
-  font-size: 50px;
-  font-family: "Days One", sans-serif;
+  font-size: 40px;
 }
 
 main .separator .info a {
@@ -227,6 +220,21 @@ main .analytics .item {
   border-radius: 20px;
 }
 
+main .separator input {
+  font-size: medium;
+  border: none;
+  color: #000000;
+  font-weight: bold;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.5;
+  font-size: 16px;
+  cursor: pointer;
+}
+
 main .analytics .item .progress {
   display: flex;
   flex-direction: column;
@@ -235,13 +243,13 @@ main .analytics .item .progress {
 
 main .analytics .item .progress .info h5,
 main .analytics .item .time h5 {
-  color: #000000;
+  color: #ffffff;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 main .analytics .item .progress .info p {
-  color: #000000;
+  color: #ffffff;
   font-size: 14px;
   margin-bottom: 5px;
 }
@@ -253,13 +261,13 @@ main .analytics .item .time {
 }
 
 main .analytics .item i {
-  margin-top: 15px;
+  margin-top: 5px;
   font-size: 70px;
-  color: #000000;
+  color: #ffffff;
 }
 
 main .analytics .item {
-  background: linear-gradient(rgb(255, 255, 255), rgba(81, 240, 252, 0.4));
+  background: linear-gradient(rgb(0, 204, 255), rgba(110, 110, 110, 0.8));
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -291,15 +299,12 @@ main .planning .item {
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  background: linear-gradient(rgb(255, 255, 255), rgba(81, 240, 252, 0.8));
+  background-color: #f7f7f7;
   border-radius: 15px;
   cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   width: 300px;
   height: 120px;
-  transition: 0.6s;
-}
-main .planning .item:hover {
-  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 main .planning .item .left {
@@ -315,24 +320,23 @@ main .planning .item .left .icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgb(0, 0, 0);
+  background: white;
 }
 
 main .planning .item .left .icon i {
-  color: rgb(255, 255, 255);
+  color: rgb(0, 204, 255);
   font-size: 45px;
 }
 
 main .planning .item .left .details h5 {
   font-size: 20px;
-  font-weight: 500;
-  color: #000000;
+  font-weight: 600;
 }
 
 main .planning .item .left .details p {
   margin-top: 2px;
   font-size: 35px;
-  color: #000000;
+  color: #bdbdbd;
 }
 
 main .planning .item > i {
@@ -502,39 +506,6 @@ main .planning .item > i {
   content: "3/4";
   font-size: 14px;
   color: #000;
-}
-
-.calender::-webkit-calendar-picker-indicator {
-  background: transparent;
-  bottom: 0;
-  color: transparent;
-  cursor: pointer;
-  height: auto;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: auto;
-}
-
-.calender {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-color: #f8f9fa;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  box-sizing: border-box;
-  color: #495057;
-  font-size: 16px;
-  padding: 8px 12px;
-  outline: none;
-  width: 200px; /* Sesuaikan dengan lebar yang diinginkan */
-}
-
-.calender:focus {
-  border-color: #80bdff;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 footer p {
   display: flex;

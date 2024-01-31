@@ -7,12 +7,12 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/style/st-style.css" />
+    <link rel="stylesheet" href="/style/stcoba.css" />
+    <title>Soil Test</title>
     <script
       src="https://kit.fontawesome.com/ff4f981f32.js"
       crossorigin="anonymous"
     ></script>
-    <title>AgriDrone | Soil Test</title>
   </head>
 
   <body>
@@ -44,9 +44,10 @@
 
       <main>
         <header>
-          <a href="#"
-            >Hello, welcome to <b>Agri-Drone</b> Monitoring Website!</a
-          >
+          <button class="menu-btn" id="menu-open">
+            <i class="bx bx-menu"></i>
+          </button>
+          <h5>Hello, Welcome to <b>Agri-Drone </b>Monitoring Website!</h5>
         </header>
 
         <div class="separator">
@@ -61,44 +62,30 @@
           <div class="item">
             <div class="progress">
               <div class="info">
-                <h5 style="margin-bottom: 10px">Sunday</h5>
-                <p>pH:__</p>
-                <p>Soil Moisture:__</p>
-                <p>NPK:__</p>
-              </div>
-            </div>
-            <div class="time">
-              <h5>15.15 pm</h5>
-            </div>
-            <img src="/assets/centang.png" alt="Centang" class="centang" />
-          </div>
-          <div class="item">
-            <div class="progress">
-              <div class="info">
                 <h5 style="margin-bottom: 10px">Monday</h5>
-                <p>pH:__</p>
+                <p>pH:__m/s</p>
                 <p>Soil Moisture:__</p>
-                <p>NPK:__</p>
+                <p>NPK:__C</p>
               </div>
             </div>
             <div class="time">
               <h5>15.15 pm</h5>
+              <i class="fa-solid fa-circle-check"></i>
             </div>
-            <img src="/assets/centang.png" alt="Centang" class="centang" />
           </div>
           <div class="item">
             <div class="progress">
               <div class="info">
                 <h5 style="margin-bottom: 10px">Tuesday</h5>
-                <p>pH:__</p>
+                <p>pH:__/p></p>
                 <p>Soil Moisture:__</p>
                 <p>NPK:__</p>
               </div>
             </div>
             <div class="time">
               <h5>15.15 pm</h5>
+              <i class="fa-solid fa-circle-check"></i>
             </div>
-            <img src="/assets/centang.png" alt="Centang" class="centang" />
           </div>
           <div class="item">
             <div class="progress">
@@ -111,8 +98,8 @@
             </div>
             <div class="time">
               <h5>15.15 pm</h5>
+              <i class="fa-solid fa-circle-xmark"></i>
             </div>
-            <img src="/assets/silang.png" alt="Silang" class="silang" />
           </div>
           <div class="item">
             <div class="progress">
@@ -125,8 +112,8 @@
             </div>
             <div class="time">
               <h5>15.15 pm</h5>
+              <i class="fa-solid fa-circle-xmark"></i>
             </div>
-            <img src="/assets/silang.png" alt="Silang" class="silang" />
           </div>
           <div class="item">
             <div class="progress">
@@ -139,8 +126,8 @@
             </div>
             <div class="time">
               <h5>15.15 pm</h5>
+              <i class="fa-solid fa-circle-xmark"></i>
             </div>
-            <img src="/assets/silang.png" alt="Silang" class="silang" />
           </div>
           <div class="item">
             <div class="progress">
@@ -153,42 +140,66 @@
             </div>
             <div class="time">
               <h5>15.15 pm</h5>
+              <i class="fa-solid fa-circle-xmark"></i>
             </div>
-            <img src="/assets/silang.png" alt="Silang" class="silang" />
           </div>
-        </div>
-
-        
-
-      <aside class="right-section">
-        <div class="separator" id="first">
-          <h4> Fertility Today's Overview</h4>
-          <a href="#">View All</a>
-        </div>
-        <div class="stats">
           <div class="item">
-            <div>
-              <img src="/assets/silang.png" alt="Silang" class="silang"
+            <div class="progress">
+              <div class="info">
+                <h5 style="margin-bottom: 10px">Sunday</h5>
+                <p>pH:__</p>
+                <p>Soil Moisture:__</p>
+                <p>NPK:__</p>
+              </div>
             </div>
-              
+            <div class="time">
+              <h5>15.15 pm</h5>
+              <i class="fa-solid fa-circle-xmark"></i>>
+            </div>
           </div>
         </div>
 
-        
-      <div class="indikator"> 
-        <div class="card pH">
-          <h5> pH = _ </h5>
+        <div class="separator">
+          <div class="info">
+            <h3>Today Overview</h3>
+            <a href="#">View All</a>
+          </div>
         </div>
-        <div class="card moisture">
-          <h5> Soil Moisture = _ </h5>
-        </div>
-        <div class="card NPK">
-          <h5> NPK = _ </h5>
-        </div>
-      </div>
-      </aside>
-    </div>
 
-    <script src="/js/st-script.js"></script>
+        <div class="planning">
+          <div class="item">
+            <div class="left">
+              <div class="details">
+                <h5>pH</h5>
+                <p>_</p>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="left">
+              <div class="details">
+                <h5>Moisture</h5>
+                <p>__</p>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="left">
+              <div class="details">
+                <h5>NPK</h5>
+                <p>__</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- <footer>
+      <div>
+        <p>Copyright © FMD Impact 2024.</p>
+      </div>
+    </footer> -->
+
+    <script src="/js/stcoba.js"></script>
   </body>
 </html>
