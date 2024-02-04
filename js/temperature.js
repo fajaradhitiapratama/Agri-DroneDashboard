@@ -1,5 +1,5 @@
-const xValues = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
-const yValues = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
+const xValues = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
+let yValues = [22, 24, 24, 25, 27, 30, 33, 32, 31, 29, 27, 26, 25]; 
 
 new Chart("myChart", {
   type: "line",
@@ -10,18 +10,22 @@ new Chart("myChart", {
         fill: false,
         lineTension: 0,
         backgroundColor: "rgba(0,0,0,1.0)",
-        borderColor: "rgba(255,0,0,0.5)",
+        borderColor: "rgba(0,0,0,0.5)",
         data: yValues,
-        borderWidth:5,
-        borderDash: [1, 2]
+        borderWidth: 5,
+        borderDash: [5, 2],
       },
     ],
   },
   options: {
     legend: { display: false },
-    title:{
-        display: true,
-        text: "Weather Station (Temperature Sensors)"
+    title: {
+      display: true,
+      text: "Weather Station (Temperature Sensors)",
+      fontFamily: "Poppins",
+      fontSize: 25,
+      fontStyle: "italic",
+      fontColor: "black",
     },
     scales: {
       yAxes: [
@@ -29,8 +33,23 @@ new Chart("myChart", {
           scaleLabel: {
             display: true,
             labelString: "Temperature (C)",
+            fontFamily: "Poppins",
+            fontSize: 20,
+            fontStyle: "italic",
+            fontColor: "black",
           },
-          ticks: { min: 6, max: 16 },
+          ticks: {
+            min: 0,
+            max: 36,
+            fontColor: "black",
+            callback: function(value) {
+              return value + "°C";
+            },
+          },
+          gridLines: {
+            color: 'rgba(0, 200, 0, 0.1)',
+            lineWidth: 1,
+          }
         },
       ],
       xAxes: [
@@ -38,6 +57,27 @@ new Chart("myChart", {
           scaleLabel: {
             display: true,
             labelString: "Time (Hour)",
+            fontFamily: "Poppins",
+            fontSize: 20,
+            fontStyle: "italic",
+            fontColor: "black",
+            gridLines: {
+              color: 'rgba(0, 200, 0, 0.1)',
+              lineWidth: 1,
+            }
+          },
+          ticks: {
+            fontColor: "black",
+            callback: function(value, index) {
+              if (value >= 6 && value <= 11) {
+                return value + " a.m.";
+              } else if (value == 12){
+                return (value) + " p.m.";
+              }
+              else{
+                return (value - 12) + " p.m."
+              }
+            },
           },
         },
       ],
@@ -45,16 +85,17 @@ new Chart("myChart", {
   },
 });
 
+
 function getCurrentDate() {
-    const currentDate = new Date();
-    const day = currentDate.getDate().toString().padStart(2, '0');
-    const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
-    const year = currentDate.getFullYear();
-    return day + '/' + month + '/' + year;
+  const currentDate = new Date();
+  const day = currentDate.getDate().toString().padStart(2, "0");
+  const month = (currentDate.getMonth() + 1).toString().padStart(2, "0");
+  const year = currentDate.getFullYear();
+  return day + "/" + month + "/" + year;
 }
 
 function updateCalendar() {
-    document.getElementById('tglsekarang').value = getCurrentDate();
+  document.getElementById("tglsekarang").value = getCurrentDate();
 }
 
 // Panggil updateCalendar setiap detik untuk memperbarui tampilan tanggal secara real-time
