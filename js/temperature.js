@@ -40,15 +40,16 @@ new Chart("myChart", {
           },
           ticks: {
             min: 0,
-            max: 36,
+            max: 35,
             fontColor: "black",
             callback: function(value) {
               return value + "°C";
             },
           },
           gridLines: {
-            color: 'rgba(0, 200, 0, 0.1)',
+            color: 'rgba(0, 0, 0, 1)',
             lineWidth: 1,
+            borderDash: [3, 3],
           }
         },
       ],
@@ -61,10 +62,11 @@ new Chart("myChart", {
             fontSize: 20,
             fontStyle: "italic",
             fontColor: "black",
-            gridLines: {
-              color: 'rgba(0, 200, 0, 0.1)',
-              lineWidth: 1,
-            }
+          },
+          gridLines: {
+            color: 'rgba(0, 0, 0, 1)',
+            lineWidth: 1,
+            borderDash: [3, 3],
           },
           ticks: {
             fontColor: "black",
