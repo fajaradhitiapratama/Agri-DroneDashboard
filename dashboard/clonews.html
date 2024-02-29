@@ -2,13 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Dashboard | By Code Info</title>
+    <link rel="icon" href="/assets/agridrone-logo.jpg" />
+    <title>Dashboard | Agri-Drone</title>
     <link rel="stylesheet" href="/style/clonews.css" />
     <!-- Font Awesome Cdn Link -->
     <script
       src="https://kit.fontawesome.com/ff4f981f32.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   </head>
   <body>
     <div class="container">
@@ -79,154 +82,151 @@
           >
         </div>
         <div class="main-weather">
-          <div class="card">
-            <div class="content_data">
-              <div class="info_data">
-                <h3>Monday</h3>
-                <p>Wind Speed:__m/s</p>
-                <p>Wind Direction:__</p>
-                <p>Temperature:__°C</p>
-                <p>Rainfall:__mm</p>
+          <div class="card_left">
+            <div class="card_detail">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="dayOfWeek"></h3>
+                  <p>Wind Speed:__m/s</p>
+                  <p>Wind Direction:__</p>
+                  <p>Temperature:__°C</p>
+                  <p>Rainfall:__mm</p>
+                </div>
+                <div class="info_time">
+                  <h3 class="realtime">01.00 WIB</h3>
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                </div>
               </div>
-              <div class="info_time">
-                <h3 class="realtime">01.00 WIB</h3>
-                <i class="fas fa-cloud-showers-heavy"></i>
-              </div>
+              <button>View All</button>
             </div>
-            <button>View All</button>
           </div>
 
-          <div class="card">
-            <div class="content_data">
-              <div class="info_data">
-                <h3>Monday</h3>
-                <p>Wind Speed:__m/s</p>
-                <p>Wind Direction:__</p>
-                <p>Temperature:__°C</p>
-                <p>Rainfall:__mm</p>
+          <div class="card_right">
+            <div class="card">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="nextDay1"></h3>
+                </div>
+                <div class="info_time">
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                </div>
               </div>
-              <div class="info_time">
-                <h3 class="realtime">01.00 WIB</h3>
-                <i class="fas fa-cloud-showers-heavy"></i>
-              </div>
+              <button>View All</button>
             </div>
-            <button>View All</button>
-          </div>
 
-          <div class="card">
-            <div class="content_data">
-              <div class="info_data">
-                <h3>Monday</h3>
-                <p>Wind Speed:__m/s</p>
-                <p>Wind Direction:__</p>
-                <p>Temperature:__°C</p>
-                <p>Rainfall:__mm</p>
+            <div class="card">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="nextDay2">Monday</h3>
+                </div>
+                <div class="info_time">
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                </div>
               </div>
-              <div class="info_time">
-                <h3 class="realtime">01.00 WIB</h3>
-                <i class="fas fa-cloud-showers-heavy"></i>
-              </div>
+              <button>View All</button>
             </div>
-            <button>View All</button>
-          </div>
 
-          <div class="card">
-            <div class="content_data">
-              <div class="info_data">
-                <h3>Monday</h3>
-                <p>Wind Speed:__m/s</p>
-                <p>Wind Direction:__</p>
-                <p>Temperature:__°C</p>
-                <p>Rainfall:__mm</p>
+            <div class="card">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="nextDay3"></h3>
+                </div>
+                <div class="info_time">
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                </div>
               </div>
-              <div class="info_time">
-                <h3 class="realtime">01.00 WIB</h3>
-                <i class="fas fa-cloud-showers-heavy"></i>
-              </div>
+              <button>View All</button>
             </div>
-            <button>View All</button>
-          </div>
 
-          <div class="card">
-            <div class="content_data">
-              <div class="info_data">
-                <h3>Monday</h3>
-                <p>Wind Speed:__m/s</p>
-                <p>Wind Direction:__</p>
-                <p>Temperature:__°C</p>
-                <p>Rainfall:__mm</p>
+            <div class="card">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="nextDay4"></h3>
+                </div>
+                <div class="info_time">
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                </div>
               </div>
-              <div class="info_time">
-                <h3 class="realtime">01.00 WIB</h3>
-                <i class="fas fa-cloud-showers-heavy"></i>
-              </div>
+              <button>View All</button>
             </div>
-            <button>View All</button>
-          </div>
 
-          <div class="card">
-            <div class="content_data">
-              <div class="info_data">
-                <h3>Monday</h3>
-                <p>Wind Speed:__m/s</p>
-                <p>Wind Direction:__</p>
-                <p>Temperature:__°C</p>
-                <p>Rainfall:__mm</p>
+            <div class="card">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="nextDay5"></h3>
+                </div>
+                <div class="info_time">
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                </div>
               </div>
-              <div class="info_time">
-                <h3 class="realtime">01.00 WIB</h3>
-                <i class="fas fa-cloud-showers-heavy"></i>
-              </div>
+              <button>View All</button>
             </div>
-            <button>View All</button>
-          </div>
 
-          <div class="card">
-            <div class="content_data">
-              <div class="info_data">
-                <h3>Monday</h3>
-                <p>Wind Speed:__m/s</p>
-                <p>Wind Direction:__</p>
-                <p>Temperature:__°C</p>
-                <p>Rainfall:__mm</p>
+            <div class="card">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="nextDay6"></h3>
+                </div>
+                <div class="info_time">
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                </div>
               </div>
-              <div class="info_time">
-                <h3 class="realtime">01.00 WIB</h3>
-                <i class="fas fa-cloud-showers-heavy"></i>
-              </div>
+              <button>View All</button>
             </div>
-            <button>View All</button>
           </div>
-          
         </div>
 
         <section class="main-course">
-          <h1>My courses</h1>
+          <h1>Overviews</h1>
           <div class="course-box">
             <ul>
-              <li class="active">In progress</li>
-              <li>explore</li>
-              <li>incoming</li>
-              <li>finished</li>
+              <li>Wind Speed</li>
+              <li>Wind Direction</li>
+              <li class="active">Temperature</li>
+              <li>Rainfall</li>
             </ul>
             <div class="course">
-              <div class="box">
-                <h3>HTML</h3>
-                <p>80% - progress</p>
-                <button>continue</button>
-                <i class="fab fa-html5 html"></i>
+              <div class="box_left">
+                <div class="box_data">
+                  <div class="info">
+                    <h3>Node Info</h3>
+                    <p>
+                      <i class="fa-solid fa-temperature-quarter"></i>
+                      <span id="windSpeed">__ m/s</span>
+                    </p>
+                    <i class="fa-regular fa-face-smile"></i>
+                  </div>
+                  <button>continue</button>
+                </div>
               </div>
-              <div class="box">
-                <h3>CSS</h3>
-                <p>50% - progress</p>
-                <button>continue</button>
-                <i class="fab fa-css3-alt css"></i>
-              </div>
-              <div class="box">
-                <h3>JavaScript</h3>
-                <p>30% - progress</p>
-                <button>continue</button>
-                <i class="fab fa-js-square js"></i>
+              <div class="box_right">
+                <div class="box">
+                  <div class="chart-wrapper">
+                    <canvas
+                      id="myChart"
+                      style="width: 100%; max-width: 400px"
+                    ></canvas>
+                  </div>
+                  <button>continue</button>
+                </div>
+
+                <div class="box">
+                  <h3>Emoji Info</h3>
+                  <div class="box_emoji">
+                    <div class="emoji_mad">
+                      <i class="fa-regular fa-face-smile"></i>
+                      <p>> 26°C <span>High</span></p>
+                    </div>
+                    <div class="emoji_smile">
+                      <i class="fa-regular fa-face-smile"></i>
+                      <p>24°C - 26°C <span>Normal</span></p>
+                    </div>
+                    <div class="emoji_sad">
+                      <i class="fa-regular fa-face-smile"></i>
+                      <p>< 24°C <span>Low</span></p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

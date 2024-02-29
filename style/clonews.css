@@ -18,7 +18,7 @@ nav {
   position: relative;
   top: 0;
   bottom: 0;
-  height: 100vh;
+  height: auto;
   left: 0;
   background: #fff;
   width: 280px;
@@ -81,7 +81,7 @@ a:hover {
   width: 100%;
 }
 .main-top i {
-    display: flex;
+  display: flex;
   flex-wrap: nowrap;
   align-items: baseline;
   position: absolute;
@@ -91,14 +91,26 @@ a:hover {
   cursor: pointer;
 }
 .main-top .date {
-    margin-left: 5px;
+  margin-left: 5px;
   font-size: 12px;
 }
 .main-weather {
   display: flex;
   margin-top: 20px;
 }
-.main-weather .card {
+
+.main-weather .card_left {
+  display: contents;
+}
+
+.main-weather .card_right {
+  display: flex;
+  flex-wrap: nowrap;
+  flex: 1;
+}
+
+/* card-left detail */
+.main-weather .card_detail {
   display: grid;
   justify-items: stretch;
   width: 25%;
@@ -108,36 +120,94 @@ a:hover {
   border-radius: 20px;
   padding: 10px;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  align-content: space-between;
 }
-.main-weather .card .content_data{
+.main-weather .card_detail .content_data {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
 }
 
-.main-weather .card .info_data{
+.main-weather .card_detail .info_data {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: flex-start;
-
 }
-.main-weather .card .info_data h3 {
+.main-weather .card_detail .info_data h3 {
   margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 25px;
   text-transform: capitalize;
 }
 
-.main-weather .card .info_data p {
-  font-size: 12px;
+.main-weather .card_detail .info_data p {
+  font-size: 14px;
 }
 
-.main-weather .card .info_time i{
+.main-weather .card_detail .info_time i {
+  font-size: 70px;
+}
+
+.main-weather .card_detail button {
+  background: rgb(70, 144, 187);
+  color: #fff;
+  padding: 7px 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.main-weather .card_detail button:hover {
+  background: rgb(28, 68, 129);
+}
+.main-weather .card_detail i {
+  font-size: 22px;
+  padding: 10px;
+}
+
+/* card-right detail */
+.main-weather .card {
+  display: flex;
+  width: 25%;
+  margin: 10px;
+  background: #fff;
+  text-align: center;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  align-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.main-weather .card .content_data {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
+  align-items: center;
+}
+
+.main-weather .card .info_data {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.main-weather .card .info_data h3 {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.main-weather .card .info_time i {
   font-size: 50px;
 }
 
 .main-weather .card button {
-  background: orangered;
+  background: rgb(70, 144, 187);
   color: #fff;
   padding: 7px 15px;
   border-radius: 10px;
@@ -145,11 +215,10 @@ a:hover {
   cursor: pointer;
 }
 .main-weather .card button:hover {
-  background: rgba(223, 70, 15, 0.856);
+  background: rgb(28, 68, 129);
 }
 .main-weather .card i {
   font-size: 22px;
-  padding: 10px;
 }
 
 /* Courses */
@@ -159,7 +228,7 @@ a:hover {
 }
 .course-box {
   width: 100%;
-  height: 300px;
+  height: 100%;
   padding: 10px 10px 30px 10px;
   margin-top: 10px;
   background: #fff;
@@ -182,40 +251,157 @@ a:hover {
 .course-box .course {
   display: flex;
 }
-.box {
-  width: 33%;
+
+.course {
+  display: flex;
+}
+
+.course .box_left {
+  display: contents;
+}
+
+.course .box_right {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+/* box-left */
+.box_data {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: stretch;
   padding: 10px;
   margin: 10px;
   border-radius: 10px;
-  background: rgb(235, 233, 233);
+  background: #dfe9f5;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.box_data .info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box_data .info p i {
+  font-size: 14px;
+  color: #000;
+}
+.box_data p {
+  font-size: 12px;
+  margin-top: 5px;
+}
+.box_data button {
+  background: rgb(70, 144, 187);
+  color: #fff;
+  padding: 7px 10px;
+  border-radius: 10px;
+  margin-top: 2px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.box_data button:hover {
+  background: rgb(28, 68, 129);
+}
+.box_data .info i {
+  margin-top: 25px;
+  font-size: 45px;
+  color: #337357;
+}
+
+/* box-right */
+.box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: stretch;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  background: #dfe9f5;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
 .box p {
   font-size: 12px;
-  margin-top: 5px;
 }
 .box button {
-  background: #000;
+  background: rgb(70, 144, 187);
   color: #fff;
   padding: 7px 10px;
   border-radius: 10px;
-  margin-top: 3rem;
+  margin-top: 2px;
   cursor: pointer;
+  transition: 0.3s;
 }
 .box button:hover {
-  background: rgba(0, 0, 0, 0.842);
+  background: rgb(28, 68, 129);
 }
 .box i {
-  font-size: 7rem;
-  float: right;
-  margin: -20px 20px 20px 0;
+  font-size: 15px;
 }
-.html {
-  color: rgb(25, 94, 54);
+
+.box .chart-wrapper{
+  width: 550px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.css {
-  color: rgb(104, 179, 35);
+
+.box h3{
+  display: flex;
+  justify-content: center;
 }
-.js {
-  color: rgb(28, 98, 179);
+
+.box .box_emoji{
+  display: flex;
+  flex-direction: column;
+}
+
+.emoji_smile,
+.emoji_sad,
+.emoji_mad{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 5px;
+  width: 300px;
+  background: #fff;
+  border-radius: 15px;
+}
+
+.emoji_smile i,
+.emoji_mad i,
+.emoji_sad i{
+  font-size: 30px;
+}
+
+.emoji_smile i{
+  color: #337357;
+}
+
+.emoji_mad i{
+  color: #D24545;
+}
+
+.emoji_sad i{
+  color: #F6D776;
+}
+
+.emoji_smile p,
+.emoji_mad p,
+.emoji_sad p{
+  margin-left: 12px;
+}
+
+.emoji_smile p span,
+.emoji_mad p span,
+.emoji_sad p span{
+ font-weight: bold;
 }
