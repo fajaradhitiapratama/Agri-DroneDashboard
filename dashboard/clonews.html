@@ -179,20 +179,20 @@
         <section class="main-course">
           <h1>Overviews</h1>
           <div class="course-box">
-            <ul>
-              <li>Wind Speed</li>
-              <li>Wind Direction</li>
-              <li class="active">Temperature</li>
-              <li>Rainfall</li>
+            <ul id="infoList">
+              <li id="windSpeed" onclick="showInfo('windSpeed')">Wind Speed</li>
+              <li id="windDirection" onclick="showInfo('windDirection')">Wind Direction</li>
+              <li id="temperature" onclick="showInfo('temperature')">Temperature</li>
+              <li id="rainfall" onclick="showInfo('rainfall')">Rainfall</li>
             </ul>
             <div class="course">
-              <div class="box_left">
+              <div class="box_left" id="infoBox">
                 <div class="box_data">
                   <div class="info">
                     <h3>Node Info</h3>
                     <p>
-                      <i class="fa-solid fa-temperature-quarter"></i>
-                      <span id="windSpeed">__ °C</span>
+                      <i class="fa-solid fa-temperature-quarter" id="icon"></i>
+                      <span id="infoValue">__</span>
                     </p>
                     <i class="emoji-berubah"></i>
                   </div>
@@ -215,15 +215,15 @@
                   <div class="box_emoji">
                     <div class="emoji_mad">
                       <i class="fa-regular fa-face-tired"></i>
-                      <p>> 26°C <span>High</span></p>
+                      <p id="emoji-data1">__</p>
                     </div>
                     <div class="emoji_smile">
                       <i class="fa-regular fa-face-smile"></i>
-                      <p>24°C - 26°C <span>Normal</span></p>
+                      <p id="emoji-data2">__</p>
                     </div>
                     <div class="emoji_sad">
                       <i class="fa-regular fa-face-sad-cry"></i>
-                      <p>< 24°C <span>Low</span></p>
+                      <p id="emoji-data3">__</p>
                     </div>
                   </div>
                 </div>
@@ -234,5 +234,13 @@
       </section>
     </div>
     <script src="/js/clonews.js"></script>
+    <script src="/js/chartjs/rainfallchart.js"></script>
+    <script src="/js/chartjs/tempchart.js"></script>
+    <script src="/js/chartjs/winddirectionchart.js"></script>
+    <script src="/js/chartjs/windspeedchart.js"></script>
+    <script src="/js/function/clock.js"></script>
+    <script src="/js/function/date.js"></script>
+    <script src="/js/function/day.js"></script>
+    <script src="/js/function/emoji.js"></script>
   </body>
 </html>

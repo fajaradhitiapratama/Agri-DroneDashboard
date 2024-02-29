@@ -243,8 +243,15 @@ a:hover {
   margin: 10px;
   color: gray;
   cursor: pointer;
+  transition: .3s;
+}
+.course-box ul li:hover{
+  color: rgb(0, 0, 0);
+  border-bottom: 1px solid #000;
 }
 .course-box ul .active {
+  font-size: 20px;
+  font-weight: 600;
   color: #000;
   border-bottom: 1px solid #000;
 }
