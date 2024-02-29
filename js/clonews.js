@@ -144,16 +144,37 @@ new Chart("myChart", {
 
 // temperature call api
 function fetchDataAndUpdateDOM() {
-  // Fetch data from the API
-  fetch('https://api.example.com/weather')
-      .then(response => response.json())
-      .then(data => {
-          const windSpeed = data.wind.speed;
-          document.getElementById('windSpeed').textContent = windSpeed + ' m/s';
-      })
-      .catch(error => {
-          console.error('Error fetching data:', error);
-      });
+  // Ambil data dari API (disimulasikan)
+  setTimeout(() => {
+    const temperature = 27; // Suhu 22 derajat Celsius
+
+    document.getElementById('windSpeed').textContent = temperature + ' °C';
+
+    // Perbarui emoji berdasarkan nilai suhu
+    const emojiElement = document.querySelector('.emoji-berubah');
+
+// Fungsi untuk mengubah kelas emoji sesuai dengan nilai suhu
+function updateEmojiClass(temperature) {
+  if (temperature < 24) {
+    emojiElement.classList.remove('fa-regular', 'fa-face-smile');
+    emojiElement.classList.add('fa-regular', 'fa-face-sad-cry');
+    emojiElement.style.color = '#c2a346;';
+  } else if (temperature > 26) {
+    emojiElement.classList.remove('fa-regular', 'fa-face-smile');
+    emojiElement.classList.add('fa-regular', 'fa-face-tired');
+    emojiElement.style.color = '#D24545';
+  } else {
+    emojiElement.classList.remove('fa-regular', 'fa-face-sad-cry', 'fa-face-tired');
+    emojiElement.classList.add('fa-regular', 'fa-face-smile');
+    emojiElement.style.color = '#337357';
+  }
 }
+
+// Memanggil fungsi untuk pertama kalinya
+updateEmojiClass(temperature);
+  }, 1000); // Simulasikan pengambilan data setelah 2 detik
+}
+
+// Panggil fetchDataAndUpdateDOM() untuk menguji suhu 22 derajat
 fetchDataAndUpdateDOM();
-setInterval(fetchDataAndUpdateDOM, 5000); 
+

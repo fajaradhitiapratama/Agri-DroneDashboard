@@ -391,7 +391,7 @@ a:hover {
 }
 
 .emoji_sad i{
-  color: #F6D776;
+  color: #c2a346;
 }
 
 .emoji_smile p,
@@ -405,3 +405,4 @@ a:hover {
 .emoji_sad p span{
  font-weight: bold;
 }
+
