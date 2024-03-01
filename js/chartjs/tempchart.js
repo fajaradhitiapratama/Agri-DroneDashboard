@@ -125,6 +125,11 @@ updateEmojiClass(temperature);
 // Panggil fetchDataAndUpdateDOM() untuk menguji suhu 22 derajat
 fetchDataAndUpdateDOM();
 
+
+// circle percentage
+
+
+
 //test api chart
 // const apiUrl = "URL_API_MODEL_ML"; // Ganti dengan URL API model machine learning Anda
 
