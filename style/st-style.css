@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Capriola&family=Days+One&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sixtyfour&family=Viga&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Rubik", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 a {
@@ -327,94 +329,53 @@ main .analytics .item .silang {
   z-index: 1; /* Bring the separator to the front */
 }
 
-.container .right-section .separator h4 {
+.container .right-section .separator .info h3 {
   font-weight: bold;
   font-size: 24px;
   margin-top: 20px;
   line-height: 1.2;
 }
-
-.container .right-section .stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-top: 110px;
-  gap: -1000px;
+.right-section .indikator {
+  display: flex; /* Mengatur agar kontainer kartu menggunakan flexbox */
+  flex-wrap: wrap; /* Izinkan kartu untuk bungkus jika tidak muat dalam satu baris */
+  justify-content: left; /* Pusatkan kartu secara horizontal */
+  align-items: flex-start; /* Atur kartu agar mulai dari atas */
+  gap: 20px; /* Jarak antar kartu */
 }
 
-.container .right-section .stats .item {
-  position: relative; /* Add this to contain absolutely positioned children */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 300px;
-  width: 300px;
-  padding: 10px; /* Consider if this much padding is necessary, as it reduces effective space for children */
-  background: #e8fcef;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  bottom: 70px; /* Consider if this is necessary, or if it's for positioning within another layout */
-}
-
-.container .right-section .stats .item .top {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  justify-content: space-between;
-  align-items: center;
-  place-items: center;
-}
-
-.container .right-section .stats .item .silang {
-  width: 60%; /* Adjust size relative to parent */
-  height: auto; /* Maintain aspect ratio */
-  position: absolute; /* Absolute positioning within .item */
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(
-    -50%,
-    -50%
-  ); /* Offset by its own size for perfect centering */
-  /* Remove excessive margins */
-}
-
-/* Style Umum untuk Semua Kartu */
 .right-section .indikator .card {
-  background-color: white; /* Warna latar belakang kartu */
-  padding: 20px; /* Jarak dalam kartu */
-  border-radius: 10px; /* Membulatkan sudut kartu */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Menambahkan bayangan untuk efek depth */
-  display: flex; /* Menggunakan flexbox */
-  flex-direction: column; /* Konten dalam kartu disusun secara vertikal */
-  align-items: flex-start; /* Pusatkan item secara horizontal */
-  justify-content: center; /* Pusatkan item secara vertikal */
-  text-align: left; /* Teks di tengah kartu */
-  height: auto; /* Biarkan tinggi menyesuaikan isi */
-  width: 100%; /* Gunakan lebar penuh pada viewport kecil */
-  max-width: 350px; /* Batasi lebar maksimum */
-  margin: 15px auto; /* Margin atas dan bawah 10px, dan horisontal auto untuk pusat */
-  /* ... other styles ... */
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  flex-direction: row; /* Ubah jika kartu memang diinginkan untuk tampil secara horizontal */
+  align-items: center; /* Pusatkan item secara vertikal dalam kartu */
+  justify-content: center;
+  text-align: left;
+  height: 50px;
+  width: 300px; /* Sesuaikan lebar agar sesuai dengan konten atau tetapkan nilai spesifik */
 }
 
-/* Style Khusus untuk masing-masing tipe kartu */
+/* Pastikan .card tidak lagi menggunakan display: grid atau grid-template-columns */
+/* Style Khusus untuk masing-masing tipe kartu tetap sama */
 .right-section .indikator .card.pH {
-  border-left: 10px solid #4caf50; /* Border kiri warna hijau untuk pH */
+  border-left: 10px solid #4caf50;
 }
 
 .right-section .indikator .card.moisture {
-  border-left: 10px solid #2196f3; /* Border kiri warna biru untuk moisture */
+  border-left: 10px solid #2196f3;
 }
 
 .right-section .indikator .card.NPK {
-  border-left: 10px solid #ffc107; /* Border kiri warna kuning untuk NPK */
-}
-/*
-/* Style untuk teks dalam kartu */
-.right-section .indikator .card h5 {
-  argin-bottom: 10px; /* Jarak antara teks dan tepi bawah kartu */
-  font-size: 18px; /* Ukuran font teks */
-  color: #333; /* Warna font teks */
+  border-left: 10px solid #ffc107;
 }
 
+/* Perbaikan typo pada style teks dalam kartu */
+.right-section .indikator .card h5 {
+  margin-bottom: 10px; /* Perbaiki dari 'argin-bottom' menjadi 'margin-bottom' */
+  font-size: 18px;
+  color: #333;
+}
 @media screen and (max-width: 1200px) {
   .container {
     grid-template-columns: 1fr 6fr 5fr;
@@ -496,12 +457,7 @@ main .analytics .item .silang {
     padding: 20px;
     z-index: 100px;
   }
-  .container .right-section .stats .item .silang {
-    width: 15vw; /* Increase size for smaller screens if needed */
-    height: 15vw; /* Maintain aspect ratio */
-    right: 5%; /* Adjust right margin for smaller screens */
-    /* Further adjustments for top/bottom if needed */
-  }
+
   .right-section .indikator .card {
     /* Gaya untuk layar tablet */
     padding: 15px;
