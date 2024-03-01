@@ -66,7 +66,7 @@ a:hover:not(.active) {
   background: #eee;
   font-weight: bold;
 }
-.active{
+.active {
   background: #eee;
   font-weight: bold;
 }
@@ -74,8 +74,6 @@ a:hover:not(.active) {
   position: absolute;
   bottom: 0;
 }
-
-
 
 /* Main Section */
 .main {
@@ -132,7 +130,7 @@ a:hover:not(.active) {
 .main-weather .card_detail .content_data {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: baseline;
 }
 
@@ -154,7 +152,11 @@ a:hover:not(.active) {
 }
 
 .main-weather .card_detail .info_time i {
+  margin-top: 15px;
   font-size: 70px;
+  background: linear-gradient(180deg, #40A2E3, #b0d1d1);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .main-weather .card_detail button {
@@ -250,9 +252,9 @@ a:hover:not(.active) {
   margin: 10px;
   color: gray;
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
 }
-.course-box ul li:hover{
+.course-box ul li:hover {
   color: rgb(0, 0, 0);
   border-bottom: 1px solid #000;
 }
@@ -296,7 +298,7 @@ a:hover:not(.active) {
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
 
-.box_data .info{
+.box_data .info {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -360,26 +362,26 @@ a:hover:not(.active) {
   font-size: 15px;
 }
 
-.box .chart-wrapper{
+.box .chart-wrapper {
   width: 550px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.box h3{
+.box h3 {
   display: flex;
   justify-content: center;
 }
 
-.box .box_emoji{
+.box .box_emoji {
   display: flex;
   flex-direction: column;
 }
 
 .emoji_smile,
 .emoji_sad,
-.emoji_mad{
+.emoji_mad {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -392,31 +394,80 @@ a:hover:not(.active) {
 
 .emoji_smile i,
 .emoji_mad i,
-.emoji_sad i{
+.emoji_sad i {
   font-size: 30px;
 }
 
-.emoji_smile i{
+.emoji_smile i {
   color: #337357;
 }
 
-.emoji_mad i{
-  color: #D24545;
+.emoji_mad i {
+  color: #d24545;
 }
 
-.emoji_sad i{
+.emoji_sad i {
   color: #c2a346;
 }
 
 .emoji_smile p,
 .emoji_mad p,
-.emoji_sad p{
+.emoji_sad p {
   margin-left: 12px;
 }
 
 .emoji_smile p span,
 .emoji_mad p span,
-.emoji_sad p span{
- font-weight: bold;
+.emoji_sad p span {
+  font-weight: bold;
 }
 
+/* circle percentage */
+.skill {
+  width: 100px;
+  height: 100px;
+  /* background: cornflowerblue; */
+  position: relative;
+}
+.outer {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  padding: 15px;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+}
+.inner {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+    inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+    -0.5px -0.5px 0px rgba(255, 255, 255, 0.1),
+    0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#value-data {
+  font-weight: 600;
+  color: #000;
+}
+circle {
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 15px;
+  stroke-dasharray: 472;
+  stroke-dashoffset: 472;
+  animation: anim 2s linear forwards;
+}
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@keyframes anim {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

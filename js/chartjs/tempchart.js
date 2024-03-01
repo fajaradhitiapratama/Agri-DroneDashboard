@@ -1,3 +1,4 @@
+//chart wind
 const xValues = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
 let yValues = [22, 24, 24, 25, 27, 30, 33, 32, 31, 29, 27, 26, 25]; 
 
@@ -23,7 +24,7 @@ new Chart("myChart", {
       display: true,
       text: "Weather Station (Temperature Sensors)",
       fontFamily: "Poppins",
-      fontSize: 25,
+      fontSize: 8,
       fontStyle: "italic",
       fontColor: "black",
     },
@@ -34,13 +35,13 @@ new Chart("myChart", {
             display: true,
             labelString: "Temperature (C)",
             fontFamily: "Poppins",
-            fontSize: 20,
+            fontSize: 8,
             fontStyle: "italic",
             fontColor: "black",
           },
           ticks: {
-            min: 0,
-            max: 35,
+            min: 22,
+            max: 34,
             fontColor: "black",
             callback: function(value) {
               return value + "°C";
@@ -59,7 +60,7 @@ new Chart("myChart", {
             display: true,
             labelString: "Time (Hour)",
             fontFamily: "Poppins",
-            fontSize: 20,
+            fontSize: 8,
             fontStyle: "italic",
             fontColor: "black",
           },
@@ -87,26 +88,49 @@ new Chart("myChart", {
   },
 });
 
+// temperature call api
+function fetchDataAndUpdateDOM() {
+  // Fetch data from the API
+  fetch('https://api.example.com/weather')
+      .then(response => response.json())
+      .then(data => {
+          const temperature = data.temperature; // Anggap data.temperature adalah suhu dalam derajat Celsius
+          document.getElementById('windSpeed').textContent = temperature + ' °C';
 
-function getCurrentDate() {
-  const currentDate = new Date();
-  const day = currentDate.getDate().toString().padStart(2, "0");
-  const month = (currentDate.getMonth() + 1).toString().padStart(2, "0");
-  const year = currentDate.getFullYear();
-  return day + "/" + month + "/" + year;
+    // Perbarui emoji berdasarkan nilai suhu
+    const emojiElement = document.querySelector('.emoji-berubah');
+
+// Fungsi untuk mengubah kelas emoji sesuai dengan nilai suhu
+function updateEmojiClass(temperature) {
+  if (temperature < 24) {
+    emojiElement.classList.remove('fa-regular', 'fa-face-smile');
+    emojiElement.classList.add('fa-regular', 'fa-face-sad-cry');
+    emojiElement.style.color = '#c2a346;';
+  } else if (temperature > 26) {
+    emojiElement.classList.remove('fa-regular', 'fa-face-smile');
+    emojiElement.classList.add('fa-regular', 'fa-face-tired');
+    emojiElement.style.color = '#D24545';
+  } else {
+    emojiElement.classList.remove('fa-regular', 'fa-face-sad-cry', 'fa-face-tired');
+    emojiElement.classList.add('fa-regular', 'fa-face-smile');
+    emojiElement.style.color = '#337357';
+  }
 }
 
-function updateCalendar() {
-  document.getElementById("tglsekarang").value = getCurrentDate();
+// Memanggil fungsi untuk pertama kalinya
+updateEmojiClass(temperature);
+  }, 1000); // Simulasikan pengambilan data setelah 2 detik
 }
 
-// Panggil updateCalendar setiap detik untuk memperbarui tampilan tanggal secara real-time
-setInterval(updateCalendar, 1000);
+// Panggil fetchDataAndUpdateDOM() untuk menguji suhu 22 derajat
+fetchDataAndUpdateDOM();
 
-// Panggil updateCalendar untuk memperbarui tampilan tanggal saat halaman dimuat
-updateCalendar();
 
-//ml => api
+// circle percentage
+
+
+
+//test api chart
 // const apiUrl = "URL_API_MODEL_ML"; // Ganti dengan URL API model machine learning Anda
 
 // // Fungsi untuk membuat permintaan ke API dan mendapatkan prediksi
