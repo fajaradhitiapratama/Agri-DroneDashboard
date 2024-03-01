@@ -62,13 +62,20 @@ nav .fas {
   top: 12px;
   margin-left: 10px;
 }
-a:hover {
+a:hover:not(.active) {
   background: #eee;
+  font-weight: bold;
+}
+.active{
+  background: #eee;
+  font-weight: bold;
 }
 .logout {
   position: absolute;
   bottom: 0;
 }
+
+
 
 /* Main Section */
 .main {

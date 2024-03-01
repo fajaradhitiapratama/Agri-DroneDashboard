@@ -39,3 +39,18 @@ function showInfo(type){
     data3.innerHTML = '<span style="font-weight: normal; font-family: Poppins, sans-serif; text-transform: lowercase"> -- </span> <span>Low</span>';
   }
 }
+
+
+// navbar
+function toggleActiveClass(element) {
+  var myList = document.getElementById("myList");
+  var listItems = myList.getElementsByTagName("li");
+
+  // Menonaktifkan class "active" dari semua elemen <li>
+  for (var i = 0; i < listItems.length; i++) {
+    listItems[i].getElementsByTagName("a")[0].classList.remove("active");
+  }
+
+  // Mengaktifkan class "active" pada elemen yang diklik
+  element.classList.add("active");
+}

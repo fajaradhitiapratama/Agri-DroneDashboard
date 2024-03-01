@@ -16,7 +16,7 @@
   <body>
     <div class="container">
       <nav>
-        <ul>
+        <ul id="myList">
           <li>
             <a href="#" class="logo">
               <img src="/assets/agridrone-logo.jpg" alt="" />
@@ -30,13 +30,13 @@
             </a>
           </li> -->
           <li>
-            <a href="">
+            <a href="#" onclick="toggleActiveClass(this)">
               <i class="fas fa-solid fa-cloud-sun"></i>
               <span class="nav-item">Weather Forecast</span>
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="#" onclick="toggleActiveClass(this)">
               <i class="fas fa-solid fa-leaf"></i>
               <span class="nav-item">Soil Forecast</span>
             </a>
@@ -48,7 +48,7 @@
             </a>
           </li> -->
           <li>
-            <a href="">
+            <a href="" onclick="toggleActiveClass(this)">
               <i class="fas fa-users"></i>
               <span class="nav-item">Our Team</span>
             </a>
