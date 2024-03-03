@@ -1,6 +1,6 @@
 //chart wind
 const xValues = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
-let yValues = [22, 24, 24, 25, 27, 30, 33, 32, 31, 29, 27, 26, 25]; 
+let yValues = [22, 24, 24, 25, 27, 30, 33, 32, 31, 29, 27, 26, 25];
 
 new Chart("myChart", {
   type: "line",
@@ -43,15 +43,15 @@ new Chart("myChart", {
             min: 22,
             max: 34,
             fontColor: "black",
-            callback: function(value) {
+            callback: function (value) {
               return value + "°C";
             },
           },
           gridLines: {
-            color: 'rgba(0, 0, 0, 1)',
+            color: "rgba(0, 0, 0, 1)",
             lineWidth: 1,
             borderDash: [3, 3],
-          }
+          },
         },
       ],
       xAxes: [
@@ -65,20 +65,19 @@ new Chart("myChart", {
             fontColor: "black",
           },
           gridLines: {
-            color: 'rgba(0, 0, 0, 1)',
+            color: "rgba(0, 0, 0, 1)",
             lineWidth: 1,
             borderDash: [3, 3],
           },
           ticks: {
             fontColor: "black",
-            callback: function(value, index) {
+            callback: function (value, index) {
               if (value >= 6 && value <= 11) {
                 return value + " a.m.";
-              } else if (value == 12){
-                return (value) + " p.m.";
-              }
-              else{
-                return (value - 12) + " p.m."
+              } else if (value == 12) {
+                return value + " p.m.";
+              } else {
+                return value - 12 + " p.m.";
               }
             },
           },
@@ -91,44 +90,45 @@ new Chart("myChart", {
 // temperature call api
 function fetchDataAndUpdateDOM() {
   // Fetch data from the API
-  fetch('https://api.example.com/weather')
-      .then(response => response.json())
-      .then(data => {
-          const temperature = data.temperature; // Anggap data.temperature adalah suhu dalam derajat Celsius
-          document.getElementById('windSpeed').textContent = temperature + ' °C';
+  fetch("https://api.example.com/weather")
+    .then((response) => response.json())
+    .then((data) => {
+      const temperature = data.temperature; // Anggap data.temperature adalah suhu dalam derajat Celsius
+      document.getElementById("windSpeed").textContent = temperature + " °C";
 
-    // Perbarui emoji berdasarkan nilai suhu
-    const emojiElement = document.querySelector('.emoji-berubah');
+      // Perbarui emoji berdasarkan nilai suhu
+      const emojiElement = document.querySelector(".emoji-berubah");
 
-// Fungsi untuk mengubah kelas emoji sesuai dengan nilai suhu
-function updateEmojiClass(temperature) {
-  if (temperature < 24) {
-    emojiElement.classList.remove('fa-regular', 'fa-face-smile');
-    emojiElement.classList.add('fa-regular', 'fa-face-sad-cry');
-    emojiElement.style.color = '#c2a346;';
-  } else if (temperature > 26) {
-    emojiElement.classList.remove('fa-regular', 'fa-face-smile');
-    emojiElement.classList.add('fa-regular', 'fa-face-tired');
-    emojiElement.style.color = '#D24545';
-  } else {
-    emojiElement.classList.remove('fa-regular', 'fa-face-sad-cry', 'fa-face-tired');
-    emojiElement.classList.add('fa-regular', 'fa-face-smile');
-    emojiElement.style.color = '#337357';
-  }
-}
+      // Fungsi untuk mengubah kelas emoji sesuai dengan nilai suhu
+      function updateEmojiClass(temperature) {
+        if (temperature < 24) {
+          emojiElement.classList.remove("fa-regular", "fa-face-smile");
+          emojiElement.classList.add("fa-regular", "fa-face-sad-cry");
+          emojiElement.style.color = "#c2a346;";
+        } else if (temperature > 26) {
+          emojiElement.classList.remove("fa-regular", "fa-face-smile");
+          emojiElement.classList.add("fa-regular", "fa-face-tired");
+          emojiElement.style.color = "#D24545";
+        } else {
+          emojiElement.classList.remove(
+            "fa-regular",
+            "fa-face-sad-cry",
+            "fa-face-tired"
+          );
+          emojiElement.classList.add("fa-regular", "fa-face-smile");
+          emojiElement.style.color = "#337357";
+        }
+      }
 
-// Memanggil fungsi untuk pertama kalinya
-updateEmojiClass(temperature);
-  }, 1000); // Simulasikan pengambilan data setelah 2 detik
+      // Memanggil fungsi untuk pertama kalinya
+      updateEmojiClass(temperature);
+    }, 1000); // Simulasikan pengambilan data setelah 2 detik
 }
 
 // Panggil fetchDataAndUpdateDOM() untuk menguji suhu 22 derajat
 fetchDataAndUpdateDOM();
 
-
 // circle percentage
-
-
 
 //test api chart
 // const apiUrl = "URL_API_MODEL_ML"; // Ganti dengan URL API model machine learning Anda

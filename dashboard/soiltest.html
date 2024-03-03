@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/assets/agridrone-logo.jpg" />
+    <title>Dashboard | Agri-Drone</title>
+    <link rel="stylesheet" href="/style/soiltest.css" />
+    <!-- Font Awesome Cdn Link -->
+    <script
+      src="https://kit.fontawesome.com/ff4f981f32.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <ul id="myList">
+          <li>
+            <a href="#" class="logo">
+              <img src="/assets/agridrone-logo.jpg" alt="" />
+              <span class="nav-item">DashBoard</span>
+            </a>
+          </li>
+          <!-- <li>
+            <a href="#">
+              <i class="fas fa-home"></i>
+              <span class="nav-item">Home</span>
+            </a>
+          </li> -->
+          <li>
+            <a href="clonews.html" onclick="toggleActiveClass(this)">
+              <i class="fas fa-solid fa-cloud-sun"></i>
+              <span class="nav-item">Weather Forecast</span>
+            </a>
+          </li>
+          <li>
+            <a href="soiltest.html" onclick="toggleActiveClass(this)">
+              <i class="fas fa-solid fa-leaf"></i>
+              <span class="nav-item">Soil Forecast</span>
+            </a>
+          </li>
+          <!-- <li>
+            <a href="">
+              <i class="fas fa-tasks"></i>
+              <span class="nav-item">Component</span>
+            </a>
+          </li> -->
+          <li>
+            <a href="our-team.html" onclick="toggleActiveClass(this)">
+              <i class="fas fa-users"></i>
+              <span class="nav-item">Our Team</span>
+            </a>
+          </li>
+          <!-- <li>
+            <a href="">
+              <i class="fas fa-cog"></i>
+              <span class="nav-item">Settings</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fas fa-question-circle"></i>
+              <span class="nav-item">Help</span>
+            </a>
+          </li>
+          <li>
+            <a href="" class="logout">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="nav-item">Log out</span>
+            </a>
+          </li> -->
+        </ul>
+      </nav>
+
+      <section class="main">
+        <div class="main-top">
+          <h1>7 Days Soil Fertility Forecast</h1>
+          <i class="fas fa-calendar-days"
+            ><h3 class="date" id="date">dd/mm/yyyy</h3></i
+          >
+        </div>
+        <div class="main-soil">
+          <div class="card_left">
+            <div class="card_detail">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="dayOfWeek"></h3>
+                  <p>NPK:__</p>
+                  <p>pH:__</p>
+                  <p>Moisture:__</p>
+                </div>
+                <div class="info_time">
+                  <h3 class="realtime">01.00 WIB</h3>
+                  <img src="/assets/lowsoil.png" alt="lowsoil" />
+                </div>
+              </div>
+              <button>View All</button>
+            </div>
+          </div>
+
+          <div class="card_right">
+            <div class="card">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="nextDay1"></h3>
+                </div>
+                <div class="info_time">
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                </div>
+              </div>
+              <button>View All</button>
+            </div>
+
+            <div class="card">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="nextDay2">Monday</h3>
+                </div>
+                <div class="info_time">
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                </div>
+              </div>
+              <button>View All</button>
+            </div>
+
+            <div class="card">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="nextDay3"></h3>
+                </div>
+                <div class="info_time">
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                </div>
+              </div>
+              <button>View All</button>
+            </div>
+
+            <div class="card">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="nextDay4"></h3>
+                </div>
+                <div class="info_time">
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                </div>
+              </div>
+              <button>View All</button>
+            </div>
+
+            <div class="card">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="nextDay5"></h3>
+                </div>
+                <div class="info_time">
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                </div>
+              </div>
+              <button>View All</button>
+            </div>
+
+            <div class="card">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="nextDay6"></h3>
+                </div>
+                <div class="info_time">
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                </div>
+              </div>
+              <button>View All</button>
+            </div>
+          </div>
+        </div>
+
+        <section class="main-course">
+          <h1>Today Overviews</h1>
+          <div class="course-box">
+            <ul id="infoList">
+              <li id="NPK" onclick="showInfo('NPK')">NPK</li>
+              <li id="pH" onclick="showInfo('pH')">pH</li>
+              <li id="Moisture" onclick="showInfo('Moisture')">Moisture</li>
+            </ul>
+            <div class="course">
+              <div class="box_left" id="infoBox">
+                <div class="box_data">
+                  <div class="info">
+                    <h3>Node Info</h3>
+                    <p>
+                      <i class="fa-solid fa-temperature-quarter" id="icon"></i>
+                      <span id="infoValue">__</span>
+                    </p>
+                    <i class="emoji-berubah"></i>
+                  </div>
+                  <button>View All</button>
+                </div>
+              </div>
+              <div class="box_right">
+                <div class="box">
+                  <div class="chart-wrapper">
+                    <canvas
+                      id="myChart"
+                      style="width: 100%; max-width: 400px"
+                    ></canvas>
+                  </div>
+                  <button>View All</button>
+                </div>
+
+                <div class="box">
+                  <h3>Emoji Info</h3>
+                  <div class="box_emoji">
+                    <div class="emoji_mad">
+                      <i class="fa-regular fa-face-tired"></i>
+                      <p id="emoji-data1">__</p>
+                    </div>
+                    <div class="emoji_smile">
+                      <i class="fa-regular fa-face-smile"></i>
+                      <p id="emoji-data2">__</p>
+                    </div>
+                    <div class="emoji_sad">
+                      <i class="fa-regular fa-face-sad-cry"></i>
+                      <p id="emoji-data3">__</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </div>
+    <script src="/js/soiltest.js"></script>
+    <script src="/js/chartjs/phchart.js"></script>
+    <script src="/js/chartjs/mouisturechart.js"></script>
+    <script src="/js/chartjs/npkchart.js"></script>
+    <script src="/js/function/clock.js"></script>
+    <script src="/js/function/date.js"></script>
+    <script src="/js/function/day.js"></script>
+    <script src="/js/function/emoji.js"></script>
+  </body>
+</html>
