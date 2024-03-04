@@ -23,12 +23,6 @@
               <span class="nav-item">DashBoard</span>
             </a>
           </li>
-          <!-- <li>
-            <a href="#">
-              <i class="fas fa-home"></i>
-              <span class="nav-item">Home</span>
-            </a>
-          </li> -->
           <li>
             <a href="#" onclick="toggleActiveClass(this)">
               <i class="fas fa-solid fa-cloud-sun"></i>
@@ -41,36 +35,12 @@
               <span class="nav-item">Soil Forecast</span>
             </a>
           </li>
-          <!-- <li>
-            <a href="">
-              <i class="fas fa-tasks"></i>
-              <span class="nav-item">Component</span>
-            </a>
-          </li> -->
           <li>
             <a href="" onclick="toggleActiveClass(this)">
               <i class="fas fa-users"></i>
               <span class="nav-item">Our Team</span>
             </a>
           </li>
-          <!-- <li>
-            <a href="">
-              <i class="fas fa-cog"></i>
-              <span class="nav-item">Settings</span>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i class="fas fa-question-circle"></i>
-              <span class="nav-item">Help</span>
-            </a>
-          </li>
-          <li>
-            <a href="" class="logout">
-              <i class="fas fa-sign-out-alt"></i>
-              <span class="nav-item">Log out</span>
-            </a>
-          </li> -->
         </ul>
       </nav>
 
@@ -87,10 +57,10 @@
               <div class="content_data">
                 <div class="info_data">
                   <h3 id="dayOfWeek"></h3>
-                  <p>Wind Speed:__m/s</p>
-                  <p>Wind Direction:__</p>
-                  <p>Temperature:__°C</p>
-                  <p>Rainfall:__mm</p>
+                  <p id="windDataS">Wind Speed:__m/s</p>
+                  <p id="windDataD">Wind Direction:__</p>
+                  <p id="tempData">Temperature:__°C</p>
+                  <p id="rainfData">Rainfall:__mm</p>
                 </div>
                 <div class="info_time">
                   <h3 class="realtime">01.00 WIB</h3>
@@ -181,7 +151,7 @@
           <div class="course-box">
             <ul id="infoList">
               <li id="windSpeed" onclick="showInfo('windSpeed')">Wind Speed</li>
-              <li id="windDirection" onclick="showInfo('windDirection')">Wind Direction</li>
+              <!-- <li id="windDirection" onclick="showInfo('windDirection')">Wind Direction</li> -->
               <li id="temperature" onclick="showInfo('temperature')">Temperature</li>
               <li id="rainfall" onclick="showInfo('rainfall')">Rainfall</li>
             </ul>

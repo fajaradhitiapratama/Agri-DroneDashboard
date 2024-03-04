@@ -18,12 +18,64 @@ function showInfo(type){
     data1.innerHTML = '<span style="font-weight: normal; font-family: Poppins, sans-serif; text-transform: lowercase"> > 26°C </span> <span>High</span>';
     data2.innerHTML = '<span style="font-weight: normal; font-family: Poppins, sans-serif; text-transform: lowercase"> 24°C - 26°C </span> <span>Normal</span>';
     data3.innerHTML = '<span style="font-weight: normal; font-family: Poppins, sans-serif; text-transform: lowercase"> < 24°C </span> <span>Low</span>';
+
+    //update data
+    const Temperature = 22;
+      document.getElementById('infoValue').textContent = Temperature + " °C";
+      const emojiElement = document.querySelector(".emoji-berubah");
+      function updateEmojiClass(Temperature) {
+        if (Temperature < 24) {
+          emojiElement.classList.remove("fa-regular", "fa-face-smile");
+          emojiElement.classList.add("fa-regular", "fa-face-sad-cry");
+          emojiElement.style.color = "#c2a346";
+        } else if (Temperature > 26) {
+          emojiElement.classList.remove("fa-regular", "fa-face-smile");
+          emojiElement.classList.add("fa-regular", "fa-face-tired");
+          emojiElement.style.color = "#D24545";
+        } else {
+          emojiElement.classList.remove(
+            "fa-regular",
+            "fa-face-sad-cry",
+            "fa-face-tired"
+          );
+          emojiElement.classList.add("fa-regular", "fa-face-smile");
+          emojiElement.style.color = "#337357";
+        }
+      }
+      updateEmojiClass(Temperature);
+
   } else if (type === 'rainfall') {
     icon.className = 'fa-solid fa-cloud-rain';
     infoValue.textContent = '__ mm';
     data1.innerHTML = '<span style="font-weight: normal; font-family: Poppins, sans-serif; text-transform: lowercase">> 8 mm </span> <span>High</span>';
     data2.innerHTML = '<span style="font-weight: normal; font-family: Poppins, sans-serif; text-transform: lowercase"> 2 mm - 8 mm </span> <span>Normal</span>';
     data3.innerHTML = '<span style="font-weight: normal; font-family: Poppins, sans-serif; text-transform: lowercase"> < 2 mm </span> <span>Low</span>';
+
+    //update data
+    const rainFall = 4;
+      document.getElementById('infoValue').textContent = rainFall + " mm";
+      const emojiElement = document.querySelector(".emoji-berubah");
+      function updateEmojiClass(rainFall) {
+        if (rainFall < 2) {
+          emojiElement.classList.remove("fa-regular", "fa-face-smile");
+          emojiElement.classList.add("fa-regular", "fa-face-sad-cry");
+          emojiElement.style.color = "#c2a346";
+        } else if (rainFall > 8) {
+          emojiElement.classList.remove("fa-regular", "fa-face-smile");
+          emojiElement.classList.add("fa-regular", "fa-face-tired");
+          emojiElement.style.color = "#D24545";
+        } else {
+          emojiElement.classList.remove(
+            "fa-regular",
+            "fa-face-sad-cry",
+            "fa-face-tired"
+          );
+          emojiElement.classList.add("fa-regular", "fa-face-smile");
+          emojiElement.style.color = "#337357";
+        }
+      }
+      updateEmojiClass(rainFall);
+
   } else if (type === 'windSpeed') {
     icon.className = 'fa-solid fa-fan';
     infoValue.textContent = '__ m/s';
@@ -31,12 +83,64 @@ function showInfo(type){
     data1.innerHTML = '<span style="font-weight: normal; font-family: Poppins, sans-serif; text-transform: lowercase">> 9 m/s </span> <span>High</span>';
     data2.innerHTML = '<span style="font-weight: normal; font-family: Poppins, sans-serif; text-transform: lowercase"> 4 m/s - 9 m/s </span> <span>Normal</span>';
     data3.innerHTML = '<span style="font-weight: normal; font-family: Poppins, sans-serif; text-transform: lowercase"> < 4 m/s </span> <span>Low</span>';
+
+    //update data
+    const windspeed = 20;
+      document.getElementById('infoValue').textContent = windspeed + " m/s";
+      const emojiElement = document.querySelector(".emoji-berubah");
+      function updateEmojiClass(windspeed) {
+        if (windspeed < 4) {
+          emojiElement.classList.remove("fa-regular", "fa-face-smile");
+          emojiElement.classList.add("fa-regular", "fa-face-sad-cry");
+          emojiElement.style.color = "#c2a346";
+        } else if (windspeed > 9) {
+          emojiElement.classList.remove("fa-regular", "fa-face-smile");
+          emojiElement.classList.add("fa-regular", "fa-face-tired");
+          emojiElement.style.color = "#D24545";
+        } else {
+          emojiElement.classList.remove(
+            "fa-regular",
+            "fa-face-sad-cry",
+            "fa-face-tired"
+          );
+          emojiElement.classList.add("fa-regular", "fa-face-smile");
+          emojiElement.style.color = "#337357";
+        }
+      }
+      updateEmojiClass(windspeed);
+
   } else if (type === 'windDirection') {
     icon.className = 'fa-solid fa-wind';
     infoValue.textContent = '__';
     data1.innerHTML = '<span style="font-weight: normal; font-family: Poppins, sans-serif; text-transform: lowercase"> -- </span> <span>High</span>';
     data2.innerHTML = '<span style="font-weight: normal; font-family: Poppins, sans-serif; text-transform: lowercase"> -- </span> <span>Normal</span>';
     data3.innerHTML = '<span style="font-weight: normal; font-family: Poppins, sans-serif; text-transform: lowercase"> -- </span> <span>Low</span>';
+
+    //update data
+    // const winddirection = 'Barat';
+    //   document.getElementById('infoValue').textContent = temperature + "";
+    //   const emojiElement = document.querySelector(".emoji-berubah");
+    //   function updateEmojiClass(winddirection) {
+    //     if (temperature < 24) {
+    //       emojiElement.classList.remove("fa-regular", "fa-face-smile");
+    //       emojiElement.classList.add("fa-regular", "fa-face-sad-cry");
+    //       emojiElement.style.color = "#c2a346;";
+    //     } else if (temperature > 26) {
+    //       emojiElement.classList.remove("fa-regular", "fa-face-smile");
+    //       emojiElement.classList.add("fa-regular", "fa-face-tired");
+    //       emojiElement.style.color = "#D24545";
+    //     } else {
+    //       emojiElement.classList.remove(
+    //         "fa-regular",
+    //         "fa-face-sad-cry",
+    //         "fa-face-tired"
+    //       );
+    //       emojiElement.classList.add("fa-regular", "fa-face-smile");
+    //       emojiElement.style.color = "#337357";
+    //     }
+    //   }
+    //   updateEmojiClass(temperature);
+
   }
 }
 
