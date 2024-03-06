@@ -75,172 +75,34 @@ a:hover:not(.active) {
   bottom: 0;
 }
 
-/* Main Section */
-.main {
-  position: relative;
-  padding: 20px;
-  width: 100%;
+/* Courses */
+.main-course {
+  margin-top: 20px;
+  text-transform: capitalize;
 }
-.main-top {
-  display: flex;
-  width: 100%;
+.main-course h1 {
+  margin-left: 30px;
 }
-.main-top i {
+.main-course i {
   display: flex;
   flex-wrap: nowrap;
   align-items: baseline;
   position: absolute;
   right: 0;
-  margin: 10px 30px;
+  margin: -30px 30px;
   color: rgb(110, 109, 109);
   cursor: pointer;
 }
-
-.main-top .date {
-  margin-left: 5px;
+.main-course .date {
+  margin-left: 10px;
   font-size: 12px;
-}
-.main-soil {
-  display: flex;
-  margin-top: 20px;
-}
-
-.main-soil .card_left {
-  display: contents;
-}
-.main-soil .card_left .info_time img {
-  width: 110px; /* Sesuaikan lebar gambar sesuai kebutuhan */
-  height: auto; /* Menggunakan auto untuk menjaga proporsi gambar */
-}
-
-.main-soil .card_right {
-  display: flex;
-  flex-wrap: nowrap;
-  flex: 1;
-}
-
-/* card-left detail */
-.main-soil .card_detail {
-  display: grid;
-  justify-items: stretch;
-  width: 25%;
-  margin: 10px;
-  background: #fff;
-  text-align: center;
-  border-radius: 20px;
-  padding: 10px;
-  box-shadow: 0 20px 35px rgb(102, 136, 127);
-  align-content: space-between;
-}
-.main-soil .card_detail .content_data {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
-.main-soil .card_detail .info_data {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.main-soil .card_detail .info_data h3 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-size: 25px;
-  text-transform: capitalize;
-}
-
-.main-soil .card_detail .info_data p {
-  font-size: 14px;
-}
-
-.main-soil .card_detail .info_time i {
-  font-size: 70px;
-}
-
-.main-soil .card_detail button {
-  background: rgb(89, 126, 100);
-  color: #fff;
-  padding: 7px 15px;
-  border-radius: 10px;
-  margin-top: 15px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.main-soil .card_detail button:hover {
-  background: rgb(49, 83, 74);
-}
-.main-soil .card_detail i {
-  font-size: 22px;
-  padding: 10px;
-}
-
-/* card-right detail */
-.main-soil .card {
-  display: flex;
-  width: 25%;
-  margin: 10px;
-  background: #fff;
-  text-align: center;
-  border-radius: 20px;
-  padding: 10px;
-  box-shadow: 0 20px 35px rgb(102, 136, 127);
-  align-content: space-between;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.main-soil .card .content_data {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: space-around;
-  align-items: center;
-}
-
-.main-soil .card .info_data {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.main-soil .card .info_data h3 {
-  margin-top: 10px;
-  margin-bottom: 25px;
-  font-size: 20px;
-  text-transform: capitalize;
-}
-
-.main-soil .card .info_time i {
-  font-size: 50px;
-}
-
-.main-soil .card button {
-  background: rgb(89, 126, 100);
-  color: #fff;
-  padding: 7px 15px;
-  border-radius: 10px;
-  margin-top: 15px;
-  cursor: pointer;
-}
-.main-soil .card button:hover {
-  background: rgb(49, 83, 74);
-}
-.main-soil .card i {
-  font-size: 22px;
-}
-
-/* Courses */
-.main-course {
-  margin-top: 20px;
-  text-transform: capitalize;
 }
 .course-box {
   width: 100%;
   height: 100%;
   padding: 10px 10px 30px 10px;
   margin-top: 10px;
+  margin-left: 30px;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
@@ -269,8 +131,8 @@ a:hover:not(.active) {
   display: flex;
 }
 
-.course {
-  display: flex;
+.course .box_left {
+  display: contents;
 }
 
 .course .box_left {
@@ -282,18 +144,72 @@ a:hover:not(.active) {
   flex-direction: row;
   flex: 1;
 }
+/* posisi */
+.position {
+  display: flex;
+  align-items: center;
+  height: 200px;
+  padding-left: 10px;
+}
+
+.position .box_posisi .posisi h3 {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.box_posisi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+  margin-left: 25px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #e1ede7;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.box_koordinat {
+  display: flex;
+  justify-content: space-around; /* This will space the boxes evenly */
+  width: 100%;
+}
+
+.latitude,
+.longitude {
+  display: flex;
+  justify-content: center;
+  width: calc(
+    50% - 5px
+  ); /* Adjust the width to be half of the parent minus the gap */
+  height: 130px;
+  width: 150px;
+  background: #fff;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  margin: 5px; /* This adds some space between the two boxes */
+}
+
+.latitude p,
+.longitude p {
+  font-size: 15px;
+  margin-top: 15px;
+  font-weight: bold;
+}
 
 /* box-left */
 .box_data {
-  width: 150px;
+  width: 185px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-content: center;
   justify-content: space-between;
   align-items: stretch;
-  padding: 10px;
-  margin: 10px;
+  margin-bottom: 50px;
+  margin-left: 30px;
+  margin-top: 50px;
   border-radius: 10px;
   background: #e1ede7;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
@@ -326,47 +242,33 @@ a:hover:not(.active) {
   background: rgb(49, 83, 74);
 }
 .box_data .info i {
-  margin-top: 25px;
+  margin-top: 50px;
   font-size: 45px;
   color: #e1ede7;
 }
 
-/* box-right */
+.box_data .info h3 {
+  padding-top: 20px;
+}
+
+/* emoji */
 .box {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-content: flex-start;
   align-items: stretch;
-  padding: 10px;
-  margin: 10px;
+  margin-bottom: 50px;
+  margin-left: 30px;
+  margin-top: 50px;
   border-radius: 10px;
   background: #e1ede7;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
-.box p {
-  font-size: 12px;
-}
-.box button {
-  background: rgb(89, 126, 100);
-  color: #fff;
-  padding: 7px 10px;
-  border-radius: 10px;
-  margin-top: 2px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.box button:hover {
-  background: rgb(49, 83, 74);
-}
-.box i {
-  font-size: 15px;
-}
 
-.box .chart-wrapper {
-  width: 550px;
+.box h3 {
+  padding-top: 20px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -386,17 +288,20 @@ a:hover:not(.active) {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-end; /* Change this to flex-end to move content to the right */
   margin: 5px;
+  height: 40px;
   width: 300px;
   background: #fff;
   border-radius: 15px;
+  padding-right: 100px; /* Add padding to keep content from touching the edge */
 }
 
-.emoji_smile i,
+.box_emoji .emoji_smile i,
 .emoji_mad i,
 .emoji_sad i {
   font-size: 30px;
+  margin-left: auto;
 }
 
 .emoji_smile i {
@@ -421,4 +326,68 @@ a:hover:not(.active) {
 .emoji_mad p span,
 .emoji_sad p span {
   font-weight: bold;
+}
+
+/* Base styles are already provided by your CSS above */
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  /* for tablets and smaller laptops */
+  /* Adjust nav width for side menu if necessary */
+  nav {
+    width: 100%; /* Full width */
+  }
+
+  .container,
+  .course-box .course,
+  .box_posisi,
+  .box_koordinat {
+    flex-direction: column; /* Stack children vertically */
+  }
+
+  /* Make sure the emoji container takes full width to align emoji to the right */
+  .box_emoji .emoji_smile,
+  .box_emoji .emoji_mad,
+  .box_emoji .emoji_sad {
+    width: 100%; /* Take full width */
+    justify-content: flex-end; /* Align emoji to the right */
+    padding-right: 16px; /* Adjust padding */
+  }
+}
+
+@media (max-width: 768px) {
+  /* for smaller tablets */
+  /* You may want to adjust font sizes here */
+  .box_data,
+  .box {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .box_emoji .emoji_smile,
+  .box_emoji .emoji_mad,
+  .box_emoji .emoji_sad {
+    padding-right: 12px; /* Adjust padding */
+  }
+}
+
+@media (max-width: 480px) {
+  /* for mobile phones */
+  /* Stack items vertically and adjust padding/margins as necessary */
+  nav,
+  .course-box,
+  .box_data,
+  .box {
+    width: 100%; /* Full width */
+    margin: 10px 0; /* Adjust vertical margin only */
+  }
+
+  /* For emoji containers, ensure they stretch and emoji stay right-aligned */
+  .box_emoji .emoji_smile,
+  .box_emoji .emoji_mad,
+  .box_emoji .emoji_sad {
+    width: 100%; /* Take full width */
+    justify-content: flex-end; /* Align emoji to the right */
+    padding-right: 8px; /* Less padding on smaller screens */
+  }
 }

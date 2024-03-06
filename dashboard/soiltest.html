@@ -74,122 +74,51 @@
         </ul>
       </nav>
 
-      <section class="main">
-        <div class="main-top">
-          <h1>7 Days Soil Fertility Forecast</h1>
-          <i class="fas fa-calendar-days"
-            ><h3 class="date" id="date">dd/mm/yyyy</h3></i
-          >
-        </div>
-        <div class="main-soil">
-          <div class="card_left">
-            <div class="card_detail">
-              <div class="content_data">
-                <div class="info_data">
-                  <h3 id="dayOfWeek"></h3>
-                  <p>NPK:__</p>
-                  <p>pH:__</p>
-                  <p>Moisture:__</p>
-                </div>
-                <div class="info_time">
-                  <h3 class="realtime">01.00 WIB</h3>
-                  <img src="/assets/lowsoil.png" alt="lowsoil" />
-                </div>
-              </div>
-              <button>View All</button>
-            </div>
-          </div>
 
-          <div class="card_right">
-            <div class="card">
-              <div class="content_data">
-                <div class="info_data">
-                  <h3 id="nextDay1"></h3>
-                </div>
-                <div class="info_time">
-                  <i class="fas fa-cloud-showers-heavy"></i>
-                </div>
-              </div>
-              <button>View All</button>
-            </div>
-
-            <div class="card">
-              <div class="content_data">
-                <div class="info_data">
-                  <h3 id="nextDay2">Monday</h3>
-                </div>
-                <div class="info_time">
-                  <i class="fas fa-cloud-showers-heavy"></i>
-                </div>
-              </div>
-              <button>View All</button>
-            </div>
-
-            <div class="card">
-              <div class="content_data">
-                <div class="info_data">
-                  <h3 id="nextDay3"></h3>
-                </div>
-                <div class="info_time">
-                  <i class="fas fa-cloud-showers-heavy"></i>
-                </div>
-              </div>
-              <button>View All</button>
-            </div>
-
-            <div class="card">
-              <div class="content_data">
-                <div class="info_data">
-                  <h3 id="nextDay4"></h3>
-                </div>
-                <div class="info_time">
-                  <i class="fas fa-cloud-showers-heavy"></i>
-                </div>
-              </div>
-              <button>View All</button>
-            </div>
-
-            <div class="card">
-              <div class="content_data">
-                <div class="info_data">
-                  <h3 id="nextDay5"></h3>
-                </div>
-                <div class="info_time">
-                  <i class="fas fa-cloud-showers-heavy"></i>
-                </div>
-              </div>
-              <button>View All</button>
-            </div>
-
-            <div class="card">
-              <div class="content_data">
-                <div class="info_data">
-                  <h3 id="nextDay6"></h3>
-                </div>
-                <div class="info_time">
-                  <i class="fas fa-cloud-showers-heavy"></i>
-                </div>
-              </div>
-              <button>View All</button>
-            </div>
-          </div>
-        </div>
 
         <section class="main-course">
           <h1>Today Overviews</h1>
+          <i class="fas fa-calendar-days"
+          ><h3 class="date" id="date">dd/mm/yyyy</h3></i
+        >
           <div class="course-box">
             <ul id="infoList">
-              <li id="NPK" onclick="showInfo('NPK')">NPK</li>
-              <li id="pH" onclick="showInfo('pH')">pH</li>
-              <li id="Moisture" onclick="showInfo('Moisture')">Moisture</li>
+              <li id="Soil Test 1" onclick="showInfo('Soil Test 1')">
+                Soil Test 1
+              </li>
+              <li id="Soil Test 2" onclick="showInfo('Soil Test 2')">
+                Soil Test 2
+              </li>
+              <li id="Soil Test 3" onclick="showInfo('Soil Test 3')">
+                Soil Test 3
+              </li>
             </ul>
+
+            <div class="position">
+                  <div class="box_posisi">
+                      <div class="posisi">
+                          <h3>Position</h3>
+                          <div class="box_koordinat">
+                            <div class="latitude">
+                              <p> Latitude </p>
+                          
+                          </div>
+                            <div class="longitude">
+                              <p> Longitude </p>
+                             
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
             <div class="course">
               <div class="box_left" id="infoBox">
                 <div class="box_data">
                   <div class="info">
-                    <h3>Node Info</h3>
+                    <h3>Moisture</h3>
                     <p>
-                      <i class="fa-solid fa-temperature-quarter" id="icon"></i>
+                      <i class="........" id="icon"></i>
                       <span id="infoValue">__</span>
                     </p>
                     <i class="emoji-berubah"></i>
@@ -197,16 +126,52 @@
                   <button>View All</button>
                 </div>
               </div>
-              <div class="box_right">
-                <div class="box">
-                  <div class="chart-wrapper">
-                    <canvas
-                      id="myChart"
-                      style="width: 100%; max-width: 400px"
-                    ></canvas>
+
+              <div class="course">
+                <div class="box_left" id="infoBox">
+                  <div class="box_data">
+                    <div class="info">
+                      <h3>Phospor</h3>
+                      <p>
+                        <i class="........" id="icon"></i>
+                        <span id="infoValue">__</span>
+                      </p>
+                      <i class="emoji-berubah"></i>
+                    </div>
+                    <button>View All</button>
                   </div>
-                  <button>View All</button>
                 </div>
+
+                
+              <div class="course">
+                <div class="box_left" id="infoBox">
+                  <div class="box_data">
+                    <div class="info">
+                      <h3>Nitrogen</h3>
+                      <p>
+                        <i class="......r" id="icon"></i>
+                        <span id="infoValue">__</span>
+                      </p>
+                      <i class="emoji-berubah"></i>
+                    </div>
+                    <button>View All</button>
+                  </div>
+                </div>
+              
+                <div class="course">
+                  <div class="box_left" id="infoBox">
+                    <div class="box_data">
+                      <div class="info">
+                        <h3>Kalium</h3>
+                        <p>
+                          <i class="........." id="icon"></i>
+                          <span id="infoValue">__</span>
+                        </p>
+                        <i class="emoji-berubah"></i>
+                      </div>
+                      <button>View All</button>
+                    </div>
+                  </div>
 
                 <div class="box">
                   <h3>Emoji Info</h3>
