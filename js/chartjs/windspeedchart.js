@@ -1,6 +1,6 @@
 //chart wind
 const xValues = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
-let yValues = [22, 24, 24, 25, 27, 30, 33, 32, 31, 29, 27, 26, 25]; 
+let yValues = [4, 4, 5, 3, 2, 2, 2, 4, 7, 5, 6, 4, 4]; 
 
 new Chart("myChart", {
   type: "line",

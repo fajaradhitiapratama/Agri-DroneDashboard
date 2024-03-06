@@ -361,7 +361,7 @@ a:hover:not(.active) {
 }
 
 .box .chart-wrapper{
-  width: 550px;
+  width: 400px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
