@@ -364,7 +364,7 @@ function showInfo(type) {
                 max: 7,
                 fontColor: "black",
                 callback: function (value) {
-                  return value + " mm";
+                  return value + " m/s";
                 },
               },
               gridLines: {
