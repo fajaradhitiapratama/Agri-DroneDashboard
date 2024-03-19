@@ -1,41 +1,45 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Dashboard | Soil Forecast</title>
+    <link rel="icon" href="/assets/agridrone-logo.jpg" />
+    <title>Dashboard | Agri-Drone</title>
     <link rel="stylesheet" href="/style/stmaufix.css" />
     <!-- Font Awesome Cdn Link -->
     <script
       src="https://kit.fontawesome.com/ff4f981f32.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   </head>
   <body>
     <div class="container">
       <nav>
-        <ul>
+        <ul id="myList">
           <li>
             <a href="#" class="logo">
               <img src="/assets/agridrone-logo.jpg" alt="" />
               <span class="nav-item">DashBoard</span>
             </a>
           </li>
-
           <li>
-            <a href="clonews.html" id="weatherLink">
+            <a href="/dashboard/clonews.html" onclick="toggleActiveClass(this)">
               <i class="fas fa-solid fa-cloud-sun"></i>
               <span class="nav-item">Weather Forecast</span>
             </a>
           </li>
           <li>
-            <a href="stmaufix.html" id="soilLink">
+            <a
+              href="/dashboard/stmaufix.html"
+              onclick="toggleActiveClass(this)"
+            >
               <i class="fas fa-solid fa-leaf"></i>
               <span class="nav-item">Soil Forecast</span>
             </a>
           </li>
-
           <li>
-            <a href="about-us.html" id="us">
+            <a href="" onclick="toggleActiveClass(this)">
               <i class="fas fa-users"></i>
               <span class="nav-item">Our Team</span>
             </a>
@@ -45,151 +49,222 @@
 
       <section class="main">
         <div class="main-top">
-          <h1>7 Days Forecast</h1>
+          <h1>Today Overviews</h1>
           <i class="fas fa-calendar-days"
             ><h3 class="date" id="date">dd/mm/yyyy</h3></i
           >
         </div>
-        <div class="main-soil">
-          <div class="card">
-            <div class="content_data">
-              <div class="info_data">
-                <h3>Monday</h3>
-                <p>pH:__</p>
-                <p>Soil Moisture:__</p>
-                <p>NPK:__</p>
+        <!-- <div class="main-weather">
+          <div class="card_left">
+            <div class="card_detail">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="dayOfWeek"></h3>
+                  <p id="windDataS">Wind Speed:__m/s</p>
+                  <p id="windDataD">Wind Direction:__</p>
+                  <p id="tempData">Temperature:__°C</p>
+                  <p id="rainfData">Rainfall:__mm</p>
+                </div>
+                <div class="info_time">
+                  <h3 class="realtime">01.00 WIB</h3>
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                </div>
               </div>
-              <div class="info_time">
-                <h3 id="realtime">01.00 WIB</h3>
-                <i class="fas fa-cloud-showers-heavy"></i>
-              </div>
+              <button>View All</button>
             </div>
-            <button>View All</button>
           </div>
 
-          <div class="card">
-            <div class="content_data">
-              <div class="info_data">
-                <h3>Monday</h3>
-                <p>pH:__</p>
-                <p>Soil Moisture:__</p>
-                <p>NPK:__</p>
+          <div class="card_right">
+            <div class="card">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="nextDay1"></h3>
+                </div>
+                <div class="info_time">
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                </div>
               </div>
-              <div class="info_time">
-                <h3 id="realtime">01.00 WIB</h3>
-                <i class="fas fa-cloud-showers-heavy"></i>
-              </div>
+              <button>View All</button>
             </div>
-            <button>View All</button>
-          </div>
 
-          <div class="card">
-            <div class="content_data">
-              <div class="info_data">
-                <h3>Monday</h3>
-                <p>pH:__</p>
-                <p>Soil Moisture:__</p>
-                <p>NPK:__</p>
+            <div class="card">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="nextDay2">Monday</h3>
+                </div>
+                <div class="info_time">
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                </div>
               </div>
-              <div class="info_time">
-                <h3 id="realtime">01.00 WIB</h3>
-                <i class="fas fa-cloud-showers-heavy"></i>
-              </div>
+              <button>View All</button>
             </div>
-            <button>View All</button>
-          </div>
 
-          <div class="card">
-            <div class="content_data">
-              <div class="info_data">
-                <h3>Monday</h3>
-                <p>pH:__</p>
-                <p>Soil Moisture:__</p>
-                <p>NPK:__</p>
+            <div class="card">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="nextDay3"></h3>
+                </div>
+                <div class="info_time">
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                </div>
               </div>
-              <div class="info_time">
-                <h3 id="realtime">01.00 WIB</h3>
-                <i class="fas fa-cloud-showers-heavy"></i>
-              </div>
+              <button>View All</button>
             </div>
-            <button>View All</button>
-          </div>
 
-          <div class="card">
-            <div class="content_data">
-              <div class="info_data">
-                <h3>Monday</h3>
-                <p>pH:__</p>
-                <p>Soil Moisture:__</p>
-                <p>NPK:__</p>
+            <div class="card">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="nextDay4"></h3>
+                </div>
+                <div class="info_time">
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                </div>
               </div>
-              <div class="info_time">
-                <h3 id="realtime">01.00 WIB</h3>
-                <i class="fas fa-cloud-showers-heavy"></i>
-              </div>
+              <button>View All</button>
             </div>
-            <button>View All</button>
-          </div>
 
-          <div class="card">
-            <div class="content_data">
-              <div class="info_data">
-                <h3>Monday</h3>
-                <p>pH:__</p>
-                <p>Soil Moisture:__</p>
-                <p>NPK:__</p>
+            <div class="card">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="nextDay5"></h3>
+                </div>
+                <div class="info_time">
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                </div>
               </div>
-              <div class="info_time">
-                <h3 id="realtime">01.00 WIB</h3>
-                <i class="fas fa-cloud-showers-heavy"></i>
-              </div>
+              <button>View All</button>
             </div>
-            <button>View All</button>
-          </div>
 
-          <div class="card">
-            <div class="content_data">
-              <div class="info_data">
-                <h3>Monday</h3>
-                <p>pH:__</p>
-                <p>Soil Moisture:__</p>
-                <p>NPK:__</p>
+            <div class="card">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="nextDay6"></h3>
+                </div>
+                <div class="info_time">
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                </div>
               </div>
-              <div class="info_time">
-                <h3 id="realtime">01.00 WIB</h3>
-                <i class="fas fa-cloud-showers-heavy"></i>
-              </div>
+              <button>View All</button>
             </div>
-            <button>View All</button>
           </div>
-        </div>
+        </div> -->
 
-        <section class="main-today">
-          <h1>Today Forecast</h1>
-          <div class="today-box">
-            <ul>
-              <li class="active">pH</li>
-              <li>Soil Moisture</li>
-              <li>NPK</li>
+        <section class="main-course">
+          <div class="course-box">
+            <ul id="infoList">
+              <!-- <li id="windDirection" onclick="showInfo('windDirection')">Wind Direction</li> -->
+              <li id="windSpeed" onclick="showInfo('windSpeed')">Soil Test 1</li>
+              <li id="temperature" onclick="showInfo('temperature')">
+                Soil Test 2
+              </li>
+              <li id="rainfall" onclick="showInfo('rainfall')">Soil Test 3</li>
             </ul>
-            <div class="course">
+            <div class="position">
               <div class="box">
-                <h3>pH</h3>
-                <p>80% - progress</p>
-                <button>continue</button>
-                <i class="fab fa-html5 html"></i>
+                <h3>Position</h3>
+                <div class="box_cordinate">
+                  <div class="latitude">
+                    <h4>Latitude</h4>
+                    <p class="cordinate_value">__</p>
+                  </div>
+                  <div class="longitude">
+                    <h4>Longitude</h4>
+                    <p class="cordinate_value">__</p>
+                  </div>
+                </div>
               </div>
-              <div class="box">
-                <h3>Soil Moisture</h3>
-                <p>50% - progress</p>
-                <button>continue</button>
-                <i class="fab fa-css3-alt css"></i>
+              <div class="map">
+                <div class="box">
+                  <h3>Fertility Mapping Results</h3>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37592.658364382274!2d107.53966145352372!3d-6.8346394515906415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e3ef08f03787%3A0xdafd5fa307d4b841!2sPadaasih%2C%20Cisarua%2C%20West%20Bandung%20Regency%2C%20West%20Java!5e1!3m2!1sen!2sid!4v1710870061220!5m2!1sen!2sid" width="930" height="280" style="border-radius:20px;margin: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                
+              </div>
+            </div>
+            <div class="course">
+              <div class="box_left" id="infoBox">
+                <div class="box_data">
+                  <div class="info">
+                    <h3>Moisture</h3>
+                    <p>
+                      <span id="infoValue">__</span>
+                    </p>
+                    <i class="emoji-berubah"></i>
+                  </div>
+                </div>
+                <div class="box_data">
+                  <div class="info">
+                    <h3>pH</h3>
+                    <p>
+                      <span id="infoValue">__</span>
+                    </p>
+                    <i class="emoji-berubah"></i>
+                  </div>
+                  
+                </div>
+                <div class="box_data">
+                  <div class="info">
+                    <h3>Nitrogen</h3>
+                    <p>
+                      <span id="infoValue">__</span>
+                    </p>
+                    <i class="emoji-berubah"></i>
+                  </div>
+                  
+                </div>
+                <div class="box_data">
+                  <div class="info">
+                    <h3>Phospor</h3>
+                    <p>
+                      <span id="infoValue">__</span>
+                    </p>
+                    <i class="emoji-berubah"></i>
+                  </div>
+                  
+                </div>
+                <div class="box_data">
+                  <div class="info">
+                    <h3>Kalium</h3>
+                    <p>
+                      <span id="infoValue">__</span>
+                    </p>
+                    <i class="emoji-berubah"></i>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="box_right">
+                <div class="box">
+                  <h3>Emoji Info</h3>
+                  <div class="box_emoji">
+                    <div class="emoji_mad">
+                      <i class="fa-regular fa-face-tired"></i>
+                      <p id="emoji-data1">__</p>
+                    </div>
+                    <div class="emoji_smile">
+                      <i class="fa-regular fa-face-smile"></i>
+                      <p id="emoji-data2">__</p>
+                    </div>
+                    <div class="emoji_sad">
+                      <i class="fa-regular fa-face-sad-cry"></i>
+                      <p id="emoji-data3">__</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
       </section>
     </div>
-    <script src="/js/stmaufix.js"></script>
+    <script src="/js/clonews.js"></script>
+    <!-- <script src="/js/chartjs/rainfallchart.js"></script> -->
+    <!-- <script src="/js/chartjs/tempchart.js"></script> -->
+    <!-- <script src="/js/chartjs/winddirectionchart.js"></script> -->
+    <!-- <script src="/js/chartjs/windspeedchart.js"></script> -->
+    <script src="/js/function/clock.js"></script>
+    <script src="/js/function/date.js"></script>
+    <script src="/js/function/day.js"></script>
+    <script src="/js/function/emoji.js"></script>
   </body>
 </html>
