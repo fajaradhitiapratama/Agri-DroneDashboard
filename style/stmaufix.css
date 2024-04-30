@@ -465,3 +465,39 @@ a:hover:not(.active) {
  font-weight: bold;
 }
 
+/* map */
+/* .box .mapbox{
+  display: flex;
+  justify-content: center;
+} */
+.mapsize {
+  width: 100%;
+  height: 200px;
+}
+.custom-icon {
+  background-color: green;
+  border-radius: 50%;
+}
+.custom-icon.red {
+  background-color: red;
+  border-radius: 50%;
+}
+.custom-icon.yellow {
+  background-color: yellow;
+  border-radius: 50%;
+}
+.mapbox{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: calc(
+    50% - 5px
+  ); /* Adjust the width to be half of the parent minus the gap */
+  height: 270px;
+  width: 670px;
+  background: #fff;
+  border-radius: 30px;
+  margin-bottom: 100px;
+  margin: 5px;
+}

@@ -31,22 +31,22 @@
               onclick="toggleActiveClass(this)"
             >
               <i class="fas fa-solid fa-leaf"></i>
-              <span class="nav-item">Soil Forecast</span>
+              <span class="nav-item">Soil</span>
             </a>
           </li>
           <li>
             <a href="/dashboard/clonews.html" onclick="toggleActiveClass(this)">
               <i class="fas fa-solid fa-cloud-sun"></i>
-              <span class="nav-item">Weather Forecast</span>
+              <span class="nav-item">Weather</span>
             </a>
           </li>
 
-          <li>
+          <!-- <li>
             <a href="" onclick="toggleActiveClass(this)">
               <i class="fas fa-users"></i>
               <span class="nav-item">Our Team</span>
             </a>
-          </li>
+          </li> -->
         </ul>
       </nav>
 
@@ -175,9 +175,12 @@
                 </div>
               </div>
               <div>
-                <div class="box" style="width: 600px">
+                <div class="box" style="width: 700px">
                   <h3>Fertility Mapping Results</h3>
-                  <div id="map"></div>
+                  <div class="mapbox">
+                    <h3>Map Desa Padaasih</h3>
+                    <div class="mapsize" id="map"></div>
+                  </div>
                 </div>
               </div>
               <div class="fertily-info">
@@ -260,6 +263,13 @@
       </section>
     </div>
     <script src="/js/stmaufix.js"></script>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="/js/function/geoJSON_Padaasih.js"></script>
+    <script src="/js/function/map.js"></script>
     <!-- <script src="/js/chartjs/rainfallchart.js"></script> -->
     <!-- <script src="/js/chartjs/tempchart.js"></script> -->
     <!-- <script src="/js/chartjs/winddirectionchart.js"></script> -->
