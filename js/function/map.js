@@ -71,7 +71,7 @@ var tambahkanMarker = function(data) {
   L.marker([data.LAT, data.LONG], {
     icon: L.divIcon({
       className: "custom-icon " + iconColor,
-      iconSize: [40, 40],
+      iconSize: [30, 30],
     }),
   })
   .bindPopup(

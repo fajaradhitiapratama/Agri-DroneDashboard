@@ -499,3 +499,46 @@ a:hover:not(.active) {
   background-color: yellow;
   border-radius: 50%;
 }
+.emoji_red,
+.emoji_green,
+.emoji_yellow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 5px;
+  width: 220px;
+  background: #fff;
+  border-radius: 15px;
+}
+
+.emoji_red i,
+.emoji_green i,
+.emoji_yellow i{
+  font-size: 30px;
+}
+
+.emoji_green i{
+  color: green;
+}
+
+.emoji_red i{
+  color: red;
+}
+
+.emoji_yellow i{
+  color: yellow;
+}
+
+.emoji_red p,
+.emoji_green p,
+.emoji_yellow p{
+  margin-left: 5px;
+  font-size: 10px;
+}
+
+.emoji_red p span,
+.emoji_green p span,
+.emoji_yellow p span{
+ font-weight: bold;
+}
