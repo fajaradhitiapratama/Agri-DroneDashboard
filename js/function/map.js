@@ -27,6 +27,7 @@ L.geoJSON(mapgeoJSON, {
 
 // Data contoh
 var alat1 = {
+  alat: 1,
   LAT: -6.82435,
   LONG: 107.5615,
   n: 150, 
@@ -37,6 +38,7 @@ var alat1 = {
 };
 
 var alat2 = {
+  alat: 2,
   LAT: -6.82442,
   LONG: 107.56175,
   n: 250,
@@ -47,6 +49,7 @@ var alat2 = {
 };
 
 var alat3 = {
+  alat: 3,
   LAT: -6.82472,
   LONG: 107.5615,
   n: 200,
@@ -76,7 +79,7 @@ var tambahkanMarker = function(data) {
   })
   .bindPopup(
     `
-              <b>Data</b><br>
+              <b>Alat ${data.alat}</b><br>
               N: ${data.n}<br>
               P: ${data.p}<br>
               K: ${data.k}<br>
