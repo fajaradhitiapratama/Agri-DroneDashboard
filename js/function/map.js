@@ -60,35 +60,5 @@ var alat3 = {
 };
 
 // Tambahkan marker untuk setiap titik
-var tambahkanMarker = function(data) {
-  // Tentukan warna ikon berdasarkan nilai n
-  var iconColor;
-  if (data.n <= 150) {
-    iconColor = "red";
-  } else if (data.n >150 && data.n <= 200) {
-    iconColor = "yellow";
-  } else {
-    iconColor = "green";
-  }
 
-  L.marker([data.LAT, data.LONG], {
-    icon: L.divIcon({
-      className: "custom-icon " + iconColor,
-      iconSize: [30, 30],
-    }),
-  })
-  .bindPopup(
-    `
-              <b>Alat ${data.alat}</b><br>
-              N: ${data.n}<br>
-              P: ${data.p}<br>
-              K: ${data.k}<br>
-              pH: ${data.ph}<br>
-              Moisture: ${data.moisture}`
-  )
-  .addTo(map);
-};
 
-tambahkanMarker(alat1);
-tambahkanMarker(alat2);
-tambahkanMarker(alat3);

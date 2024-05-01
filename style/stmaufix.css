@@ -475,7 +475,7 @@ a:hover:not(.active) {
     50% - 5px
   ); /* Adjust the width to be half of the parent minus the gap */
   height: 270px;
-  width: 670px;
+  width: 840px;
   background: #fff;
   border-radius: 30px;
   margin-bottom: 100px;
