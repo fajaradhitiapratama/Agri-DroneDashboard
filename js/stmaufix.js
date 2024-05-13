@@ -87,10 +87,10 @@ function showInfo(type) {
       LAT: -6.82435,
       LONG: 107.5615,
       n: 150, 
-      p: 55,
-      k: 50,
-      ph: 6,
-      moisture: 20
+      p: 80,
+      k: 70,
+      ph: 4,
+      moisture: 60
     };   
     document.getElementById("infoMoisture").textContent = alat1.moisture + " %";
     document.getElementById("infopH").textContent = alat1.ph;
@@ -106,10 +106,10 @@ function showInfo(type) {
       LAT: -6.82442,
       LONG: 107.56175,
       n: 250,
-      p: 55,
-      k: 50,
-      ph: 6,
-      moisture: 20,
+      p: 155,
+      k: 200,
+      ph: 7,
+      moisture: 75,
     };
     document.getElementById("infoMoisture").textContent = alat2.moisture + " %";
     document.getElementById("infopH").textContent = alat2.ph;
@@ -139,6 +139,42 @@ function showInfo(type) {
     document.getElementById("coordinateLong").textContent = alat3.LONG;
     addMarkerSoil3(alat3);
   }
+  else if (type === "all"){
+    var alat1 = {
+      alat: 1,
+      LAT: -6.82435,
+      LONG: 107.5615,
+      n: 150, 
+      p: 80,
+      k: 70,
+      ph: 4,
+      moisture: 60
+    };
+    var alat2 = {
+      alat: 2,
+      LAT: -6.82442,
+      LONG: 107.56175,
+      n: 250,
+      p: 155,
+      k: 200,
+      ph: 7,
+      moisture: 75,
+    };
+    var alat3 = {
+      alat: 3,
+      LAT: -6.82472,
+      LONG: 107.5615,
+      n: 200,
+      p: 55,
+      k: 50,
+      ph: 6,
+      moisture: 20,
+    };
+    
+    addMarkerSoil1(alat1);
+    addMarkerSoil2(alat2);
+    addMarkerSoil3(alat3);
+  }
 }
 
 // navbar
@@ -153,4 +189,15 @@ function toggleActiveClass(element) {
 
   // Mengaktifkan class "active" pada elemen yang diklik
   element.classList.add("active");
+}
+
+// pop up data
+function myFunction(event) {
+  var popup = event.currentTarget.querySelector(".popuptext");
+  popup.classList.toggle("show");
+}
+
+// pop up map
+function movemap(){
+  window.location.href = "map_ta.html";
 }

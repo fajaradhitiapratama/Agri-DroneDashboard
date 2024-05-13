@@ -48,7 +48,7 @@ a {
   display: table;
   width: 280px;
   padding: 10px;
-  transition: .3s ;
+  transition: 0.3s;
 }
 nav .fas {
   position: relative;
@@ -67,7 +67,7 @@ a:hover:not(.active) {
   background: #eee;
   font-weight: bold;
 }
-.active{
+.active {
   font-weight: bold;
 }
 .logout {
@@ -234,7 +234,7 @@ a:hover:not(.active) {
 }
 .course-box {
   width: 100%;
-  height: 100%;
+  height: 620px;
   padding: 10px 10px 10px 10px;
   margin-top: 10px;
   background: #fff;
@@ -249,9 +249,9 @@ a:hover:not(.active) {
   margin: 10px;
   color: gray;
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
 }
-.course-box ul li:hover{
+.course-box ul li:hover {
   color: rgb(0, 0, 0);
   border-bottom: 1px solid #000;
 }
@@ -297,7 +297,7 @@ a:hover:not(.active) {
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
 
-.box_data .info{
+.box_data .info {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -321,7 +321,7 @@ a:hover:not(.active) {
   border-radius: 15px;
 }
 .box_data button {
-  background: #7F9F80;
+  background: #7f9f80;
   color: #fff;
   padding: 7px 10px;
   border-radius: 10px;
@@ -330,7 +330,7 @@ a:hover:not(.active) {
   transition: 0.3s;
 }
 .box_data button:hover {
-  background: #A8CD9F;
+  background: #a8cd9f;
 }
 .box_data .info i {
   margin-top: 25px;
@@ -343,14 +343,16 @@ a:hover:not(.active) {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: stretch;
+  justify-content: space-between;
   padding: 10px;
   margin: 10px;
   border-radius: 10px;
   background: #e1ede7;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
   /* width: 430px; */
+  width: 1200px;
+  height: 580px;
 }
 .box p {
   font-size: 12px;
@@ -375,19 +377,19 @@ a:hover:not(.active) {
   font-size: 15px;
 }
 
-.box .chart-wrapper{
+.box .chart-wrapper {
   width: 400px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.box h3{
+.box h3 {
   display: flex;
   justify-content: center;
 }
 
-.box .box_emoji{
+.box .box_emoji {
   display: flex;
   flex-direction: column;
 }
@@ -398,7 +400,6 @@ a:hover:not(.active) {
   justify-content: space-between;
   align-items: stretch;
   height: 350px;
-
 }
 
 .position .box .posisi h3 {
@@ -440,7 +441,7 @@ a:hover:not(.active) {
 /* end box */
 .emoji_smile,
 .emoji_sad,
-.emoji_mad{
+.emoji_mad {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -453,44 +454,40 @@ a:hover:not(.active) {
 
 .emoji_smile i,
 .emoji_mad i,
-.emoji_sad i{
+.emoji_sad i {
   font-size: 30px;
 }
 
-.emoji_smile i{
+.emoji_smile i {
   color: #337357;
 }
 
-.emoji_mad i{
-  color: #D24545;
+.emoji_mad i {
+  color: #d24545;
 }
 
-.emoji_sad i{
+.emoji_sad i {
   color: #c2a346;
 }
 
 .emoji_smile p,
 .emoji_mad p,
-.emoji_sad p{
+.emoji_sad p {
   margin-left: 12px;
 }
 
 .emoji_smile p span,
 .emoji_mad p span,
-.emoji_sad p span{
- font-weight: bold;
+.emoji_sad p span {
+  font-weight: bold;
 }
 
 /* map */
-.box .mapbox{
+.box .mapbox {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: calc(
-    50% - 5px
-  ); /* Adjust the width to be half of the parent minus the gap */
-  height: 270px;
-  width: 920px;
+  height: 500px;
   background: #fff;
   border-radius: 30px;
   margin-bottom: 100px;
@@ -500,7 +497,7 @@ a:hover:not(.active) {
   width: 100%;
   height: 100%;
   border-radius: 15px;
-
+  width: 1170px;
 }
 .custom-icon {
   background-color: green;
@@ -516,7 +513,7 @@ a:hover:not(.active) {
 }
 .emoji_red,
 .emoji_green,
-.emoji_yellow{
+.emoji_yellow {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -529,33 +526,33 @@ a:hover:not(.active) {
 
 .emoji_red i,
 .emoji_green i,
-.emoji_yellow i{
+.emoji_yellow i {
   font-size: 30px;
 }
 
-.emoji_green i{
+.emoji_green i {
   color: green;
 }
 
-.emoji_red i{
+.emoji_red i {
   color: red;
 }
 
-.emoji_yellow i{
+.emoji_yellow i {
   color: yellow;
 }
 
 .emoji_red p,
 .emoji_green p,
-.emoji_yellow p{
+.emoji_yellow p {
   margin-left: 5px;
   font-size: 10px;
 }
 
 .emoji_red p span,
 .emoji_green p span,
-.emoji_yellow p span{
- font-weight: bold;
+.emoji_yellow p span {
+  font-weight: bold;
 }
 
 /* pop up */
@@ -610,11 +607,19 @@ a:hover:not(.active) {
 
 /* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {
-  from {opacity: 0;} 
-  to {opacity: 1;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:1 ;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

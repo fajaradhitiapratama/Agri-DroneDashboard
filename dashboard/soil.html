@@ -68,6 +68,7 @@
               <li id="soil1" onclick="showInfo('soil1')">Soil Test 1</li>
               <li id="soil2" onclick="showInfo('soil2')">Soil Test 2</li>
               <li id="soil3" onclick="showInfo('soil3')">Soil Test 3</li>
+              <li id="all" onclick="showInfo('all')">All Node</li>
             </ul>
             <div class="position">
               <div class="box">
@@ -79,16 +80,16 @@
                   </div>
                   <div class="longitude">
                     <h4><i class="fa-solid fa-location-dot"></i> Longitude</h4>
-
                     <p class="cordinate_value" id="coordinateLong">__</p>
                   </div>
                 </div>
               </div>
               <div>
-                <div class="box" style="width: 870px">
+                <div class="box" style="width: 950px">
                   <h3>Fertility Mapping Results</h3>
                   <div class="mapbox">
                     <div class="mapsize" id="map"></div>
+                    <button onclick="movemap()">View Map</button>
                   </div>
                 </div>
               </div>
@@ -98,7 +99,11 @@
               <div class="box_left" id="infoBox">
                 <div class="box_data">
                   <div class="info">
-                    <h3>Moisture</h3>
+                    <div class="popup" onclick="myFunction(event)">Moisture
+                      <span class="popuptext" id="myPopup">Poor : <20% <br>
+                      Moderate: 20% - 60% <br>
+                      Good: 61% - 80% </span>
+                    </div>
                     <p>
                       <span id="infoMoisture">__</span>
                     </p>
@@ -107,7 +112,11 @@
                 </div>
                 <div class="box_data">
                   <div class="info">
-                    <h3>pH</h3>
+                    <div class="popup" onclick="myFunction(event)">pH
+                      <span class="popuptext" id="myPopup">Poor : <6 <br>
+                      Moderate: 6 - 7.5 <br>
+                      Good: >7.5 </span>
+                    </div>
                     <p>
                       <span id="infopH">__</span>
                     </p>
@@ -116,7 +125,11 @@
                 </div>
                 <div class="box_data">
                   <div class="info">
-                    <h3>Nitrogen</h3>
+                    <div class="popup" onclick="myFunction(event)">Nitrogen
+                      <span class="popuptext" id="myPopup">Poor : <150 <br>
+                      Moderate: 150 - 200 <br>
+                      Good: 200 - 250 </span>
+                    </div>
                     <p>
                       <span id="infoN">__</span>
                     </p>
@@ -125,7 +138,11 @@
                 </div>
                 <div class="box_data">
                   <div class="info">
-                    <h3>Phospor</h3>
+                    <div class="popup" onclick="myFunction(event)">Phosphorous
+                      <span class="popuptext" id="myPopup">Poor : 160 - 200<br>
+                      Moderate: 210 - 350<br>
+                      Good: 351 - 500</span>
+                    </div>
                     <p>
                       <span id="infoP">__</span>
                     </p>
@@ -134,7 +151,11 @@
                 </div>
                 <div class="box_data">
                   <div class="info">
-                    <h3>Pothasium</h3>
+                    <div class="popup" onclick="myFunction(event)">Potassium
+                      <span class="popuptext" id="myPopup">Poor : 200 - 250<br>
+                      Moderate: 251 - 400<br>
+                      Good: 401 - 600</span>
+                    </div>
                     <p>
                       <span id="infoK">__</span>
                     </p>
@@ -161,25 +182,6 @@
                   </div>
                 </div>
               </div>
-              <!-- <div class="box_right">
-                <div class="box">
-                  <h3>Emoji Info</h3>
-                  <div class="box_emoji">
-                    <div class="emoji_mad">
-                      <i class="fa-regular fa-face-tired"></i>
-                      <p id="emoji-data1">__</p>
-                    </div>
-                    <div class="emoji_smile">
-                      <i class="fa-regular fa-face-smile"></i>
-                      <p id="emoji-data2">__</p>
-                    </div>
-                    <div class="emoji_sad">
-                      <i class="fa-regular fa-face-sad-cry"></i>
-                      <p id="emoji-data3">__</p>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
             </div>
           </div>
         </section>
