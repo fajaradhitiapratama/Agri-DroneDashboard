@@ -55,7 +55,7 @@ function tambahkanMarker(data) {
   var marker = L.marker([data.LAT, data.LONG], {
     icon: L.divIcon({
       className: "custom-icon " + iconColor,
-      iconSize: [30, 30],
+      iconSize: [10, 10],
     }),
   })
   .bindPopup(
@@ -90,7 +90,7 @@ function showInfo(type) {
       p: 80,
       k: 70,
       ph: 4,
-      moisture: 60
+      moisture: 60  
     };   
     document.getElementById("infoMoisture").textContent = alat1.moisture + " %";
     document.getElementById("infopH").textContent = alat1.ph;
