@@ -420,3 +420,7 @@ a:hover:not(.active) {
  font-weight: bold;
 }
 
+#infoValue{
+  text-transform: lowercase;
+}
+

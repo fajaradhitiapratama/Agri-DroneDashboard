@@ -181,10 +181,10 @@ if (type === "soil1") {
     alat: 2,
     LAT: -6.82442,
     LONG: 107.56175,
-    n: 250,
-    p: 155,
-    k: 200,
-    ph: 7,
+    n: 200,
+    p: 360,
+    k: 420,
+    ph: 2,
     moisture: 75,
   };
   document.getElementById("infoMoisture").textContent = alat2.moisture + " %";
@@ -195,25 +195,6 @@ if (type === "soil1") {
   document.getElementById("coordinateLat").textContent = alat2.LAT;
   document.getElementById("coordinateLong").textContent = alat2.LONG;
   addMarkerSoil2(alat2);
-} else if (type === "soil3") {
-  var alat3 = {
-    alat: 3,
-    LAT: -6.82472,
-    LONG: 107.5615,
-    n: 200,
-    p: 55,
-    k: 50,
-    ph: 6,
-    moisture: 20,
-  };
-  document.getElementById("infoMoisture").textContent = alat3.moisture + " %";
-  document.getElementById("infopH").textContent = alat3.ph;
-  document.getElementById("infoN").textContent = alat3.n;
-  document.getElementById("infoP").textContent = alat3.p;
-  document.getElementById("infoK").textContent = alat3.k ;
-  document.getElementById("coordinateLat").textContent = alat3.LAT;
-  document.getElementById("coordinateLong").textContent = alat3.LONG;
-  addMarkerSoil3(alat3);
 } 
 }
 

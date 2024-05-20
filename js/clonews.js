@@ -1,6 +1,10 @@
 let rainfallChart;
 let temperatureChart;
 let windspeedChart;
+const Temperature = 33;
+const rainFall = 4;
+const windspeed = 4;
+
 // change value
 function showInfo(type) {
   const infoListItem = document.querySelectorAll("#infoList li");
@@ -11,6 +15,9 @@ function showInfo(type) {
 
   const icon = document.getElementById("icon");
   const infoValue = document.getElementById("infoValue");
+  const addwind =  document.getElementById('windDataS');
+  const addtemp =  document.getElementById('tempData');
+  const addrain =  document.getElementById('rainfData');
   const data1 = document.getElementById("emoji-data1");
   const data2 = document.getElementById("emoji-data2");
   const data3 = document.getElementById("emoji-data3");
@@ -130,8 +137,10 @@ function showInfo(type) {
     });
 
     //update data
-    const Temperature = 22;
     document.getElementById("infoValue").textContent = Temperature + " °C";
+    addtemp.textContent = "Temperature: " + Temperature + " °C";
+    addrain.textContent = "Rainfall: " + rainFall + " mm";
+    addwind.textContent = "Wind Speed: " + windspeed + " m/s";
     const emojiElement = document.querySelector(".emoji-berubah");
     function updateEmojiClass(Temperature) {
       if (Temperature < 24) {
@@ -268,8 +277,10 @@ function showInfo(type) {
     });
 
     //update data
-    const rainFall = 4;
     document.getElementById("infoValue").textContent = rainFall + " mm";
+    addtemp.textContent = "Temperature: " + Temperature + " °C";
+    addrain.textContent = "Rainfall: " + rainFall + " mm";
+    addwind.textContent = "Wind Speed: " + windspeed + " m/s";
     const emojiElement = document.querySelector(".emoji-berubah");
     function updateEmojiClass(rainFall) {
       if (rainFall < 2) {
@@ -407,8 +418,10 @@ function showInfo(type) {
       },
     });
     //update data
-    const windspeed = 20;
     document.getElementById("infoValue").textContent = windspeed + " m/s";
+    addtemp.textContent = "Temperature: " + Temperature + " °C";
+    addrain.textContent = "Rainfall: " + rainFall + " mm";
+    addwind.textContent = "Wind Speed: " + windspeed + " m/s";
     const emojiElement = document.querySelector(".emoji-berubah");
     function updateEmojiClass(windspeed) {
       if (windspeed < 4) {
