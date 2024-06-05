@@ -8,27 +8,32 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+/* html{
+  width: 1440px;
+} */
 body {
   background: #dfe9f5;
 }
 .container {
   display: flex;
+  /* width: 1440px;
+  max-width: 100%; */
 }
 nav {
   position: relative;
   top: 0;
   bottom: 0;
-  height: 100vh;
   left: 0;
   background: #fff;
-  width: 300px;
-  overflow: hidden;
+  height: 100vh;
+  width: 250px;
+  /* overflow: hidden; */
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
 .logo {
   text-align: center;
   display: flex;
-  margin: 10px 0 0 10px;
+  /* margin: 10px 0 0 10px; */
 }
 .logo img {
   width: 45px;
@@ -46,9 +51,9 @@ a {
   color: rgb(85, 83, 83);
   font-size: 14px;
   display: table;
-  width: 280px;
+  width: 250px;
   padding: 10px;
-  transition: .3s ;
+  transition: 0.3s;
 }
 nav .fas {
   position: relative;
@@ -67,7 +72,7 @@ a:hover:not(.active) {
   background: #eee;
   font-weight: bold;
 }
-.active{
+.active {
   font-weight: bold;
 }
 .logout {
@@ -75,13 +80,11 @@ a:hover:not(.active) {
   bottom: 0;
 }
 
-
-
 /* Main Section */
 .main {
   position: relative;
   padding: 20px;
-  width: 100%;
+  /* width: 1190px; */
 }
 .main-top {
   display: flex;
@@ -125,22 +128,22 @@ a:hover:not(.active) {
   background: #fff;
   text-align: center;
   border-radius: 20px;
-  padding: 10px;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
   align-content: space-between;
 }
 .main-weather .card_detail .content_data {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline;
+  flex-direction: column;
 }
 
 .main-weather .card_detail .info_data {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: flex-start;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, #5690d7, rgb(255, 255, 255));
+  padding: 10px;
+  /* border-top-left-radius: 10px; */
+  border-top-right-radius: 10px;
 }
 .main-weather .card_detail .info_data h3 {
   margin-top: 10px;
@@ -153,8 +156,18 @@ a:hover:not(.active) {
   font-size: 14px;
 }
 
-.main-weather .card_detail .info_time i {
-  font-size: 70px;
+.main-weather .card_detail .info_time {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 30px;
+  padding-top: 0px;
+}
+.main-weather .card_detail .info_time .nilaiweather {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .main-weather .card_detail button {
@@ -182,18 +195,18 @@ a:hover:not(.active) {
   background: #fff;
   text-align: center;
   border-radius: 20px;
-  padding: 10px;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
   align-content: space-between;
   flex-direction: column;
-  justify-content: space-between;
 }
 .main-weather .card .content_data {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  align-content: space-around;
   align-items: center;
+  padding: 10px;
+  background: linear-gradient(to bottom, #5690d7, rgb(255, 255, 255));
+  border-top-left-radius: 10px;
+  /* border-top-right-radius: 10px;  */
 }
 
 .main-weather .card .info_data {
@@ -209,8 +222,8 @@ a:hover:not(.active) {
   text-transform: capitalize;
 }
 
-.main-weather .card .info_time i {
-  font-size: 50px;
+.main-weather img {
+  height: 50px;
 }
 
 .main-weather .card button {
@@ -250,9 +263,9 @@ a:hover:not(.active) {
   margin: 10px;
   color: gray;
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
 }
-.course-box ul li:hover{
+.course-box ul li:hover {
   color: rgb(0, 0, 0);
   border-bottom: 1px solid #000;
 }
@@ -263,10 +276,6 @@ a:hover:not(.active) {
   border-bottom: 1px solid #000;
 }
 .course-box .course {
-  display: flex;
-}
-
-.course {
   display: flex;
 }
 
@@ -296,7 +305,7 @@ a:hover:not(.active) {
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
 
-.box_data .info{
+.box_data .info {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -324,12 +333,12 @@ a:hover:not(.active) {
 }
 .box_data .info i {
   margin-top: 25px;
-  font-size: 45px;
+  font-size: 65px;
   color: #337357;
 }
 
 /* box-right */
-.box {
+.box,.box1 {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -340,6 +349,12 @@ a:hover:not(.active) {
   border-radius: 10px;
   background: #dfe9f5;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.box1 {
+  width: 500px;
+}
+.box{
+  width: 500px;
 }
 .box p {
   font-size: 12px;
@@ -360,67 +375,341 @@ a:hover:not(.active) {
   font-size: 15px;
 }
 
-.box .chart-wrapper{
+.box .chart-wrapper {
   width: 500px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.box h3{
+.box h3, .box1 h3 {
   display: flex;
   justify-content: center;
 }
 
-.box .box_emoji{
+.box .box_emoji {
   display: flex;
   flex-direction: column;
 }
 
 .emoji_smile,
 .emoji_sad,
-.emoji_mad{
+.emoji_mad {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   margin: 5px;
-  width: 300px;
+  width: 400px;
+  height: 48px;
   background: #fff;
   border-radius: 15px;
 }
 
 .emoji_smile i,
 .emoji_mad i,
-.emoji_sad i{
-  font-size: 30px;
+.emoji_sad i {
+  font-size: 50px;
 }
 
-.emoji_smile i{
+.emoji_smile i {
   color: #337357;
 }
 
-.emoji_mad i{
-  color: #D24545;
+.emoji_mad i {
+  color: #d24545;
 }
 
-.emoji_sad i{
+.emoji_sad i {
   color: #c2a346;
 }
 
 .emoji_smile p,
 .emoji_mad p,
-.emoji_sad p{
+.emoji_sad p {
   margin-left: 12px;
 }
 
 .emoji_smile p span,
 .emoji_mad p span,
-.emoji_sad p span{
- font-weight: bold;
+.emoji_sad p span {
+  font-weight: bold;
 }
 
-#infoValue{
+#infoValue {
   text-transform: lowercase;
 }
 
+@media(max-width: 1280px) {
+  .main{
+    max-width: 1050px;
+  }
+  nav{
+    width: 230px;
+  }
+  .main-weather .card_detail .info_data h3{
+    font-size: 20px;
+  }
+  .main-weather .card .info_data h3{
+    font-size: 18px;
+  }
+  .main-weather .card .info_data{
+    border-top-left-radius: 20px;
+  }
+  .main-weather .card .content_data{
+    padding: 0px;
+    padding-top: 10px;
+  }
+  .main-weather .card_detail .info_time .nilaiweather p{
+    font-size: 13px;
+  }
+  .box1, .box{
+    width: 400px;
+  }
+  .emoji_mad, .emoji_sad, .emoji_smile{
+    width: 350px;
+  }
+}
+
+/* tablet */
+@media(max-width: 885px) {
+  .logo{
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 0px
+  }
+  .logo img{
+    width: 75px;
+    height: 75px;
+  }
+  .logo span{
+    padding-left: 0px;
+    display: none;;
+  }
+  nav{
+    height: 130vh;
+    width: 150px;
+  }
+  a{
+    width: 150px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    font-size: 13px;
+  }
+  .box1{
+    width: 200px;
+  }
+  .main {
+    width: 618px;
+  }
+  .main-top{
+    width: 618px;
+  }
+  .main-weather{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-weather .card_detail{
+    width: 520px;
+    border-radius: 40px;
+    border-bottom-right-radius: 0px;
+  }
+  .main-weather .card_detail .info_data{
+    border-top-right-radius: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .main-weather .card_detail .info_data h3{
+    font-size: 28px;
+  }
+  .main-weather .card_detail .info_time .nilaiweather p{
+    font-size: 18px;
+  }
+  .main-weather .card_detail .info_time .nilaiweather {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .main-weather .card_right {
+    justify-content: space-evenly;
+  }
+
+  .main-weather .card_detail .info_time {
+    display: flex;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .main-weather .card_detail .info_time img {
+    width: 100px;
+    height: 100px;
+  }
+  .main-weather .card .content_data {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    /* width: 155px; */
+  }
+  .main-weather .card_right {
+    flex-wrap: wrap;
+  }
+  .course .box_right{
+    flex-direction: column-reverse;
+  }
+  .course-box .course{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row-reverse;
+  }
+  .box_data{
+    height: 194.2px;
+  }
+  .box1,.box {
+    width: 350px;
+  }
+  .emoji_sad, .emoji_smile, .emoji_mad{
+    width: 280px;
+    height: 35px;
+  }
+  .emoji_sad i, .emoji_smile i, .emoji_mad i{
+    font-size: 35px;
+  }
+  .info h3, .box h3, .box1 h3{
+    font-size: 13px;
+  }
+}
+
+/* tablet 768px */
+/* @media (max-width: 768px){
+  nav{
+    height: 100vh;
+  }
+  .box1{
+    width: 150px;
+  }
+
+  .course-box .course {
+    display: grid;
+    flex-direction: column-reverse;
+  }
+} */
+/* mobile 425px */
+@media (max-width: 360px) {
+  nav {
+    height: 20vh;
+    width: 100%;
+  }
+  nav ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+  }
+  .logo {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    
+  }
+  
+  .logo span {
+    font-size: 14px;
+  }
+
+  .container {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .main {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .main-top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-top i {
+    position: static;
+    margin: 10px 0;
+  }
+
+  .main-weather {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-weather .card_detail,
+  .main-weather .card {
+    width: 90%;
+    margin: 10px 0;
+  }
+
+  .main-weather .card_detail .info_time,
+  .main-weather .card .content_data {
+    width: 100%;
+  }
+
+  .main-course {
+    margin-top: 20px;
+  }
+
+  .course-box ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .course-box ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .course-box .course {
+    flex-direction: column;
+  }
+
+  .box,
+  .box1 {
+    width: 90%;
+    margin: 10px 0;
+  }
+
+  .emoji_smile,
+  .emoji_sad,
+  .emoji_mad {
+    width: 90%;
+    margin: 5px 0;
+  }
+
+  .emoji_smile i,
+  .emoji_mad i,
+  .emoji_sad i {
+    font-size: 30px;
+  }
+
+  .info h3,
+  .box h3,
+  .box1 h3 {
+    font-size: 14px;
+  }
+}

@@ -18,7 +18,7 @@
       <nav>
         <ul id="myList">
           <li>
-            <a href="#" class="logo">
+            <a href="/dashboard/soil.html" class="logo">
               <img src="/assets/agridrone-logo.jpg" alt="" />
               <span class="nav-item">DashBoard</span>
             </a>
@@ -60,14 +60,16 @@
               <div class="content_data">
                 <div class="info_data">
                   <h3 id="dayOfWeek"></h3>
-                  <p id="windDataS">Wind Speed: __ m/s</p>
-                  <!-- <p id="windDataD">Wind Direction:__</p> -->
-                  <p id="tempData">Temperature: __ °C</p>
-                  <p id="rainfData">Rainfall: __ mm</p>
+                  <h3 class="realtime">01.00 WIB</h3>
+                  
                 </div>
                 <div class="info_time">
-                  <h3 class="realtime">01.00 WIB</h3>
-                  <i class="fa-solid fa-sun"></i>
+                  <div class="nilaiweather">
+                    <p id="windDataS">Wind Speed: __ m/s</p>
+                    <p id="tempData">Temperature: __ °C</p>
+                    <p id="rainfData">Rainfall: __ mm</p>
+                  </div>
+                  <img src="/assets/cloud-sun-solid.svg" alt="">
                 </div>
               </div>
               
@@ -80,9 +82,7 @@
                 <div class="info_data">
                   <h3 id="nextDay1"></h3>
                 </div>
-                <div class="info_time">
-                  <i class="fas fa-cloud-showers-heavy"></i>
-                </div>
+                <img src="/assets/sun-solid.svg" alt="">
               </div>
               
             </div>
@@ -92,9 +92,7 @@
                 <div class="info_data">
                   <h3 id="nextDay2">Monday</h3>
                 </div>
-                <div class="info_time">
-                  <i class="fas fa-cloud-showers-heavy"></i>
-                </div>
+                <img src="/assets/sun-solid.svg" alt="">
               </div>
               
             </div>
@@ -104,9 +102,7 @@
                 <div class="info_data">
                   <h3 id="nextDay3"></h3>
                 </div>
-                <div class="info_time">
-                  <i class="fas fa-cloud-showers-heavy"></i>
-                </div>
+                <img src="/assets/cloud-sun-solid.svg" alt="">
               </div>
               
             </div>
@@ -116,9 +112,7 @@
                 <div class="info_data">
                   <h3 id="nextDay4"></h3>
                 </div>
-                <div class="info_time">
-                  <i class="fas fa-cloud-showers-heavy"></i>
-                </div>
+                <img src="/assets/cloud-sun-solid.svg" alt="">
               </div>
               
             </div>
@@ -128,9 +122,7 @@
                 <div class="info_data">
                   <h3 id="nextDay5"></h3>
                 </div>
-                <div class="info_time">
-                  <i class="fas fa-cloud-showers-heavy"></i>
-                </div>
+                <img src="/assets/sun-solid.svg" alt="">
               </div>
               
             </div>
@@ -140,9 +132,7 @@
                 <div class="info_data">
                   <h3 id="nextDay6"></h3>
                 </div>
-                <div class="info_time">
-                  <i class="fas fa-cloud-showers-heavy"></i>
-                </div>
+                <img src="/assets/cloud-sun-solid.svg" alt="">
               </div>
               
             </div>
@@ -175,7 +165,7 @@
                 </div>
               </div>
               <div class="box_right">
-                  <div class="box" style="width: 600px;">
+                  <div class="box">
                     <h3>Chart Info</h3>
                     <div class="chart-wrapper">
                       <!-- <canvas
@@ -186,7 +176,7 @@
                     <!--  -->
                   </div>
 
-                <div class="box">
+                <div class="box1">
                   <h3>Emoji Info</h3>
                   <div class="box_emoji">
                     <div class="emoji_mad">

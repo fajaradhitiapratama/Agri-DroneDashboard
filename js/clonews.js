@@ -15,9 +15,9 @@ function showInfo(type) {
 
   const icon = document.getElementById("icon");
   const infoValue = document.getElementById("infoValue");
-  const addwind =  document.getElementById('windDataS');
-  const addtemp =  document.getElementById('tempData');
-  const addrain =  document.getElementById('rainfData');
+  const addwind = document.getElementById("windDataS");
+  const addtemp = document.getElementById("tempData");
+  const addrain = document.getElementById("rainfData");
   const data1 = document.getElementById("emoji-data1");
   const data2 = document.getElementById("emoji-data2");
   const data3 = document.getElementById("emoji-data3");
@@ -26,20 +26,25 @@ function showInfo(type) {
     icon.className = "fa-solid fa-temperature-quarter";
     infoValue.textContent = "__°C";
     data1.innerHTML =
-      '<span style="font-weight: normal; font-family: Poppins, sans-serif; text-transform: lowercase"> > 26°C </span> <span>High</span>';
+      '<span style="font-weight: normal; font-size: 13px ;font-family: Poppins, sans-serif; text-transform: lowercase"> > 26°C </span> <span>High</span>';
     data2.innerHTML =
-      '<span style="font-weight: normal; font-family: Poppins, sans-serif; text-transform: lowercase"> 24°C - 26°C </span> <span>Normal</span>';
+      '<span style="font-weight: normal; font-size: 13px ;font-family: Poppins, sans-serif; text-transform: lowercase"> 24°C - 26°C </span> <span>Normal</span>';
     data3.innerHTML =
-      '<span style="font-weight: normal; font-family: Poppins, sans-serif; text-transform: lowercase"> < 24°C </span> <span>Low</span>';
+      '<span style="font-weight: normal; font-size: 13px ;font-family: Poppins, sans-serif; text-transform: lowercase"> < 24°C </span> <span>Low</span>';
     // chart
     const HourTime = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
     const DataTemp = [22, 24, 24, 25, 27, 30, 33, 32, 31, 29, 27, 26, 25];
 
-    // Create canvas element
     const canvas = document.createElement("canvas");
     canvas.id = "myChart";
     canvas.style.width = "100%";
-    canvas.style.maxWidth = "400px";
+    if (window.innerWidth >= 1280) {
+      canvas.style.maxWidth = "400px";
+    } else if (window.innerWidth < 1280) {
+      canvas.style.maxWidth = "350px";
+    } else {
+      canvas.style.maxWidth = "250px";
+    }
 
     if (temperatureChart) {
       temperatureChart.destroy();
@@ -47,7 +52,7 @@ function showInfo(type) {
 
     // Append canvas to chart-wrapper
     const chartWrapper = document.querySelector(".chart-wrapper");
-    chartWrapper.innerHTML = '';
+    chartWrapper.innerHTML = "";
     chartWrapper.appendChild(canvas);
 
     // Create chart
@@ -166,20 +171,25 @@ function showInfo(type) {
     icon.className = "fa-solid fa-cloud-rain";
     infoValue.textContent = "__ mm";
     data1.innerHTML =
-      '<span style="font-weight: normal; font-family: Poppins, sans-serif; text-transform: lowercase">> 8 mm </span> <span>High</span>';
+      '<span style="font-weight: normal; font-size: 13px ;font-family: Poppins, sans-serif; text-transform: lowercase">> 8 mm </span> <span>High</span>';
     data2.innerHTML =
-      '<span style="font-weight: normal; font-family: Poppins, sans-serif; text-transform: lowercase"> 2 mm - 8 mm </span> <span>Normal</span>';
+      '<span style="font-weight: normal; font-size: 13px ;font-family: Poppins, sans-serif; text-transform: lowercase"> 2 mm - 8 mm </span> <span>Normal</span>';
     data3.innerHTML =
-      '<span style="font-weight: normal; font-family: Poppins, sans-serif; text-transform: lowercase"> < 2 mm </span> <span>Low</span>';
+      '<span style="font-weight: normal; font-size: 13px ;font-family: Poppins, sans-serif; text-transform: lowercase"> < 2 mm </span> <span>Low</span>';
     // chart
     const HourTime = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
     const DataRain = [2, 2, 3, 2, 2, 3, 4, 4, 5, 2, 1, 2, 2];
 
-    // Create canvas element
     const canvas = document.createElement("canvas");
     canvas.id = "myChart";
     canvas.style.width = "100%";
-    canvas.style.maxWidth = "400px";
+    if (window.innerWidth >= 1280) {
+      canvas.style.maxWidth = "400px";
+    } else if (window.innerWidth < 1280) {
+      canvas.style.maxWidth = "350px";
+    } else {
+      canvas.style.maxWidth = "250px";
+    }
 
     if (rainfallChart) {
       rainfallChart.destroy();
@@ -187,7 +197,7 @@ function showInfo(type) {
 
     // Append canvas to chart-wrapper
     const chartWrapper = document.querySelector(".chart-wrapper");
-    chartWrapper.innerHTML = '';
+    chartWrapper.innerHTML = "";
     chartWrapper.appendChild(canvas);
 
     // Create chart
@@ -307,21 +317,26 @@ function showInfo(type) {
     infoValue.textContent = "__ m/s";
     infoValue.style.textTransform = "lowercase";
     data1.innerHTML =
-      '<span style="font-weight: normal; font-family: Poppins, sans-serif; text-transform: lowercase">> 9 m/s </span> <span>High</span>';
+      '<span style="font-weight: normal; font-size: 13px ;font-family: Poppins, sans-serif; text-transform: lowercase">> 9 m/s </span> <span>High</span>';
     data2.innerHTML =
-      '<span style="font-weight: normal; font-family: Poppins, sans-serif; text-transform: lowercase"> 4 m/s - 9 m/s </span> <span>Normal</span>';
+      '<span style="font-weight: normal; font-size: 13px ;font-family: Poppins, sans-serif; text-transform: lowercase"> 4 m/s - 9 m/s </span> <span>Normal</span>';
     data3.innerHTML =
-      '<span style="font-weight: normal; font-family: Poppins, sans-serif; text-transform: lowercase"> < 4 m/s </span> <span>Low</span>';
+      '<span style="font-weight: normal; font-size: 13px ;font-family: Poppins, sans-serif; text-transform: lowercase"> < 4 m/s </span> <span>Low</span>';
     // chart
     // chart
     const HourTime = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
     const DataWinds = [4, 4, 5, 3, 2, 2, 2, 4, 7, 5, 6, 4, 4];
 
-    // Create canvas element
     const canvas = document.createElement("canvas");
     canvas.id = "myChart";
     canvas.style.width = "100%";
-    canvas.style.maxWidth = "400px";
+    if (window.innerWidth >= 1280) {
+      canvas.style.maxWidth = "400px";
+    } else if (window.innerWidth < 1280) {
+      canvas.style.maxWidth = "350px";
+    } else {
+      canvas.style.maxWidth = "250px";
+    }
 
     if (windspeedChart) {
       windspeedChart.destroy();
@@ -329,7 +344,7 @@ function showInfo(type) {
 
     // Append canvas to chart-wrapper
     const chartWrapper = document.querySelector(".chart-wrapper");
-    chartWrapper.innerHTML = '';
+    chartWrapper.innerHTML = "";
     chartWrapper.appendChild(canvas);
 
     // Create chart
@@ -447,11 +462,11 @@ function showInfo(type) {
     icon.className = "fa-solid fa-wind";
     infoValue.textContent = "__";
     data1.innerHTML =
-      '<span style="font-weight: normal; font-family: Poppins, sans-serif; text-transform: lowercase"> -- </span> <span>High</span>';
+      '<span style="font-weight: normal; font-size: 13px ;font-family: Poppins, sans-serif; text-transform: lowercase"> -- </span> <span>High</span>';
     data2.innerHTML =
-      '<span style="font-weight: normal; font-family: Poppins, sans-serif; text-transform: lowercase"> -- </span> <span>Normal</span>';
+      '<span style="font-weight: normal; font-size: 13px ;font-family: Poppins, sans-serif; text-transform: lowercase"> -- </span> <span>Normal</span>';
     data3.innerHTML =
-      '<span style="font-weight: normal; font-family: Poppins, sans-serif; text-transform: lowercase"> -- </span> <span>Low</span>';
+      '<span style="font-weight: normal; font-size: 13px ;font-family: Poppins, sans-serif; text-transform: lowercase"> -- </span> <span>Low</span>';
 
     //update data
     // const winddirection = 'Barat';
