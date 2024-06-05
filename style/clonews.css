@@ -338,7 +338,8 @@ a:hover:not(.active) {
 }
 
 /* box-right */
-.box,.box1 {
+.box,
+.box1 {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -353,7 +354,7 @@ a:hover:not(.active) {
 .box1 {
   width: 500px;
 }
-.box{
+.box {
   width: 500px;
 }
 .box p {
@@ -382,7 +383,8 @@ a:hover:not(.active) {
   justify-content: center;
 }
 
-.box h3, .box1 h3 {
+.box h3,
+.box1 h3 {
   display: flex;
   justify-content: center;
 }
@@ -440,91 +442,94 @@ a:hover:not(.active) {
   text-transform: lowercase;
 }
 
-@media(max-width: 1280px) {
-  .main{
+@media (max-width: 1280px) {
+  .main {
     max-width: 1050px;
   }
-  nav{
+  nav {
     width: 230px;
   }
-  .main-weather .card_detail .info_data h3{
+  .main-weather .card_detail .info_data h3 {
     font-size: 20px;
   }
-  .main-weather .card .info_data h3{
+  .main-weather .card .info_data h3 {
     font-size: 18px;
   }
-  .main-weather .card .info_data{
+  .main-weather .card .info_data {
     border-top-left-radius: 20px;
   }
-  .main-weather .card .content_data{
+  .main-weather .card .content_data {
     padding: 0px;
     padding-top: 10px;
   }
-  .main-weather .card_detail .info_time .nilaiweather p{
+  .main-weather .card_detail .info_time .nilaiweather p {
     font-size: 13px;
   }
-  .box1, .box{
+  .box1,
+  .box {
     width: 400px;
   }
-  .emoji_mad, .emoji_sad, .emoji_smile{
+  .emoji_mad,
+  .emoji_sad,
+  .emoji_smile {
     width: 350px;
   }
 }
 
 /* tablet */
-@media(max-width: 885px) {
-  .logo{
+@media (max-width: 885px) {
+  .logo {
     flex-wrap: wrap;
     justify-content: center;
-    padding-bottom: 0px
+    padding-bottom: 0px;
   }
-  .logo img{
+  .logo img {
     width: 75px;
     height: 75px;
   }
-  .logo span{
+  .logo span {
     padding-left: 0px;
-    display: none;;
+    display: none;
   }
-  nav{
+  nav {
     height: 130vh;
     width: 150px;
   }
-  a{
+  a {
     width: 150px;
     padding-left: 0px;
     padding-right: 0px;
     padding-top: 0px;
     font-size: 13px;
   }
-  .box1{
+  .box1 {
     width: 200px;
   }
   .main {
     width: 618px;
   }
-  .main-top{
+  .main-top {
     width: 618px;
   }
-  .main-weather{
+  .main-weather {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .main-weather .card_detail{
+  .main-weather .card_detail {
     width: 520px;
     border-radius: 40px;
     border-bottom-right-radius: 0px;
   }
-  .main-weather .card_detail .info_data{
+  .main-weather .card_detail .info_data {
     border-top-right-radius: 40px;
     padding-right: 20px;
     padding-left: 20px;
   }
-  .main-weather .card_detail .info_data h3{
+  .main-weather .card_detail .info_data h3 {
     font-size: 28px;
   }
-  .main-weather .card_detail .info_time .nilaiweather p{
+  .main-weather .card_detail .info_time .nilaiweather p {
     font-size: 18px;
   }
   .main-weather .card_detail .info_time .nilaiweather {
@@ -566,150 +571,183 @@ a:hover:not(.active) {
   .main-weather .card_right {
     flex-wrap: wrap;
   }
-  .course .box_right{
+  .course .box_right {
     flex-direction: column-reverse;
   }
-  .course-box .course{
+  .course-box .course {
     display: flex;
     align-items: flex-start;
     flex-direction: row-reverse;
   }
-  .box_data{
-    height: 194.2px;
+  .box_data {
+    height: 165px;
   }
-  .box1,.box {
+  .box1,
+  .box {
     width: 350px;
   }
-  .emoji_sad, .emoji_smile, .emoji_mad{
+  .emoji_sad,
+  .emoji_smile,
+  .emoji_mad {
     width: 280px;
     height: 35px;
   }
-  .emoji_sad i, .emoji_smile i, .emoji_mad i{
+  .emoji_sad i,
+  .emoji_smile i,
+  .emoji_mad i {
     font-size: 35px;
   }
-  .info h3, .box h3, .box1 h3{
+  .info h3,
+  .box h3,
+  .box1 h3 {
     font-size: 13px;
+  }
+  .box_data .info i {
+    margin-top: 15px;
   }
 }
 
-/* tablet 768px */
-/* @media (max-width: 768px){
-  nav{
-    height: 100vh;
-  }
-  .box1{
-    width: 150px;
-  }
-
-  .course-box .course {
-    display: grid;
-    flex-direction: column-reverse;
-  }
-} */
-/* mobile 425px */
-@media (max-width: 360px) {
+/* mobile */
+@media (max-width: 428px) {
   nav {
-    height: 20vh;
+    height: 22vh;
     width: 100%;
   }
-  nav ul{
+  nav ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
     list-style-type: none;
   }
+  nav ul li{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
   .logo {
     flex-direction: column;
-    align-items: center;
-    padding: 10px 0;
-    
+    align-items: flex-start;
+    padding: 10px 350px 10px 20px;
   }
-  
+  .logo img {
+    width: 120px;
+    height: 120px;
+  }
   .logo span {
     font-size: 14px;
   }
-
   .container {
     flex-direction: column;
     width: 100%;
   }
-  
   a {
     width: 100%;
     text-align: center;
+    font-size: 25px;
+    display: flex;
+    align-items: flex-end;
   }
-
+  a:hover:not(.active) {
+    background: white;
+  }
+  nav .fas {
+    font-size: 35px;
+  }
   .main {
     width: 100%;
     padding: 10px;
   }
 
   .main-top {
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 960px;
+    padding: 0 10px;
+  }
+  .main-top h1{
+    font-size: 40px;
   }
 
   .main-top i {
     position: static;
     margin: 10px 0;
-  }
-
-  .main-weather {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .main-weather .card_detail,
-  .main-weather .card {
-    width: 90%;
-    margin: 10px 0;
-  }
-
-  .main-weather .card_detail .info_time,
-  .main-weather .card .content_data {
-    width: 100%;
-  }
-
-  .main-course {
-    margin-top: 20px;
-  }
-
-  .course-box ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .course-box ul li {
-    width: 100%;
-    text-align: center;
-  }
-
-  .course-box .course {
-    flex-direction: column;
-  }
-
-  .box,
-  .box1 {
-    width: 90%;
-    margin: 10px 0;
-  }
-
-  .emoji_smile,
-  .emoji_sad,
-  .emoji_mad {
-    width: 90%;
-    margin: 5px 0;
-  }
-
-  .emoji_smile i,
-  .emoji_mad i,
-  .emoji_sad i {
     font-size: 30px;
   }
-
-  .info h3,
-  .box h3,
-  .box1 h3 {
-    font-size: 14px;
+  .main-top i .date{
+    font-size: 20px;
+  }
+  .main-weather .card_detail{
+    width: 850px;
+  }
+  .main-weather .card_detail .info_data{
+    justify-content: space-around;
+  }
+  .main-weather .card_detail .info_time{
+    justify-content: space-around;
+    padding-bottom: 20px;
+  }
+  .main-weather .card_detail .info_data h3{
+    font-size: 35px;
+  }
+  .main-weather .card_detail .info_time .nilaiweather p{
+    font-size: 25px;
+  }
+  .main-weather img{
+    height: 65px;
+  }
+  .main-weather .card {
+    height: 180px;
+    border-bottom-right-radius: 0px;
+  }
+  .main-weather .card_right{
+    justify-content: space-between;
+    width: 800px;
+  }
+  .main-weather .card .info_data h3{
+    font-size: 30px;
+  }
+  .main-course h1{
+    font-size: 40px;
+    padding-left: 10px;
+  }
+  .course-box ul li{
+    font-size: 25px;
+  }
+  .course-box  ul .active{
+    font-size: 30px;
+  }
+  .course .box_right{
+    flex-direction: column;
+  }
+  .box, .box1{
+    width: 580px;
+  }
+  .box h3, .box1 h3, .info h3{
+    font-size: 30px;
+  }
+  .emoji_mad, .emoji_sad, .emoji_smile{
+    width: 550px;
+    height: 70px;
+  }
+  .emoji_mad i, .emoji_sad i, .emoji_smile i{
+    font-size: 65px;
+  }
+  .emoji_smile p, .emoji_mad p, .emoji_sad p{
+    font-size: 28px;
+  }
+  .box_data{
+    height: 287.5px;
+    width: 280px;
+  }
+  .box_data p{
+    font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+  .box_data .info p i{
+    font-size: 30px;
+  }
+  .box_data .info i{
+    font-size: 80px;
   }
 }
