@@ -40,10 +40,10 @@ function showInfo(type) {
     canvas.style.width = "100%";
     if (window.innerWidth >= 1280) {
       canvas.style.maxWidth = "400px";
-    } else if (window.innerWidth < 980 && window.innerWidth > 884) {
-      canvas.style.maxWidth = "450px";
-    } else if (window.innerWidth <= 884) {
+    } else if (window.innerWidth >= 768) {
       canvas.style.maxWidth = "350px";
+    } else if (window.innerWidth >= 360) {
+      canvas.style.maxWidth = "470px";
     } else {
       canvas.style.maxWidth = "250px";
     }
@@ -187,10 +187,10 @@ function showInfo(type) {
     canvas.style.width = "100%";
     if (window.innerWidth >= 1280) {
       canvas.style.maxWidth = "400px";
-    } else if (window.innerWidth < 980 && window.innerWidth > 884) {
-      canvas.style.maxWidth = "450px";
-    } else if (window.innerWidth <= 884) {
+    } else if (window.innerWidth >= 768) {
       canvas.style.maxWidth = "350px";
+    } else if (window.innerWidth >= 360) {
+      canvas.style.maxWidth = "470px";
     } else {
       canvas.style.maxWidth = "250px";
     }
@@ -336,10 +336,10 @@ function showInfo(type) {
     canvas.style.width = "100%";
     if (window.innerWidth >= 1280) {
       canvas.style.maxWidth = "400px";
-    } else if (window.innerWidth < 980 && window.innerWidth > 884) {
-      canvas.style.maxWidth = "450px";
-    } else if (window.innerWidth <= 884) {
+    } else if (window.innerWidth >= 768) {
       canvas.style.maxWidth = "350px";
+    } else if (window.innerWidth >= 360) {
+      canvas.style.maxWidth = "470px";
     } else {
       canvas.style.maxWidth = "250px";
     }
