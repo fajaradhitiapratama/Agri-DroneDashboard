@@ -856,7 +856,7 @@ a:hover:not(.active) {
   }
 }
 
-@media (max-width: 428px) {
+@media (max-width: 431px) {
   nav {
     height: 22vh;
     width: 100%;
