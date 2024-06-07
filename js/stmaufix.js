@@ -131,7 +131,7 @@ if (category === 'poor') {
 var marker = L.marker([data.LAT, data.LONG], {
   icon: L.divIcon({
     className: "custom-icon " + iconColor,
-    iconSize: [10, 10],
+    iconSize: [15, 15],
   }),
 })
 .bindPopup(
