@@ -947,6 +947,7 @@ a:hover:not(.active) {
     height: 480px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
   }
   .box .mapbox {
     width: 350px;
@@ -960,20 +961,21 @@ a:hover:not(.active) {
     height: 150px;
   }
   .position .box-lokasi {
-    width: 750px;
+    width: 350px;
+    height: 230px;
   }
   h3 {
     font-size: 24px;
   }
   .longitude,
   .latitude {
-    width: 270px;
-    height: 130px;
+    width: 150px;
+    height: 120px;
     justify-content: space-around;
   }
   .latitude h4,
   .longitude h4 {
-    font-size: 30px;
+    font-size: 18px;
   }
   .latitude p,
   .longitude p {
@@ -984,32 +986,34 @@ a:hover:not(.active) {
     flex-wrap: 
   } */
   .box_data {
-    width: 250px;
+    width: 130px;
+    height: 150px;
   }
   .box_data p {
-    width: 200px;
+    width: 100px;
     height: 100px;
+    margin-top: 5px;
   }
   .popup {
-    font-size: 30px;
+    font-size: 18px;
   }
   .course-box .course .box_left {
     justify-content: center;
   }
   .box-fertility {
-    width: 900px;
+    width: 350px;
     margin-top: 15px;
   }
   .emoji_green,
   .emoji_red,
   .emoji_yellow {
-    width: 800px;
-    height: 80px;
+    width: 300px;
+    height: 50px;
   }
   .emoji_green p,
   .emoji_red p,
   .emoji_yellow p {
-    font-size: 30px;
+    font-size: 14px;
   }
   .emoji_green i,
   .emoji_red i,

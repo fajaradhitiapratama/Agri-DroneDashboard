@@ -43,7 +43,7 @@ function showInfo(type) {
     } else if (window.innerWidth >= 768) {
       canvas.style.maxWidth = "350px";
     } else if (window.innerWidth >= 360) {
-      canvas.style.maxWidth = "470px";
+      canvas.style.maxWidth = "350px";
     } else {
       canvas.style.maxWidth = "250px";
     }
@@ -190,7 +190,7 @@ function showInfo(type) {
     } else if (window.innerWidth >= 768) {
       canvas.style.maxWidth = "350px";
     } else if (window.innerWidth >= 360) {
-      canvas.style.maxWidth = "470px";
+      canvas.style.maxWidth = "350px";
     } else {
       canvas.style.maxWidth = "250px";
     }
@@ -339,7 +339,7 @@ function showInfo(type) {
     } else if (window.innerWidth >= 768) {
       canvas.style.maxWidth = "350px";
     } else if (window.innerWidth >= 360) {
-      canvas.style.maxWidth = "470px";
+      canvas.style.maxWidth = "350px";
     } else {
       canvas.style.maxWidth = "250px";
     }

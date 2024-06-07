@@ -613,28 +613,32 @@ a:hover:not(.active) {
 /* mobile */
 @media (max-width: 431px) {
   nav {
-    height: 15vh;
-    width: 970px;
+    height: 50px;
+    width: 100%;
   }
   nav ul {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: space-around;
+    align-items: normal;
     list-style-type: none;
     height: auto;
+    width: 375px;
+  }
+  .nav-item{
+    margin-left: 0px;
   }
   nav ul li {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
   .logo {
     flex-direction: column;
     align-items: flex-start;
-    padding: 10px 350px 10px 20px;
+    padding: 0px 0px 0px 0px;
   }
   .logo img {
-    width: 120px;
-    height: 120px;
+    width: 50px;
+    height: 50px;
   }
   .logo span {
     font-size: 14px;
@@ -646,18 +650,20 @@ a:hover:not(.active) {
   a {
     width: 100%;
     text-align: center;
-    font-size: 25px;
+    font-size: 15px;
     display: flex;
-    align-items: flex-end;
+    align-items: normal;
+    padding-bottom: 0px;
   }
   a:hover:not(.active) {
     background: white;
   }
   nav .fas {
-    font-size: 35px;
+    font-size: 25px;
+    width: 35px;
   }
   .main {
-    width: 970px;
+    width: 375px;
     padding: 10px;
   }
 
@@ -665,88 +671,91 @@ a:hover:not(.active) {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    width: 960px;
+    width: 365px;
     padding: 0 10px;
+    padding-left: 0px;
   }
-  .main-top h1 {
-    font-size: 40px;
-  }
-
   .main-top i {
     position: static;
     margin: 10px 0;
-    font-size: 30px;
-  }
-  .main-top i .date {
     font-size: 20px;
   }
+  .main-top i .date {
+    font-size: 15px;
+  }
   .main-weather .card_detail{
-    width: 850px;
+    width: 350px;
   }
   .main-weather .card_detail .info_data{
-    justify-content: space-around;
+    justify-content: space-between;
   }
   .main-weather .card_detail .info_time{
     justify-content: space-around;
     padding-bottom: 20px;
   }
   .main-weather .card_detail .info_data h3{
-    font-size: 35px;
+    font-size: 30px;
   }
   .main-weather .card_detail .info_time .nilaiweather p{
-    font-size: 25px;
+    font-size: 18px;
   }
   .main-weather img{
-    height: 65px;
+    height: 55px;
   }
   .main-weather .card {
-    height: 180px;
+    height: 150px;
     border-bottom-right-radius: 0px;
   }
   .main-weather .card_right{
-    justify-content: space-between;
-    width: 800px;
+    display: flex;
+    justify-content: center;
+    width: 370px;
   }
   .main-weather .card .info_data h3{
-    font-size: 30px;
+    font-size: 15px;
   }
   .main-course h1{
-    font-size: 40px;
+    font-size: 24px;
     padding-left: 10px;
   }
   .course-box ul li{
-    font-size: 25px;
+    font-size: 15px;
   }
   .course-box  ul .active{
-    font-size: 30px;
+    font-size: 17px;
   }
   .course .box_right{
     flex-direction: column;
   }
+  .course-box .course{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .box, .box1{
-    width: 580px;
+    width: 350px;
   }
   .box h3, .box1 h3, .info h3{
-    font-size: 30px;
+    font-size: 22px;
   }
   .emoji_mad, .emoji_sad, .emoji_smile{
-    width: 550px;
-    height: 70px;
+    width: 330px;
+    height: 50px;
   }
   .emoji_mad i, .emoji_sad i, .emoji_smile i{
-    font-size: 65px;
+    font-size: 35px;
   }
   .emoji_smile p, .emoji_mad p, .emoji_sad p{
-    font-size: 28px;
+    font-size: 18px;
   }
   .box_data{
-    height: 287.5px;
-    width: 280px;
+    height: 230px;
+    width: 350px;
   }
   .box_data p{
-    font-size: 30px;
-    padding-top: 20px;
-    padding-bottom: 30px;
+    font-size: 18px;
+    padding-top: 5px;
+    padding-bottom: 10px;
   }
   .box_data .info p i{
     font-size: 30px;
