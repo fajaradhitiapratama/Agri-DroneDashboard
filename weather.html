@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/assets/agridrone-logo.jpg" />
-    <title>Temperature Node | Agri-Drone</title>
-    <link rel="stylesheet" href="/node/node-style/temp.css" />
+    <title>Dashboard | Agri-Drone</title>
+    <link rel="stylesheet" href="/style/weather.css" />
     <!-- Font Awesome Cdn Link -->
     <script
       src="https://kit.fontawesome.com/ff4f981f32.js"
@@ -18,33 +18,27 @@
       <nav>
         <ul id="myList">
           <li>
-            <a href="#" class="logo">
+            <a href="soil.html" class="logo">
               <img src="/assets/agridrone-logo.jpg" alt="" />
               <span class="nav-item">DashBoard</span>
             </a>
           </li>
           <li>
-            <a href="#" onclick="toggleActiveClass(this)">
-              <i class="fas fa-solid fa-cloud-sun"></i>
-              <span class="nav-item">Weather Forecast</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" onclick="toggleActiveClass(this)">
+            <a href="soil.html" onclick="toggleActiveClass(this)">
               <i class="fas fa-solid fa-leaf"></i>
-              <span class="nav-item">Soil Forecast</span>
+              <span class="nav-item">Soil</span>
             </a>
           </li>
           <li>
-            <a href="" onclick="toggleActiveClass(this)">
-              <i class="fas fa-users"></i>
-              <span class="nav-item">Our Team</span>
+            <a href="weather.html" onclick="toggleActiveClass(this)">
+              <i class="fas fa-solid fa-cloud-sun"></i>
+              <span class="nav-item">Weather</span>
             </a>
           </li>
           <!-- <li>
-            <a href="" class="logout">
-              <i class="fas fa-sign-out-alt"></i>
-              <span class="nav-item">Log out</span>
+            <a href="" onclick="toggleActiveClass(this)">
+              <i class="fas fa-users"></i>
+              <span class="nav-item">History</span>
             </a>
           </li> -->
         </ul>
@@ -52,7 +46,7 @@
 
       <section class="main">
         <div class="main-top">
-          <h1>Info Node</h1>
+          <h1>7 Days Forecast</h1>
           <i class="fas fa-calendar-days"
             ><h3 class="date" id="date">dd/mm/yyyy</h3></i
           >
@@ -63,31 +57,15 @@
               <div class="content_data">
                 <div class="info_data">
                   <h3 id="dayOfWeek"></h3>
-                  <div class="skill">
-                    <div class="outer">
-                      <div class="inner">
-                        <div id="value-data">__°C</div>
-                      </div>
-                    </div>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      version="1.1"
-                      width="120px"
-                      height="120px"
-                    >
-                      <defs>
-                        <linearGradient id="GradientColor">
-                          <stop offset="0%" stop-color="#c2a346" />
-                          <stop offset="100%" stop-color="#d24545" />
-                        </linearGradient>
-                      </defs>
-                      <circle cx="55" cy="55" r="45" stroke-linecap="round" />
-                    </svg>
-                  </div>
+                  <h3 class="realtime">01.00 WIB</h3>
                 </div>
                 <div class="info_time">
-                  <h3 class="realtime">01.00 WIB</h3>
-                  <i class="fas fa-cloud-showers-heavy"></i>
+                  <div class="nilaiweather">
+                    <p id="windDataS">Wind Speed: __ m/s</p>
+                    <p id="tempData">Temperature: __ °C</p>
+                    <p id="rainfData">Rainfall: __ mm</p>
+                  </div>
+                  <img src="/assets/cloud-sun-solid.svg" alt="" />
                 </div>
               </div>
             </div>
@@ -99,11 +77,8 @@
                 <div class="info_data">
                   <h3 id="nextDay1"></h3>
                 </div>
-                <div class="info_time">
-                  <i class="fas fa-cloud-showers-heavy"></i>
-                </div>
+                <img src="/assets/sun-solid.svg" alt="" />
               </div>
-              <button>View All</button>
             </div>
 
             <div class="card">
@@ -111,11 +86,8 @@
                 <div class="info_data">
                   <h3 id="nextDay2">Monday</h3>
                 </div>
-                <div class="info_time">
-                  <i class="fas fa-cloud-showers-heavy"></i>
-                </div>
+                <img src="/assets/sun-solid.svg" alt="" />
               </div>
-              <button>View All</button>
             </div>
 
             <div class="card">
@@ -123,11 +95,8 @@
                 <div class="info_data">
                   <h3 id="nextDay3"></h3>
                 </div>
-                <div class="info_time">
-                  <i class="fas fa-cloud-showers-heavy"></i>
-                </div>
+                <img src="/assets/cloud-sun-solid.svg" alt="" />
               </div>
-              <button>View All</button>
             </div>
 
             <div class="card">
@@ -135,11 +104,8 @@
                 <div class="info_data">
                   <h3 id="nextDay4"></h3>
                 </div>
-                <div class="info_time">
-                  <i class="fas fa-cloud-showers-heavy"></i>
-                </div>
+                <img src="/assets/cloud-sun-solid.svg" alt="" />
               </div>
-              <button>View All</button>
             </div>
 
             <div class="card">
@@ -147,11 +113,8 @@
                 <div class="info_data">
                   <h3 id="nextDay5"></h3>
                 </div>
-                <div class="info_time">
-                  <i class="fas fa-cloud-showers-heavy"></i>
-                </div>
+                <img src="/assets/sun-solid.svg" alt="" />
               </div>
-              <button>View All</button>
             </div>
 
             <div class="card">
@@ -159,11 +122,8 @@
                 <div class="info_data">
                   <h3 id="nextDay6"></h3>
                 </div>
-                <div class="info_time">
-                  <i class="fas fa-cloud-showers-heavy"></i>
-                </div>
+                <img src="/assets/cloud-sun-solid.svg" alt="" />
               </div>
-              <button>View All</button>
             </div>
           </div>
         </div>
@@ -172,10 +132,8 @@
           <h1>Overviews</h1>
           <div class="course-box">
             <ul id="infoList">
+              <!-- <li id="windDirection" onclick="showInfo('windDirection')">Wind Direction</li> -->
               <li id="windSpeed" onclick="showInfo('windSpeed')">Wind Speed</li>
-              <li id="windDirection" onclick="showInfo('windDirection')">
-                Wind Direction
-              </li>
               <li id="temperature" onclick="showInfo('temperature')">
                 Temperature
               </li>
@@ -192,21 +150,21 @@
                     </p>
                     <i class="emoji-berubah"></i>
                   </div>
-                  <button>View All</button>
                 </div>
               </div>
               <div class="box_right">
                 <div class="box">
+                  <h3>Chart Info</h3>
                   <div class="chart-wrapper">
-                    <canvas
-                      id="myChart"
-                      style="width: 100%; max-width: 400px"
-                    ></canvas>
+                    <!-- <canvas
+                        id="myChart"
+                        style="width: 100%; max-width: 600px"
+                      ></canvas> -->
                   </div>
-                  <button>View All</button>
+                  <!--  -->
                 </div>
 
-                <div class="box">
+                <div class="box1">
                   <h3>Emoji Info</h3>
                   <div class="box_emoji">
                     <div class="emoji_mad">
@@ -229,11 +187,7 @@
         </section>
       </section>
     </div>
-    <script src="/js/clonews.js"></script>
-    <script src="/js/chartjs/rainfallchart.js"></script>
-    <script src="/js/chartjs/tempchart.js"></script>
-    <script src="/js/chartjs/winddirectionchart.js"></script>
-    <script src="/js/chartjs/windspeedchart.js"></script>
+    <script src="/js/weather.js"></script>
     <script src="/js/function/clock.js"></script>
     <script src="/js/function/date.js"></script>
     <script src="/js/function/day.js"></script>
