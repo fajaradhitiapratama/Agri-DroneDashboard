@@ -613,16 +613,17 @@ a:hover:not(.active) {
 /* mobile */
 @media (max-width: 431px) {
   nav {
-    height: 22vh;
-    width: 100%;
+    height: 15vh;
+    width: 970px;
   }
   nav ul {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     list-style-type: none;
+    height: auto;
   }
-  nav ul li{
+  nav ul li {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -656,7 +657,7 @@ a:hover:not(.active) {
     font-size: 35px;
   }
   .main {
-    width: 100%;
+    width: 970px;
     padding: 10px;
   }
 
@@ -667,7 +668,7 @@ a:hover:not(.active) {
     width: 960px;
     padding: 0 10px;
   }
-  .main-top h1{
+  .main-top h1 {
     font-size: 40px;
   }
 
@@ -676,7 +677,7 @@ a:hover:not(.active) {
     margin: 10px 0;
     font-size: 30px;
   }
-  .main-top i .date{
+  .main-top i .date {
     font-size: 20px;
   }
   .main-weather .card_detail{

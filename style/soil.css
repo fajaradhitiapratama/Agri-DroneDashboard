@@ -777,7 +777,7 @@ a:hover:not(.active) {
     display: none;
   }
   nav {
-    height: 130vh;
+    height: 165vh;
     width: 150px;
   }
   a {
@@ -858,27 +858,32 @@ a:hover:not(.active) {
 
 @media (max-width: 431px) {
   nav {
-    height: 22vh;
+    height: 50px;
     width: 100%;
   }
   nav ul {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: space-around;
+    align-items: normal;
     list-style-type: none;
+    height: auto;
+    width: 375px;
+  }
+  .nav-item{
+    margin-left: 0px;
   }
   nav ul li {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
   .logo {
     flex-direction: column;
     align-items: flex-start;
-    padding: 10px 350px 10px 20px;
+    padding: 0px 0px 0px 0px;
   }
   .logo img {
-    width: 120px;
-    height: 120px;
+    width: 50px;
+    height: 50px;
   }
   .logo span {
     font-size: 14px;
@@ -890,18 +895,20 @@ a:hover:not(.active) {
   a {
     width: 100%;
     text-align: center;
-    font-size: 25px;
+    font-size: 15px;
     display: flex;
-    align-items: flex-end;
+    align-items: normal;
+    padding-bottom: 0px;
   }
   a:hover:not(.active) {
     background: white;
   }
   nav .fas {
-    font-size: 35px;
+    font-size: 25px;
+    width: 35px;
   }
   .main {
-    width: 100%;
+    width: 375px;
     padding: 10px;
   }
 
@@ -909,20 +916,20 @@ a:hover:not(.active) {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    width: 960px;
+    width: 365px;
     padding: 0 10px;
+    padding-left: 0px;
   }
-  .main-top h1 {
-    font-size: 40px;
-  }
-
   .main-top i {
     position: static;
     margin: 10px 0;
-    font-size: 30px;
+    font-size: 20px;
   }
   .main-top i .date {
-    font-size: 20px;
+    font-size: 15px;
+  }
+  .course-box ul{
+    justify-content: space-between;
   }
   .course-box ul li {
     font-size: 25px;
@@ -936,11 +943,13 @@ a:hover:not(.active) {
     width: 180px;
   }
   .box {
-    width: 920px;
+    width: 355px;
     height: 480px;
+    display: flex;
+    flex-direction: row;
   }
   .box .mapbox {
-    width: 890px;
+    width: 350px;
     height: 380px;
   }
   .box_cordinate {
@@ -954,7 +963,7 @@ a:hover:not(.active) {
     width: 750px;
   }
   h3 {
-    font-size: 40px;
+    font-size: 24px;
   }
   .longitude,
   .latitude {
