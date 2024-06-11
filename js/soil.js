@@ -1,3 +1,42 @@
+tampilSoil();
+var data_soil;
+async function tampilSoil(){
+
+data_soil = await getDataSoil();
+
+var silede = Object.keys(data_soil);
+var str = '<ul id="infoList">';
+var count = 1;
+
+silede.forEach(function(slide) {
+  str += '<li id="'+slide+'" onclick="showInfo(\''+slide+'\')"> Soil Test '+count+ '</li>';
+  count++;
+})
+
+str += '</ul>';
+document.getElementById("TampilSoil").innerHTML = str;
+
+}
+
+async function getDataSoil(){
+  const response = await fetch("http://localhost:8080/router/tampil_soil");
+  const data = await response.json();
+  return data.data;
+}
+
+async function getHistorySoil(id_alat){
+  const response = await fetch("http://localhost:8080/router/tampil_history_soil",{
+    method: "POST",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({id: id_alat}),
+  });
+  const data = await response.json();
+  return data.data.data;
+}
+
 // Fuzzy Logic Function
 function fuzzyMembership(value, min, max) {
   if (value <= min || value >= max) {
@@ -150,52 +189,35 @@ return marker;
 }
 
 // change value
-function showInfo(type) {
-const infoListItem = document.querySelectorAll("#infoList li");
-infoListItem.forEach((item) => item.classList.remove("active"));
-
-const clickedItem = document.getElementById(type);
-clickedItem.classList.add("active");
-
-if (type === "soil1") {
-  var alat1 = {
-    alat: 1,
-    LAT: -6.82435,
-    LONG: 107.5615,
-    n: 150, 
-    p: 80,
-    k: 70,
-    ph: 4,
-    moisture: 60  
-  };   
-  document.getElementById("infoMoisture").textContent = alat1.moisture + " %";
-  document.getElementById("infopH").textContent = alat1.ph;
-  document.getElementById("infoN").textContent = alat1.n;
-  document.getElementById("infoP").textContent = alat1.p;
-  document.getElementById("infoK").textContent = alat1.k ;
-  document.getElementById("coordinateLat").textContent = alat1.LAT;
-  document.getElementById("coordinateLong").textContent = alat1.LONG;
-  addMarkerSoil1(alat1);
-} else if (type === "soil2") {
-  var alat2 = {
-    alat: 2,
-    LAT: -6.82442,
-    LONG: 107.56175,
-    n: 200,
-    p: 360,
-    k: 420,
-    ph: 2,
-    moisture: 75,
-  };
-  document.getElementById("infoMoisture").textContent = alat2.moisture + " %";
-  document.getElementById("infopH").textContent = alat2.ph;
-  document.getElementById("infoN").textContent = alat2.n;
-  document.getElementById("infoP").textContent = alat2.p;
-  document.getElementById("infoK").textContent = alat2.k ;
-  document.getElementById("coordinateLat").textContent = alat2.LAT;
-  document.getElementById("coordinateLong").textContent = alat2.LONG;
-  addMarkerSoil2(alat2);
-} 
+async function showInfo(type) {
+  var data_history = await getHistorySoil(type)
+  data_history = data_history[data_history.length-1]
+  console.log(data_soil[type])
+  
+  
+  const infoListItem = document.querySelectorAll("#infoList li");
+  infoListItem.forEach((item) => item.classList.remove("active"));
+  
+  const clickedItem = document.getElementById(type);
+  clickedItem.classList.add("active");
+    var alat = {
+      alat: data_soil[type].jenis_iot,
+      LAT: data_soil[type].lat,
+      LONG: data_soil[type].long,
+      n: data_history.N, 
+      p: data_history.P,
+      k: data_history.K,
+      ph: data_history.PH,
+      moisture: data_history.mosit  
+    };   
+    document.getElementById("infoMoisture").textContent = alat.moisture + " %";
+    document.getElementById("infopH").textContent = alat.ph;
+    document.getElementById("infoN").textContent = alat.n;
+    document.getElementById("infoP").textContent = alat.p;
+    document.getElementById("infoK").textContent = alat.k ;
+    document.getElementById("coordinateLat").textContent = alat.LAT;
+    document.getElementById("coordinateLong").textContent = alat.LONG;
+    addMarkerSoil1(alat); 
 }
 
 // navbar
