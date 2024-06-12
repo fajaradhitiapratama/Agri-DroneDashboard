@@ -24,14 +24,14 @@ async function tampilSoil() {
 }
 
 async function getDataSoil() {
-  const response = await fetch("http://localhost:8080/router/tampil_soil");
+  const response = await fetch("https://backend-agridrone.vercel.app/router/tampil_soil/");
   const data = await response.json();
   return data.data;
 }
 
 async function getHistorySoil(id_alat) {
   const response = await fetch(
-    "http://localhost:8080/router/tampil_history_soil",
+    "https://backend-agridrone.vercel.app/router/tampil_history_soil/",
     {
       method: "POST",
       headers: {
