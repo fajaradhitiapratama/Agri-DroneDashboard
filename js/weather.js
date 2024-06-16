@@ -5,6 +5,19 @@ const Temperature = 33;
 const rainFall = 4;
 const windspeed = 4;
 
+showWeater();
+
+function showWeater(){
+  var str = "";
+  for(var i = 1; i<=6; i++){
+    str += "<div class='card'> <div class='content_data'> <div class='info_data'> <h3 id='nextDay"+i+"'></h3> </div> <img src='/assets/sun-solid.svg' /> </div> </div>"
+
+  }
+  
+  document.getElementById("tampilWeather").innerHTML = str;
+
+}
+
 // change value
 function showInfo(type) {
   const infoListItem = document.querySelectorAll("#infoList li");

@@ -207,6 +207,7 @@ a:hover:not(.active) {
   background: linear-gradient(to bottom, #5690d7, rgb(255, 255, 255));
   border-top-left-radius: 10px;
   /* border-top-right-radius: 10px;  */
+  width: 135px;
 }
 
 .main-weather .card .info_data {
@@ -239,6 +240,11 @@ a:hover:not(.active) {
 }
 .main-weather .card i {
   font-size: 22px;
+}
+
+#tampilWeather{
+  display: flex;
+  /* width: 400px; */
 }
 
 /* Courses */
