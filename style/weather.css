@@ -487,6 +487,11 @@ a:hover:not(.active) {
 
 /* tablet */
 @media (max-width: 885px) {
+  #tampilWeather{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   .logo {
     flex-wrap: wrap;
     justify-content: center;
@@ -575,7 +580,7 @@ a:hover:not(.active) {
     border-radius: 20px;
     border-top-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    /* width: 155px; */
+    width: 155px;
   }
   .main-weather .card_right {
     flex-wrap: wrap;
@@ -618,6 +623,15 @@ a:hover:not(.active) {
 
 /* mobile */
 @media (max-width: 431px) {
+  #tampilWeather{
+    display: flex;
+    justify-content: space-evenly;
+    column-gap: 30px;
+    margin-right: 20px;
+  }
+  .main-weather .card .content_data{
+    width: 120px;
+  }
   nav {
     height: 50px;
     width: 100%;
@@ -709,7 +723,7 @@ a:hover:not(.active) {
     height: 55px;
   }
   .main-weather .card {
-    height: 150px;
+    height: auto;
     border-bottom-right-radius: 0px;
   }
   .main-weather .card_right{
