@@ -83,11 +83,11 @@ function categorizeValues(nitrogen, phosphorous, potassium, ph, moisture) {
       moisture: { min: 20, max: 60 },
     },
     good: {
-      nitrogen: { min: 200, max: 1000 },
-      phosphorous: { min: 12, max: 1000 },
-      potassium: { min: 155, max: 1000 },
-      ph: { min: 7.5, max: 1000 },
-      moisture: { min: 60, max: 1000 },
+      nitrogen: { min: 200, max: 300 },
+      phosphorous: { min: 12, max: 300 },
+      potassium: { min: 155, max: 300 },
+      ph: { min: 7.5, max: 300 },
+      moisture: { min: 60, max: 300 },
     },
   };
 
