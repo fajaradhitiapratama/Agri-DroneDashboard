@@ -12,7 +12,9 @@ async function tampilSoil() {
     str +=
       '<li id="' +
       slide +
-      '" class="' + (index === 0 ? 'active' : '') + '" onclick="showInfo(\'' +
+      '" class="' +
+      (index === 0 ? "active" : "") +
+      '" onclick="showInfo(\'' +
       slide +
       "')\"> Soil Test " +
       count +
@@ -246,7 +248,7 @@ async function showInfo(type) {
   var data_history = await getHistorySoil(type);
   data_history = data_history[data_history.length - 1];
 
-  setActiveClass(type);  // Set class active
+  setActiveClass(type); // Set class active
 
   var alat = {
     alat: data_soil[type].jenis_iot,
@@ -265,6 +267,10 @@ async function showInfo(type) {
   document.getElementById("infoK").textContent = alat.k;
   document.getElementById("coordinateLat").textContent = alat.LAT;
   document.getElementById("coordinateLong").textContent = alat.LONG;
+  const currentDate = new Date();
+  const formattedTimestamp = currentDate.toISOString();
+  console.log("Current Timestamp (ISO format):", formattedTimestamp);
+
   addMarkerSoil1(alat);
 
   map.setView([alat.LAT, alat.LONG], 18);
@@ -292,5 +298,5 @@ function myFunction(event) {
 
 // pop up map
 function movemap() {
-  window.location.href = "map_ta.html";
+  window.location.href = "/html/map_ta.html";
 }
