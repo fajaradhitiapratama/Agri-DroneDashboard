@@ -454,6 +454,7 @@ a:hover:not(.active) {
   }
   nav {
     width: 230px;
+    height: 810px;
   }
   a{
     width: 230px;
@@ -520,7 +521,7 @@ a:hover:not(.active) {
     width: 200px;
   }
   .main {
-    width: 618px;
+    width: 638px;
   }
   .main-top {
     width: 618px;
@@ -642,7 +643,7 @@ a:hover:not(.active) {
     align-items: normal;
     list-style-type: none;
     height: auto;
-    width: 375px;
+    width: 438px;
   }
   .nav-item{
     margin-left: 0px;
@@ -683,17 +684,16 @@ a:hover:not(.active) {
     width: 35px;
   }
   .main {
-    width: 375px;
-    padding: 10px;
+    width:431px;
+    padding: 0px;
   }
 
   .main-top {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    width: 365px;
+    width: 431px;
     padding: 0 10px;
-    padding-left: 0px;
   }
   .main-top i {
     position: static;

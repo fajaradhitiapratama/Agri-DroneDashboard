@@ -5,6 +5,25 @@ const Temperature = 33;
 const rainFall = 4;
 const windspeed = 4;
 
+var data_weather;
+
+async function getHistoryWeather(id_alat) {
+  const response = await fetch(
+    "https://backend-agridrone.vercel.app/router/tampil_history_weather/",
+    {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id: id_alat }),
+    }
+  );
+  const data = await response.json();
+  return data.data.data;
+}
+
+
 showWeater();
 
 function showWeater(){
@@ -18,13 +37,33 @@ function showWeater(){
 
 }
 
-// change value
-function showInfo(type) {
+function setActiveClass(type) {
   const infoListItem = document.querySelectorAll("#infoList li");
   infoListItem.forEach((item) => item.classList.remove("active"));
 
   const clickedItem = document.getElementById(type);
   clickedItem.classList.add("active");
+}
+
+// change value
+async function showInfo(type) {
+  var data_history = await getHistoryWeather(type);
+  data_history = data_history[data_history.length - 1];
+
+  setActiveClass();
+  var alat = {
+    alat: data_weather[type].jenis_iot,
+    humidity: data_weather.Humid,
+    intens: data_weather.Intensity,
+    pressure: data_weather.Pressure,
+    rain: data_weather.Rain,
+    temp: data_weather.Temp,
+    windd: data_weather.Wind_dir,
+    winds: data_weather.Wind_speed,
+  }
+
+  document.getElementById("humidData").textContent = alat.humidity;
+  document.getElementById("tempData").textContent = alat.temp + "°C";
 
   const icon = document.getElementById("icon");
   const infoValue = document.getElementById("infoValue");
