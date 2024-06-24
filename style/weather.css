@@ -116,6 +116,7 @@ a:hover:not(.active) {
 .main-weather .card_right {
   display: flex;
   flex-wrap: nowrap;
+  justify-content: center;
   flex: 1;
 }
 
@@ -123,7 +124,8 @@ a:hover:not(.active) {
 .main-weather .card_detail {
   display: grid;
   justify-items: stretch;
-  width: 25%;
+  width: 300px;
+  height: 180px;
   margin: 10px;
   background: #fff;
   text-align: center;
@@ -159,10 +161,10 @@ a:hover:not(.active) {
 .main-weather .card_detail .info_time {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-between;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 30px;
+  justify-content: flex-end;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 10px;
   padding-top: 0px;
 }
 .main-weather .card_detail .info_time .nilaiweather {
@@ -224,7 +226,7 @@ a:hover:not(.active) {
 }
 
 .main-weather img {
-  height: 50px;
+  height: 75px;
 }
 
 .main-weather .card button {
@@ -283,6 +285,8 @@ a:hover:not(.active) {
 }
 .course-box .course {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .course .box_left {
@@ -297,7 +301,7 @@ a:hover:not(.active) {
 
 /* box-left */
 .box_data {
-  width: 150px;
+  width: 250px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
