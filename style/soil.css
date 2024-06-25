@@ -519,6 +519,23 @@ a:hover:not(.active) {
   margin-bottom: 100px;
   margin: 5px;
 }
+.box .mapbox a{
+  color: #000;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  transition: .3s;
+  border-radius: 30px;
+}
+.box .mapbox a:hover{
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  background-color: #337357;
+  color: white;
+  font-weight: bold;
+}
 .box .mapbox .mapsize {
   width: 100%;
   height: 100%;
@@ -812,7 +829,7 @@ a:hover:not(.active) {
   }
   .latitude p,
   .longitude p {
-    font-size: 15px;
+    font-size: 13px;
   }
   .box {
     width: 410px;
@@ -986,7 +1003,7 @@ a:hover:not(.active) {
   }
   .latitude p,
   .longitude p {
-    font-size: 28px;
+    font-size: 22px;
   }
   /* .course-box .course .box_left{
     display: flex;
