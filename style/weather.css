@@ -497,18 +497,40 @@ a:hover:not(.active) {
 }
 
 @media (max-width: 1280px) {
+  #tampilWeather{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 680px;
+  }
   .main {
     max-width: 1050px;
   }
   nav {
     width: 230px;
-    height: 810px;
+    height: 1030px;
   }
   a{
     width: 230px;
   }
+  .main-weather .card_detail{
+    height: 370px;
+  }
+  .main-weather .card_detail img{
+    height: 100px;
+  }
+  .main-weather .card{
+    height: 175px;
+  }
+  .main-weather .card_detail .info_data{
+    height: 150px;
+  }
+  .main-weather .card_detail .info_time{
+    height: 180px;
+    align-items: flex-end;
+  }
   .main-weather .card_detail .info_data h3 {
-    font-size: 20px;
+    font-size: 25px;
   }
   .main-weather .card .info_data h3 {
     font-size: 18px;
@@ -519,6 +541,7 @@ a:hover:not(.active) {
   .main-weather .card .content_data {
     padding: 0px;
     padding-top: 10px;
+    width: 100%;
   }
   .main-weather .card_detail .info_time .nilaiweather p {
     font-size: 13px;
@@ -531,6 +554,9 @@ a:hover:not(.active) {
   .emoji_sad,
   .emoji_smile {
     width: 350px;
+  }
+  .course-box{
+    width: 980px;
   }
 }
 
@@ -555,7 +581,7 @@ a:hover:not(.active) {
     display: none;
   }
   nav {
-    height: 130vh;
+    height: 1550px;
     width: 150px;
   }
   a {
@@ -580,11 +606,13 @@ a:hover:not(.active) {
     align-items: center;
   }
   .main-weather .card_detail {
-    width: 520px;
+    width: 570px;
+    height: 250px;
     border-radius: 40px;
     border-bottom-right-radius: 0px;
   }
   .main-weather .card_detail .info_data {
+    height: 100px;
     border-top-right-radius: 40px;
     padding-right: 20px;
     padding-left: 20px;
@@ -613,12 +641,12 @@ a:hover:not(.active) {
     padding-right: 20px;
     padding-top: 0px;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
   }
   .main-weather .card_detail .info_time img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
   }
   .main-weather .card .content_data {
     display: flex;
@@ -629,7 +657,7 @@ a:hover:not(.active) {
     border-radius: 20px;
     border-top-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    width: 155px;
+    width: 170px;
   }
   .main-weather .card_right {
     flex-wrap: wrap;
@@ -637,12 +665,21 @@ a:hover:not(.active) {
   .course .box_right {
     flex-direction: column-reverse;
   }
+  .course-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 625px;
+  }
   .course-box .course {
+    width: 620px;
     display: flex;
     align-items: flex-start;
+    justify-content: center;
     flex-direction: row-reverse;
   }
   .box_data {
+    width: 120px;
     height: 165px;
   }
   .box1,
