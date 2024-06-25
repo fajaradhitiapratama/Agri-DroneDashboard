@@ -372,6 +372,7 @@ a:hover:not(.active) {
 .box_data p {
   font-size: 18px;
   margin-top: 5px;
+  text-transform: lowercase;
 }
 .box_data button {
   background: rgb(70, 144, 187);
@@ -517,17 +518,19 @@ a:hover:not(.active) {
     height: 370px;
   }
   .main-weather .card_detail img{
-    height: 100px;
+    height: 130px;
   }
   .main-weather .card{
     height: 175px;
   }
   .main-weather .card_detail .info_data{
-    height: 150px;
+    height: 120px;
   }
   .main-weather .card_detail .info_time{
     height: 180px;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
+    padding-right: 0px;
   }
   .main-weather .card_detail .info_data h3 {
     font-size: 25px;
@@ -724,11 +727,11 @@ a:hover:not(.active) {
   }
   nav ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: normal;
     list-style-type: none;
     height: auto;
-    width: 438px;
+    width: 100%;
   }
   .nav-item{
     margin-left: 0px;
@@ -745,6 +748,7 @@ a:hover:not(.active) {
   .logo img {
     width: 50px;
     height: 50px;
+    margin-right: 90px;
   }
   .logo span {
     font-size: 14px;
@@ -760,6 +764,8 @@ a:hover:not(.active) {
     display: flex;
     align-items: normal;
     padding-bottom: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   a:hover:not(.active) {
     background: white;
@@ -769,7 +775,7 @@ a:hover:not(.active) {
     width: 35px;
   }
   .main {
-    width:431px;
+    width:100%;
     padding: 0px;
   }
 
@@ -777,7 +783,7 @@ a:hover:not(.active) {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    width: 431px;
+    width: 100%;
     padding: 0 10px;
   }
   .main-top i {
@@ -789,17 +795,23 @@ a:hover:not(.active) {
     font-size: 15px;
   }
   .main-weather .card_detail{
-    width: 350px;
+    width: 300px;
+    height: 180px;
+  }
+  .main-weather .card_detail .info_time img {
+    width: 75px;
+    height: 75px;
   }
   .main-weather .card_detail .info_data{
     justify-content: space-between;
   }
   .main-weather .card_detail .info_time{
+    height: 70px;
     justify-content: space-around;
     padding-bottom: 20px;
   }
   .main-weather .card_detail .info_data h3{
-    font-size: 30px;
+    font-size: 28px;
   }
   .main-weather .card_detail .info_time .nilaiweather p{
     font-size: 18px;
@@ -817,11 +829,14 @@ a:hover:not(.active) {
     width: 370px;
   }
   .main-weather .card .info_data h3{
-    font-size: 15px;
+    font-size: 18px;
   }
   .main-course h1{
     font-size: 24px;
     padding-left: 10px;
+  }
+  .course-box{
+    width: 100%;
   }
   .course-box ul li{
     font-size: 15px;
@@ -833,8 +848,9 @@ a:hover:not(.active) {
     flex-direction: column;
   }
   .course-box .course{
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
   }
   .box, .box1{
@@ -854,8 +870,8 @@ a:hover:not(.active) {
     font-size: 18px;
   }
   .box_data{
-    height: 230px;
-    width: 350px;
+    height: 140px;
+    width: 150px;
   }
   .box_data p{
     font-size: 18px;

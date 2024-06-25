@@ -863,11 +863,11 @@ a:hover:not(.active) {
   }
   nav ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: normal;
     list-style-type: none;
     height: auto;
-    width: 375px;
+    width: 100%;
   }
   .nav-item{
     margin-left: 0px;
@@ -884,6 +884,7 @@ a:hover:not(.active) {
   .logo img {
     width: 50px;
     height: 50px;
+    margin-right: 90px;
   }
   .logo span {
     font-size: 14px;
@@ -899,6 +900,8 @@ a:hover:not(.active) {
     display: flex;
     align-items: normal;
     padding-bottom: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   a:hover:not(.active) {
     background: white;
@@ -908,8 +911,8 @@ a:hover:not(.active) {
     width: 35px;
   }
   .main {
-    width: 375px;
-    padding: 10px;
+    width: 100%;
+    padding: 0px;
   }
 
   .main-top {

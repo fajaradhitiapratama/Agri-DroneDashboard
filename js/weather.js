@@ -82,13 +82,13 @@ function updateInfo(data) {
   // Log untuk infoMap
   console.log("Updating info with:", infoMap);
 
-  document.getElementById("humidityData").textContent = infoMap.humidity;
-  document.getElementById("intensityData").textContent = infoMap.intensity;
-  document.getElementById("pressureData").textContent = infoMap.pressure;
-  document.getElementById("rainData").textContent = infoMap.rain;
+  document.getElementById("humidityData").textContent = infoMap.humidity + " %";
+  document.getElementById("intensityData").textContent = infoMap.intensity + " mm/h";
+  document.getElementById("pressureData").textContent = infoMap.pressure + " hPa";
+  document.getElementById("rainData").textContent = infoMap.rain + " Bit";
   document.getElementById("tempData").textContent = infoMap.temp + "°C";
   document.getElementById("winddirData").textContent = infoMap.winddir;
-  document.getElementById("windspeedData").textContent = infoMap.windspeed;
+  document.getElementById("windspeedData").textContent = infoMap.windspeed + " m/s";
 }
 
 // Menjalankan showWeater() pada awal
