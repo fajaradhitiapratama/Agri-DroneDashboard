@@ -84,7 +84,7 @@ a:hover:not(.active) {
 .main {
   position: relative;
   padding: 20px;
-  /* width: 1190px; */
+  width: 1270px;
 }
 .main-top {
   display: flex;
@@ -255,7 +255,9 @@ a:hover:not(.active) {
   text-transform: capitalize;
 }
 .course-box {
-  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 1200px;
   height: 100%;
   padding: 10px 10px 30px 10px;
   margin-top: 10px;
@@ -284,9 +286,10 @@ a:hover:not(.active) {
   border-bottom: 1px solid #000;
 }
 .course-box .course {
+  width: 920px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .course .box_left {
@@ -301,7 +304,7 @@ a:hover:not(.active) {
 
 /* box-left */
 .box_data {
-  width: 250px;
+  width: 205px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -321,12 +324,53 @@ a:hover:not(.active) {
   align-items: center;
 }
 
+.box_data_1 {
+  width: 250px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  background: #dfe9f5;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.box_data_1 .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.box_data_1 .info h3{
+  padding-bottom: 10px;
+}
+
+.box_data_1 img{
+  width: 50px;
+  height: 50px;
+}
+.box_data_1 .bagiancuaca{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
+}
+.box_data_1 .bagiancuaca h4{
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
 .box_data .info p i {
-  font-size: 14px;
+  font-size: 18px;
   color: #000;
 }
 .box_data p {
-  font-size: 12px;
+  font-size: 18px;
   margin-top: 5px;
 }
 .box_data button {

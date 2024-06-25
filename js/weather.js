@@ -93,3 +93,38 @@ function updateInfo(data) {
 
 // Menjalankan showWeater() pada awal
 showWeater();
+
+
+const cuaca = {
+  0: "assets/smog-solid.svg",
+  1: "assets/cloud-sun-solid.svg",
+  2: "assets/cloud-rain-solid.svg",
+  3: "assets/sun-solid.svg"
+};
+
+// Fungsi untuk mendapatkan data dari API
+async function getCuaca() {
+  try {
+      const response = await fetch('URL_API_ANDA'); // Ganti dengan URL API Anda
+      if (!response.ok) {
+          throw new Error('Jaringan bermasalah');
+      }
+      const data = await response.json();
+      
+      // Misalkan API mengembalikan objek dengan properti status
+      const status = data.status;
+      
+      // Ganti src dari img dengan id 'cuacaImg' berdasarkan status
+      const cuacaImg = document.getElementById('cuacaImg');
+      if (cuacaImg && cuaca[status]) {
+          cuacaImg.src = cuaca[status];
+      } else {
+          console.error('Gambar cuaca tidak ditemukan untuk status:', status);
+      }
+  } catch (error) {
+      console.error('Terjadi kesalahan:', error);
+  }
+}
+
+// Panggil fungsi untuk mendapatkan data cuaca dari API
+getCuaca();
