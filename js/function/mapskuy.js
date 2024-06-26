@@ -1,34 +1,4 @@
-// Inisialisasi peta
-var map = L.map("map").setView([-6.9760917, 107.7256277], 18);
-
-// Layer OSM
-var osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  attribution:
-    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-});
-osm.addTo(map);
-
-// Layer satelit
-var googleSat = L.tileLayer(
-  "http://{s}.google.com/vt?lyrs=s&x={x}&y={y}&z={z}",
-  {
-    maxZoom: 20,
-    subdomains: ["mt0", "mt1", "mt2", "mt3"],
-  }
-);
-googleSat.addTo(map);
-
-var myStyle = {
-  color: "#ff0000",
-  weight: 4,
-  opacity: 1,
-};
-
-// GeoJSON
-L.geoJSON(mapgeoJSON, {
-  style: myStyle,
-}).addTo(map);
-
+var data_soil;
 async function getDataSoil() {
   const response = await fetch(
     "https://backend-agridrone.vercel.app/router/tampil_soil/"
@@ -53,7 +23,6 @@ async function getHistorySoil(id_alat) {
   return data.data.data;
 }
 
-// Fungsi fuzzy logic
 function fuzzyMembership(value, min, max) {
   if (value <= min || value >= max) {
     return 0;
@@ -69,25 +38,25 @@ function fuzzyMembership(value, min, max) {
 function categorizeValues(nitrogen, phosphorous, potassium, ph, moisture) {
   const categories = {
     poor: {
-      nitrogen: { min: 0, max: 150 },
-      phosphorous: { min: 160, max: 200 },
-      potassium: { min: 200, max: 250 },
-      ph: { min: 0, max: 6 },
-      moisture: { min: 0, max: 20 },
+      nitrogen: { min: 0, max: 149 },
+      phosphorous: { min: 0, max: 5 },
+      potassium: { min: 0, max: 64 },
+      ph: { min: 0, max: 5 },
+      moisture: { min: 0, max: 19 },
     },
     moderate: {
-      nitrogen: { min: 151, max: 200 },
-      phosphorous: { min: 201, max: 350 },
-      potassium: { min: 251, max: 400 },
+      nitrogen: { min: 150, max: 200 },
+      phosphorous: { min: 6, max: 12 },
+      potassium: { min: 65, max: 155 },
       ph: { min: 6, max: 7.5 },
       moisture: { min: 20, max: 60 },
     },
     good: {
-      nitrogen: { min: 201, max: 250 },
-      phosphorous: { min: 351, max: 500 },
-      potassium: { min: 401, max: 600 },
-      ph: { min: 7.5, max: 14 },
-      moisture: { min: 61, max: 80 },
+      nitrogen: { min: 201, max: 300 },
+      phosphorous: { min: 13, max: 300 },
+      potassium: { min: 156, max: 300 },
+      ph: { min: 7.6, max: 14 },
+      moisture: { min: 61, max: 100 },
     },
   };
 
@@ -148,17 +117,45 @@ function categorizeValues(nitrogen, phosphorous, potassium, ph, moisture) {
   return chosenCategory;
 }
 
-var tambahkanMarker = function (data) {
+var markers = [];
+
+// Fungsi untuk menambahkan marker
+function addMarker(data) {
+  var marker = tambahkanMarker(data);
+  markers.push(marker);
+}
+
+// Fungsi untuk menghapus semua marker
+function removeMarkers() {
+  markers.forEach((marker) => {
+    map.removeLayer(marker);
+  });
+  markers = [];
+}
+
+// Fungsi untuk menambahkan marker dengan popup
+function tambahkanMarker(data) {
+  // Tentukan kategori tanah menggunakan logika Fuzzy
+  const category = categorizeValues(
+    data.n,
+    data.p,
+    data.k,
+    data.ph,
+    data.moisture
+  );
+
+  // Tentukan warna ikon berdasarkan kategori tanah
   var iconColor;
-  if (data.category === "poor") {
+  if (category === "poor") {
     iconColor = "red";
-  } else if (data.category === "moderate") {
+  } else if (category === "moderate") {
     iconColor = "yellow";
   } else {
     iconColor = "green";
   }
 
-  L.marker([data.LAT, data.LONG], {
+  // Buat marker dengan popup
+  var marker = L.marker([data.LAT, data.LONG], {
     icon: L.divIcon({
       className: "custom-icon " + iconColor,
       iconSize: [15, 15],
@@ -166,53 +163,15 @@ var tambahkanMarker = function (data) {
   })
     .bindPopup(
       `
-      <b>Alat ${data.alat}</b><br>
-      N: ${data.n}<br>
-      P: ${data.p}<br>
-      K: ${data.k}<br>
-      pH: ${data.ph}<br>
-      Moisture: ${data.moisture}`
+    <b>Alat ${data.alat}</b><br>
+    N: ${data.n}<br>
+    P: ${data.p}<br>
+    K: ${data.k}<br>
+    pH: ${data.ph}<br>
+    Moisture: ${data.moisture}`
     )
     .addTo(map);
-};
 
-async function showInfo(type, data_soil) {
-  var data_history = await getHistorySoil(type);
-  if (data_history && data_history.length > 0) {
-    data_history = data_history[data_history.length - 1];
-    var alat = {
-      alat: data_soil.jenis_iot,
-      LAT: parseFloat(data_soil.lat),
-      LONG: parseFloat(data_soil.long),
-      n: data_history.N,
-      p: data_history.P,
-      k: data_history.K,
-      ph: data_history.PH,
-      moisture: data_history.mosit,
-    };
-    const category = categorizeValues(
-      alat.n,
-      alat.p,
-      alat.k,
-      alat.ph,
-      alat.moisture
-    );
-    tambahkanMarker({ ...alat, category });
-  } else {
-    console.error(
-      "Tidak ada data history untuk alat dengan mac_address:",
-      type
-    );
-  }
+  // Kembalikan marker yang dibuat
+  return marker;
 }
-
-async function init() {
-  const dataSoil = await getDataSoil();
-  const dataArray = Object.entries(dataSoil); // Mengubah objek menjadi array pasangan kunci-nilai
-
-  for (const [key, value] of dataArray) {
-    await showInfo(key, value);
-  }
-}
-
-init();
