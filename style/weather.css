@@ -322,6 +322,7 @@ a:hover:not(.active) {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .box_data_1 {
@@ -346,22 +347,28 @@ a:hover:not(.active) {
   align-items: center;
 }
 .box_data_1 .info h3{
-  padding-bottom: 10px;
+  text-align: center;
 }
 
 .box_data_1 img{
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
+  margin-right: 20px;
+  margin-left: 10px;
 }
 .box_data_1 .bagiancuaca{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  
+  background-color: #fff;
+  width: 200px;
+  border-radius: 10px;
 }
 .box_data_1 .bagiancuaca h4{
+  width: 200px;
   display: flex;
   align-items: center;
+  padding-top: 10px;
   padding-bottom: 10px;
 }
 

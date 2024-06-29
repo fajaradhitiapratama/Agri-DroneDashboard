@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/assets/agridrone-logo.jpg" />
-    <title>Dashboard | Agri-Drone</title>
+    <title>Dasbor | Agri-Drone</title>
     <link rel="stylesheet" href="/style/soil.css" />
     <link rel="stylesheet" href="/style/leaflet.css" />
     <!-- Font Awesome Cdn Link -->
@@ -30,19 +30,19 @@
           <li>
             <a href="index.html" class="logo">
               <img src="/assets/agridrone-logo.jpg" alt="" />
-              <span class="nav-item">DashBoard</span>
+              <span class="nav-item">Dasbor</span>
             </a>
           </li>
           <li>
             <a href="index.html" onclick="toggleActiveClass(this)">
               <i class="fas fa-solid fa-leaf"></i>
-              <span class="nav-item">Soil</span>
+              <span class="nav-item">Tanah</span>
             </a>
           </li>
           <li>
             <a href="/html/weather.html" onclick="toggleActiveClass(this)">
               <i class="fas fa-solid fa-cloud-sun"></i>
-              <span class="nav-item">Weather</span>
+              <span class="nav-item">Cuaca</span>
             </a>
           </li>
 
@@ -57,23 +57,17 @@
 
       <section class="main">
         <div class="main-top">
-          <h1>Today Overviews</h1>
+          <h1>Hasil Data Pengukuran</h1>
           <i class="fas fa-calendar-days"
             ><h3 class="date" id="date">dd/mm/yyyy</h3></i
           >
         </div>
         <section class="main-course">
           <div class="course-box">
-            <!-- <ul id="infoList">
-              <li id="soil1" onclick="showInfo('soil1')">Soil Test 1</li>
-              <li id="soil2" onclick="showInfo('soil2')">Soil Test 2</li>
-              <li id="soil3" onclick="showInfo('soil3')">Soil Test 3</li>
-              <li id="all" onclick="showInfo('all')">All Node</li>
-            </ul> -->
             <div id="TampilSoil"></div>
             <div class="position">
               <div class="box-lokasi">
-                <h3>Position</h3>
+                <h3>Lokasi</h3>
                 <div class="box_cordinate">
                   <div class="latitude">
                     <h4><i class="fa-solid fa-location-dot"></i> Latitude</h4>
@@ -87,10 +81,10 @@
               </div>
               <div class="peta">
                 <div class="box">
-                  <h3>Fertility Mapping Results</h3>
+                  <h3>Peta Kesuburan Tanah</h3>
                   <div class="mapbox">
                     <div class="mapsize" id="map"></div>
-                    <a href = "/html/map_ta.html">View Map</a>
+                    <a href = "/html/map_ta.html">Lihat Peta</a>
                   </div>
                 </div>
               </div>
@@ -100,7 +94,7 @@
               <div class="box_left" id="infoBox">
                 <div class="box_data">
                   <div class="info">
-                    <div class="popup" onclick="myFunction(event)">Moisture
+                    <div class="popup" onclick="myFunction(event)">Kelembapan
                       <span class="popuptext" id="myPopup">Poor : <20% <br>
                       Moderate: 20% - 60% <br>
                       Good: 61% - 80% </span>
@@ -166,19 +160,19 @@
               </div>
               <div class="fertily-info">
                 <div class="box-fertility">
-                  <h3>Fertility</h3>
+                  <h3>Keterangan Kesuburan</h3>
                   <div class="box_info_map">
                     <div class="emoji_red">
                       <i class="fa-solid fa-circle"></i>
-                      <p>This area have Poor Fertility</p>
+                      <p>Daerah ini mempunyai kesuburan yang buruk</p>
                     </div>
                     <div class="emoji_green">
                       <i class="fa-solid fa-circle"></i>
-                      <p>This area have Good Fertility</p>
+                      <p>Daerah ini memiliki Kesuburan yang Baik</p>
                     </div>
                     <div class="emoji_yellow">
                       <i class="fa-solid fa-circle"></i>
-                      <p>This area have Moderate Fertility</p>
+                      <p>Daerah ini mempunyai tingkat kesuburan sedang</p>
                     </div>
                   </div>
                 </div>

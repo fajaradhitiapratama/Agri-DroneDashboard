@@ -13,7 +13,7 @@ async function tampilSoil() {
       '<li id="' +
       slide +
       '" class="' +
-      (index === 0 ? "active" : "") +
+      (index === 1 ? "active" : "") +
       '" onclick="showInfo(\'' +
       slide +
       "')\"> Soil Test " +
@@ -24,10 +24,8 @@ async function tampilSoil() {
 
   str += "</ul>";
   document.getElementById("TampilSoil").innerHTML = str;
-
-  // Panggil showInfo untuk item pertama untuk menampilkan detailnya secara default
   if (silede.length > 0) {
-    showInfo(silede[0]);
+    showInfo(silede[1]);
   }
 }
 

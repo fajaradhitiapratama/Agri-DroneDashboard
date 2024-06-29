@@ -1,6 +1,6 @@
 // day update
 var currentDate = new Date();
-var weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+var weekdays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
 var dayOfWeek = currentDate.getDay();
 document.getElementById('dayOfWeek').textContent = weekdays[dayOfWeek];
 var daysUntilWednesday = [];
