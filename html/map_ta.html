@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/assets/agridrone-logo.jpg" />
-    <title>Dashboard | Agri-Drone</title>
+    <title>Dasbor | Agri-Drone</title>
     <link rel="stylesheet" href="/style/map_ta.css" />
     <link rel="stylesheet" href="/style/leaflet.css" />
     <!-- Font Awesome Cdn Link -->
@@ -22,19 +22,19 @@
           <li>
             <a href="/index.html" class="logo">
               <img src="/assets/agridrone-logo.jpg" alt="" />
-              <span class="nav-item">DashBoard</span>
+              <span class="nav-item">Dasbor</span>
             </a>
           </li>
           <li>
             <a href="/index.html" onclick="toggleActiveClass(this)">
               <i class="fas fa-solid fa-leaf"></i>
-              <span class="nav-item">Soil</span>
+              <span class="nav-item">Tanah</span>
             </a>
           </li>
           <li>
             <a href="/html/weather.html" onclick="toggleActiveClass(this)">
               <i class="fas fa-solid fa-cloud-sun"></i>
-              <span class="nav-item">Weather</span>
+              <span class="nav-item">Cuaca</span>
             </a>
           </li>
         </ul>
@@ -42,7 +42,7 @@
 
       <section class="main">
         <div class="main-top">
-          <h1>Map of Soil Test</h1>
+          <h1>Peta Soil Test</h1>
           <i class="fas fa-calendar-days"
             ><h3 class="date" id="date">dd/mm/yyyy</h3></i
           >
@@ -52,10 +52,10 @@
             <div class="position">
               <div>
                 <div class="box">
-                  <h3>Fertility Mapping Results</h3>
+                  <h3>Peta Kesuburan Tanah</h3>
                   <div class="mapbox">
                     <div class="mapsize" id="map"></div>
-                    <button onclick="move()">Back Dashboard</button>
+                    <button onclick="move()">Kembali</button>
                     <script>
                       function move(){
                         window.location.href = "/index.html"

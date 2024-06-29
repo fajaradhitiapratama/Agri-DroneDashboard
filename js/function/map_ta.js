@@ -69,25 +69,25 @@ function fuzzyMembership(value, min, max) {
 function categorizeValues(nitrogen, phosphorous, potassium, ph, moisture) {
   const categories = {
     poor: {
-      nitrogen: { min: 0, max: 150 },
-      phosphorous: { min: 160, max: 200 },
-      potassium: { min: 200, max: 250 },
-      ph: { min: 0, max: 6 },
-      moisture: { min: 0, max: 20 },
+      nitrogen: { min: 0, max: 149 },
+      phosphorous: { min: 0, max: 5 },
+      potassium: { min: 0, max: 64 },
+      ph: { min: 0, max: 5 },
+      moisture: { min: 0, max: 19 },
     },
     moderate: {
-      nitrogen: { min: 151, max: 200 },
-      phosphorous: { min: 201, max: 350 },
-      potassium: { min: 251, max: 400 },
+      nitrogen: { min: 150, max: 200 },
+      phosphorous: { min: 6, max: 12 },
+      potassium: { min: 65, max: 155 },
       ph: { min: 6, max: 7.5 },
       moisture: { min: 20, max: 60 },
     },
     good: {
-      nitrogen: { min: 201, max: 250 },
-      phosphorous: { min: 351, max: 500 },
-      potassium: { min: 401, max: 600 },
-      ph: { min: 7.5, max: 14 },
-      moisture: { min: 61, max: 80 },
+      nitrogen: { min: 201, max: 300 },
+      phosphorous: { min: 13, max: 300 },
+      potassium: { min: 156, max: 300 },
+      ph: { min: 7.6, max: 14 },
+      moisture: { min: 61, max: 100 },
     },
   };
 
