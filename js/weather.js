@@ -33,18 +33,6 @@ async function getHistoryWeather(id_alat) {
   }
 }
 
-function showWeater() {
-  var str = "";
-  for (var i = 1; i <= 6; i++) {
-    str +=
-      "<div class='card'><div class='content_data'> <div class='info_data'> <h3 id='nextDay" +
-      i +
-      "'></h3> </div> <img src='/assets/sun-solid.svg' /> </div> </div>";
-  }
-
-  document.getElementById("tampilWeather").innerHTML = str;
-}
-
 async function showInfo(id_alat) {
   try {
     const data_history = await getHistoryWeather(id_alat);
@@ -91,16 +79,32 @@ function updateInfo(data) {
   document.getElementById("windspeedData").textContent = infoMap.windspeed + " m/s";
 }
 
-// Menjalankan showWeater() pada awal
-showWeater();
+function showWeater() {
+  var str = "";
+  const cuacaIndexMap = [2, 2, 2, 2, 1, 3]; // Urutan indeks cuaca sesuai permintaan
 
+  for (var i = 1; i <= 6; i++) {
+    var cuacaIndex = cuacaIndexMap[i - 1]; // Ambil indeks cuaca dari cuacaIndexMap
+    var imgSrc = cuaca[cuacaIndex];
+    
+    str +=
+      "<div class='card'><div class='content_data'> <div class='info_data'> <h3 id='nextDay" +
+      i +
+      "'>Day " + i + "</h3> </div> <img src='" + imgSrc + "' /> </div> </div>";
+  }
+
+  document.getElementById("tampilWeather").innerHTML = str;
+}
 
 const cuaca = {
-  0: "assets/smog-solid.svg",
-  1: "assets/cloud-sun-solid.svg",
-  2: "assets/cloud-rain-solid.svg",
-  3: "assets/sun-solid.svg"
+  0: "/assets/smog-solid.svg",
+  1: "/assets/cloud-sun-solid.svg",
+  2: "/assets/cloud-rain-solid.svg",
+  3: "/assets/sun-solid.svg"
 };
+
+showWeater();
+
 
 // Fungsi untuk mendapatkan data dari API
 async function getCuaca() {
@@ -126,5 +130,43 @@ async function getCuaca() {
   }
 }
 
-// Panggil fungsi untuk mendapatkan data cuaca dari API
 getCuaca();
+
+// clasify
+// const cuaca = {
+//   0: "/assets/smog-solid.svg",
+//   1: "/assets/cloud-sun-solid.svg",
+//   2: "/assets/cloud-rain-solid.svg",
+//   3: "/assets/sun-solid.svg"
+// };
+
+// async function getCuaca() {
+//   try {
+//     const response = await fetch('URL_API_ANDA'); 
+//     if (!response.ok) {
+//       throw new Error('Jaringan bermasalah');
+//     }
+//     const data = await response.json();
+    
+//     const statusCuaca = data.statusCuaca;
+    
+//     showWeater(statusCuaca);
+//   } catch (error) {
+//     console.error('Terjadi kesalahan:', error);
+//   }
+// }
+
+// function showWeater(statusCuaca) {
+//   var str = "";
+//   for (var i = 0; i < statusCuaca.length; i++) {
+//     var imgSrc = cuaca[statusCuaca[i]];
+    
+//     str +=
+//       "<div class='card'><div class='content_data'> <div class='info_data'> <h3 id='nextDay" +
+//       (i + 1) +
+//       "'>Day " + (i + 1) + "</h3> </div> <img src='" + imgSrc + "' /> </div> </div>";
+//   }
+
+//   document.getElementById("tampilWeather").innerHTML = str;
+// }
+// getCuaca();
