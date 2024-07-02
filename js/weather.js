@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const id_alat = "AWS"; // Ganti dengan ID alat yang sesuai
   showInfo(id_alat); // Panggil showInfo untuk menginisialisasi data
+  showWeater(); // Panggil showWeater untuk menampilkan prakiraan cuaca
 });
 
 async function getHistoryWeather(id_alat) {
@@ -79,18 +80,35 @@ function updateInfo(data) {
   document.getElementById("windspeedData").textContent = infoMap.windspeed + " m/s";
 }
 
-function showWeater() {
-  var str = "";
-  const cuacaIndexMap = [2, 2, 2, 2, 1, 3]; // Urutan indeks cuaca sesuai permintaan
+async function getDataforecast() {
+  const response = await fetch(
+    "https://backend-agridrone.vercel.app/router/forecast/"
+  );
+  const data = await response.json();
+  return data.data;
+}
 
-  for (var i = 1; i <= 6; i++) {
-    var cuacaIndex = cuacaIndexMap[i - 1]; // Ambil indeks cuaca dari cuacaIndexMap
-    var imgSrc = cuaca[cuacaIndex];
-    
+async function showWeater() {
+  const cuacaIndexMap = await getDataforecast();
+
+  // Mendapatkan hari ini
+  const today = new Date();
+  const options = { weekday: 'long' }; // Opsi untuk mendapatkan nama hari dalam bahasa yang sesuai
+  let str = "";
+
+  for (let i = 1; i <= 6; i++) {
+    // Menghitung hari berikutnya
+    const nextDay = new Date(today);
+    nextDay.setDate(today.getDate() + i);
+    const dayName = nextDay.toLocaleDateString('id-ID', options); // Mendapatkan nama hari dalam bahasa Indonesia
+
+    const cuacaIndex = cuacaIndexMap[i]; // Ambil indeks cuaca dari cuacaIndexMap
+    const imgSrc = cuaca[cuacaIndex];
+
     str +=
       "<div class='card'><div class='content_data'> <div class='info_data'> <h3 id='nextDay" +
       i +
-      "'>Day " + i + "</h3> </div> <img src='" + imgSrc + "' /> </div> </div>";
+      "'>" + dayName + "</h3> </div> <img src='" + imgSrc + "' /> </div> </div>";
   }
 
   document.getElementById("tampilWeather").innerHTML = str;
@@ -102,71 +120,3 @@ const cuaca = {
   2: "/assets/cloud-rain-solid.svg",
   3: "/assets/sun-solid.svg"
 };
-
-showWeater();
-
-
-// Fungsi untuk mendapatkan data dari API
-async function getCuaca() {
-  try {
-      const response = await fetch('URL_API_ANDA'); // Ganti dengan URL API Anda
-      if (!response.ok) {
-          throw new Error('Jaringan bermasalah');
-      }
-      const data = await response.json();
-      
-      // Misalkan API mengembalikan objek dengan properti status
-      const status = data.status;
-      
-      // Ganti src dari img dengan id 'cuacaImg' berdasarkan status
-      const cuacaImg = document.getElementById('cuacaImg');
-      if (cuacaImg && cuaca[status]) {
-          cuacaImg.src = cuaca[status];
-      } else {
-          console.error('Gambar cuaca tidak ditemukan untuk status:', status);
-      }
-  } catch (error) {
-      console.error('Terjadi kesalahan:', error);
-  }
-}
-
-getCuaca();
-
-// clasify
-// const cuaca = {
-//   0: "/assets/smog-solid.svg",
-//   1: "/assets/cloud-sun-solid.svg",
-//   2: "/assets/cloud-rain-solid.svg",
-//   3: "/assets/sun-solid.svg"
-// };
-
-// async function getCuaca() {
-//   try {
-//     const response = await fetch('URL_API_ANDA'); 
-//     if (!response.ok) {
-//       throw new Error('Jaringan bermasalah');
-//     }
-//     const data = await response.json();
-    
-//     const statusCuaca = data.statusCuaca;
-    
-//     showWeater(statusCuaca);
-//   } catch (error) {
-//     console.error('Terjadi kesalahan:', error);
-//   }
-// }
-
-// function showWeater(statusCuaca) {
-//   var str = "";
-//   for (var i = 0; i < statusCuaca.length; i++) {
-//     var imgSrc = cuaca[statusCuaca[i]];
-    
-//     str +=
-//       "<div class='card'><div class='content_data'> <div class='info_data'> <h3 id='nextDay" +
-//       (i + 1) +
-//       "'>Day " + (i + 1) + "</h3> </div> <img src='" + imgSrc + "' /> </div> </div>";
-//   }
-
-//   document.getElementById("tampilWeather").innerHTML = str;
-// }
-// getCuaca();
