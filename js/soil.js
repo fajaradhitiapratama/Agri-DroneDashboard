@@ -53,19 +53,6 @@ async function getHistorySoil(id_alat) {
   return data.data.data;
 }
 
-// Fungsi logika Fuzzy
-function fuzzyMembership(value, min, max) {
-  if (value <= min || value >= max) {
-    return 0;
-  }
-  let mid = (min + max) / 2;
-  if (value <= mid) {
-    return (value - min) / (mid - min);
-  } else {
-    return (max - value) / (max - mid);
-  }
-}
-
 function categorizeValues(nitrogen, phosphorous, potassium, ph, moisture) {
   const categories = {
     poor: {
@@ -83,10 +70,10 @@ function categorizeValues(nitrogen, phosphorous, potassium, ph, moisture) {
       moisture: { min: 20, max: 60 },
     },
     good: {
-      nitrogen: { min: 201, max: 300 },
-      phosphorous: { min: 13, max: 300 },
-      potassium: { min: 156, max: 300 },
-      ph: { min: 7.6, max: 14 },
+      nitrogen: { min: 201, max: 412 },
+      phosphorous: { min: 13, max: 39 },
+      potassium: { min: 156, max: 270 },
+      ph: { min: 7.6, max: 10 },
       moisture: { min: 61, max: 100 },
     },
   };
@@ -133,6 +120,19 @@ function categorizeValues(nitrogen, phosphorous, potassium, ph, moisture) {
         phMembership +
         moistureMembership) /
       5;
+  }
+
+  // Fungsi logika Fuzzy
+  function fuzzyMembership(value, min, max) {
+    if (value <= min || value >= max) {
+      return 0;
+    }
+    let mid = (min + max) / 2;
+    if (value <= mid) {
+      return (value - min) / (mid - min);
+    } else {
+      return (max - value) / (max - mid);
+    }
   }
 
   let maxScore = -1;
