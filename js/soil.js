@@ -50,6 +50,7 @@ async function getHistorySoil(id_alat) {
     }
   );
   const data = await response.json();
+  console.log(data)
   return data.data.data;
 }
 
@@ -244,7 +245,9 @@ function setActiveClass(type) {
 // ganti nilai
 async function showInfo(type) {
   var data_history = await getHistorySoil(type);
+  console.log(type);
   data_history = data_history[data_history.length - 1];
+  
 
   setActiveClass(type); // Set class active
 
